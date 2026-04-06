@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="تتبع طلبك في متجر وصلك – أدخل رقم هاتفك لمعرفة حالة طلبك لحظةً بلحظة"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+  <title>تتبع طلبي | وصلك – wasalak.com</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    :root {
+      --green:       #1a6b3c;
+      --green-light: #e8f5ee;
+      --green-dark:  #145530;
+      --gray-50:     #f8f9fa;
+      --gray-100:    #f1f3f4;
+      --gray-200:    #e8eaed;
+      --gray-300:    #dadce0;
+      --gray-500:    #80868b;
+      --gray-600:    #5f6368;
+      --gray-700:    #3c4043;
+      --gray-900:    #1a1a1a;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,.06);
+      --transition:  .22s cubic-bezier(.4,0,.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      direction: rtl;
+      line-height: 1.8;
+    }
+
+    /* ══ TOP BAR ══ */
+    .top-bar {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 7px 16px;
+      font-size: .78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .top-bar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .top-bar-item svg { width: 13px; height: 13px; }
+
+    /* ══ HEADER ══ */
+    .terms-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8eaed;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .terms-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      gap: 16px;
+    }
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity .22s;
+    }
+    .header-logo:hover img { opacity: .85; }
+    .logo-fallback {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #1a6b3c;
+      display: none;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-nav a {
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: #5f6368;
+      text-decoration: none;
+      transition: background .22s, color .22s;
+    }
+    .header-nav a:hover  { background: #f1f3f4; color: #1a1a1a; }
+    .header-nav a.active { background: #e8f5ee; color: #1a6b3c; font-weight: 700; }
+    @media (max-width: 600px) {
+      .header-nav { display: none; }
+    }
+
+    /* ══ HERO ══ */
+    .track-hero {
+      background: linear-gradient(135deg, #0d2b1a 0%, #1a6b3c 60%, #22a05a 100%);
+      padding: 52px 24px 44px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .track-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-icon {
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,.1);
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .hero-icon svg { width: 34px; height: 34px; color: #fff; }
+    .track-hero h1 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .track-hero p {
+      font-size: .9rem;
+      opacity: .85;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ══ MAIN WRAPPER ══ */
+    .track-section { padding: 36px 0 48px; }
+    .track-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ══ CARD ══ */
+    .track-card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    /* ══ FORM ══ */
+    .form-section { padding: 28px 32px; }
+    .form-label {
+      display: block;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--gray-600);
+      margin-bottom: 8px;
+    }
+    .phone-row {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--gray-300);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .phone-row:focus-within {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(26,107,60,.1);
+    }
+    .phone-prefix {
+      padding: 0 14px;
+      background: var(--gray-50);
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--gray-600);
+      border-left: 1px solid var(--gray-200);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .phone-prefix svg { width: 15px; height: 15px; }
+    .phone-input {
+      flex: 1;
+      height: 48px;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: 'Cairo', sans-serif;
+      font-size: .95rem;
+      padding: 0 14px;
+      color: var(--gray-900);
+      direction: ltr;
+      text-align: left;
+    }
+    .phone-input::placeholder { color: var(--gray-500); }
+    .btn-track {
+      width: 100%;
+      margin-top: 16px;
+      height: 48px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background var(--transition), transform .15s;
+    }
+    .btn-track:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-track:active { transform: scale(.98); }
+    .btn-track svg { width: 18px; height: 18px; }
+
+    /* ══ HINT ROW ══ */
+    .hint-row {
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-100);
+    }
+    .hint-row svg { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; }
+    .hint-row span { font-size: .78rem; color: var(--gray-600); line-height: 1.5; }
+
+    /* ══ RESULTS ══ */
+    .results-section { padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; }
+
+    .order-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .meta-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .meta-card .lbl { font-size: .72rem; color: var(--gray-500); font-weight: 600; margin-bottom: 3px; }
+    .meta-card .val { font-size: .88rem; font-weight: 700; color: var(--gray-900); }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .status-badge.processing { background: #fff8e1; color: #b45309; }
+    .status-badge.shipped    { background: #dbeafe; color: #1e40af; }
+    .status-badge.delivered  { background: #dcfce7; color: #15803d; }
+    .status-badge.failed     { background: #fee2e2; color: #b91c1c; }
+
+    /* ══ TIMELINE ══ */
+    .timeline { display: flex; flex-direction: column; }
+    .t-step { display: flex; gap: 14px; }
+    .t-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 32px;
+      flex-shrink: 0;
+    }
+    .t-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .t-dot.done   { background: var(--green); }
+    .t-dot.active { background: #fff; border: 2px solid var(--green); }
+    .t-dot.wait   { background: var(--gray-100); border: 1px solid var(--gray-200); }
+    .t-dot svg { width: 14px; height: 14px; }
+    .t-dot.done   svg { color: #fff; }
+    .t-dot.active svg { color: var(--green); }
+    .t-dot.wait   svg { color: var(--gray-500); }
+    .t-line {
+      flex: 1;
+      width: 2px;
+      background: var(--gray-200);
+      margin: 3px 0;
+      min-height: 18px;
+    }
+    .t-line.done { background: var(--green); }
+    .t-body { padding-bottom: 20px; flex: 1; padding-top: 4px; }
+    .t-title { font-size: .88rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; }
+    .t-title.wait { color: var(--gray-500); }
+    .t-desc { font-size: .78rem; color: var(--gray-600); line-height: 1.6; }
+    .t-time { font-size: .72rem; color: var(--gray-500); margin-top: 2px; }
+
+    /* ══ ACTION BUTTONS ══ */
+    .action-row { display: flex; gap: 10px; }
+    .btn-wa {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      gap: 7px;
+      background: #25d366; color: #fff;
+      border: none; border-radius: 10px; height: 44px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .85rem; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+      transition: background var(--transition);
+    }
+    .btn-wa:hover { background: #1db954; }
+    .btn-wa svg { width: 18px; height: 18px; }
+    .btn-secondary {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px;
+      background: none;
+      border: 1px solid var(--gray-300);
+      border-radius: 10px; height: 44px;
+      padding: 0 18px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .85rem; font-weight: 600;
+      color: var(--gray-600); cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+    .btn-secondary:hover { background: var(--gray-100); color: var(--gray-900); }
+    .btn-secondary svg { width: 15px; height: 15px; }
+
+    /* ══ EMPTY STATE ══ */
+    .empty-wrap {
+      padding: 48px 32px;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .empty-icon {
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      background: var(--gray-100);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 4px;
+    }
+    .empty-icon svg { width: 30px; height: 30px; color: var(--gray-500); }
+    .empty-wrap h3 { font-size: 1rem; font-weight: 700; color: var(--gray-900); }
+    .empty-wrap p  { font-size: .82rem; color: var(--gray-600); line-height: 1.7; max-width: 320px; }
+
+    /* ══ FOOTER ══ */
+    .terms-footer {
+      background: var(--white, #ffffff);
+      border-top: 1px solid #e8eaed;
+      padding: 28px 24px;
+      margin-top: 20px;
+    }
+    .terms-footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .footer-logo img { height: 34px; width: auto; object-fit: contain; }
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-legal-links a {
+      font-size: .75rem;
+      color: #5f6368;
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: background .22s, color .22s;
+    }
+    .footer-legal-links a:hover   { background: #e8f5ee; color: #1a6b3c; }
+    .footer-legal-links a.current { color: #1a6b3c; font-weight: 700; }
+    .footer-sep  { color: #dadce0; font-size: .7rem; }
+    .footer-copy { font-size: .72rem; color: #80868b; }
+
+    /* ══ WHATSAPP FLOAT ══ */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+      width: 54px; height: 54px;
+      background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,.4);
+      transition: transform .2s; text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 28px; height: 28px; }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 600px) {
+      .form-section, .results-section, .empty-wrap { padding: 20px; }
+      .hint-row { padding: 12px 20px; }
+      .order-meta { grid-template-columns: 1fr; }
+      .action-row { flex-direction: column; }
+      .track-hero h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ TOP BAR ══ -->
+<div class="top-bar">
+  <span class="top-bar-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6z"/>
+    </svg>
+    0912-345-678
+  </span>
+  <span class="top-bar-item">
+    <svg viewBox="0 0 24 24" fill="#fff" width="13" height="13">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    واتساب متاح 24/7
+  </span>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header class="terms-header">
+  <div class="terms-header-inner">
+    <a href="index.html" class="header-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك | wasalak.com" height="42"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/>
+      <span class="logo-fallback" id="logoFallback">وصلك</span>
+    </a>
+    <nav class="header-nav" aria-label="التنقل الرئيسي">
+      <a href="index.html">الرئيسية</a>
+      <a href="catalog.html">المنتجات</a>
+      <a href="about.html">من نحن</a>
+      <a href="track.html" class="active" aria-current="page">تتبع طلبي</a>
+      <a href="shipping.html">الشحن</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<div class="track-hero" role="banner">
+  <div class="hero-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="2"/>
+      <path d="M16 8h4l3 4v3h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+  </div>
+  <h1>تتبع طلبك</h1>
+  <p>أدخل رقم هاتفك لمعرفة حالة طلبك الأخيرة لحظةً بلحظة</p>
+</div>
+
+<!-- ══ MAIN ══ -->
+<section class="track-section">
+  <div class="track-container">
+
+    <!-- Form Card -->
+    <div class="track-card" id="formCard">
+      <div class="form-section">
+        <label class="form-label" for="trackPhone">رقم الهاتف المستخدم في الطلب</label>
+        <div class="phone-row">
+          <span class="phone-prefix">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6z"/>
+            </svg>
+            +218
+          </span>
+          <input
+            type="tel"
+            id="trackPhone"
+            placeholder="91-234-5678"
+            class="phone-input"
+            maxlength="10"
+            oninput="onPhoneInput()"
+            onkeydown="if(event.key==='Enter')trackOrder()"
+            aria-label="رقم الهاتف"
+          />
+        </div>
+        <button class="btn-track" onclick="trackOrder()" id="trackBtn" style="opacity:.6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          تتبع الطلب
+        </button>
+      </div>
+      <div class="hint-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span>أدخل رقم الهاتف الذي سجّلته عند الطلب. يمكنك أيضاً البحث برقم الطلب (WS…) عبر واتساب.</span>
+      </div>
+    </div>
+
+    <!-- Results Card -->
+    <div class="track-card" id="resultsCard" style="display:none">
+      <div class="results-section">
+        <div class="order-meta" id="orderMeta"></div>
+        <div class="timeline" id="trackTimeline"></div>
+        <div class="action-row">
+          <a href="https://wa.me/218912345678" class="btn-wa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            تواصل مع خدمة العملاء
+          </a>
+          <button class="btn-secondary" onclick="resetForm()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
+            </svg>
+            بحث جديد
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="track-card" id="emptyCard" style="display:none">
+      <div class="empty-wrap">
+        <div class="empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        <h3>لم يُعثر على طلب</h3>
+        <p>تأكد من أن الرقم المدخل هو نفس رقم هاتفك المستخدم عند الطلب، أو تواصل معنا مباشرةً.</p>
+        <div class="action-row" style="width:100%;margin-top:4px">
+          <a href="https://wa.me/218912345678" class="btn-wa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            تواصل للمساعدة
+          </a>
+          <button class="btn-secondary" onclick="resetForm()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
+            </svg>
+            حاول مجدداً
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ WHATSAPP FLOAT ══ -->
+<a href="https://wa.me/218912345678?text=مرحباً، أريد الاستفسار عن طلبي"
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+   aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="#fff" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ══ FOOTER ══ -->
+<footer class="terms-footer" role="contentinfo">
+  <div class="terms-footer-inner">
+    <a href="index.html" class="footer-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك" height="34"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span style="display:none;font-size:1.1rem;font-weight:900;color:#1a6b3c">وصلك</span>
+    </a>
+    <nav class="footer-legal-links" aria-label="الروابط القانونية">
+      <a href="index.html">الرئيسية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="catalog.html">المنتجات</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="terms.html">الشروط والأحكام</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="returns.html">سياسة الإرجاع</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="shipping.html">سياسة الشحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="about.html">من نحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="track.html" class="current" aria-current="page">تتبع الطلب</a>
+    </nav>
+    <p class="footer-copy">
+      © 2026 وصلك – wasalak.com · جميع الحقوق محفوظة · طرابلس، ليبيا
+    </p>
+  </div>
+</footer>
+
+<script>
+  /* ══ DEMO DATA ══ */
+  const DEMO = {
+    "0912345678": {
+      id: "WS-20260401-7821",
+      product: "سماعات لاسلكية بلوتوث",
+      date: "01 أبريل 2026",
+      city: "طرابلس",
+      total: "189 د.ل",
+      status: "shipped",
+      steps: [
+        { done:true,  label:"استلام الطلب",      desc:"تم تسجيل طلبك بنجاح",          time:"01/04 — 10:22" },
+        { done:true,  label:"تأكيد بشري",         desc:"تأكّد المندوب وجدول التوصيل",  time:"01/04 — 11:48" },
+        { done:true,  label:"تحضير وتغليف",       desc:"الطرد جاهز ومفحوص",            time:"01/04 — 14:00" },
+        { done:false, active:true, label:"في الطريق إليك", desc:"المندوب يتجه نحو عنوانك", time:"تقدير: 06/04" },
+        { done:false, label:"تم التوصيل",         desc:"بانتظار استلامك",               time:"—" }
+      ]
+    },
+    "0901234567": {
+      id: "WS-20260330-5543",
+      product: "ساعة ذكية رياضية",
+      date: "30 مارس 2026",
+      city: "بنغازي",
+      total: "245 د.ل",
+      status: "delivered",
+      steps: [
+        { done:true, label:"استلام الطلب",   desc:"تم تسجيل طلبك",           time:"30/03 — 09:10" },
+        { done:true, label:"تأكيد بشري",     desc:"تأكّد المندوب",            time:"30/03 — 10:30" },
+        { done:true, label:"تحضير وتغليف",   desc:"الطرد جاهز",              time:"30/03 — 15:00" },
+        { done:true, label:"في الطريق",      desc:"شُحن للمندوب",            time:"31/03 — 08:00" },
+        { done:true, label:"تم التوصيل",     desc:"استُلم ودُفع عند الباب",  time:"02/04 — 14:22" }
+      ]
+    }
+  };
+
+  const STATUS_LABELS = {
+    processing: { text:"قيد المعالجة", cls:"processing" },
+    shipped:    { text:"في الطريق",    cls:"shipped"    },
+    delivered:  { text:"تم التوصيل",  cls:"delivered"  },
+    failed:     { text:"فشل التوصيل", cls:"failed"     }
+  };
+
+  const STEP_ICONS = [
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6z"/></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 4v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+  ];
+
+  function onPhoneInput() {
+    const v = document.getElementById('trackPhone').value;
+    document.getElementById('trackBtn').style.opacity = v.length >= 9 ? '1' : '.6';
+  }
+
+  function trackOrder() {
+    const raw = document.getElementById('trackPhone').value.replace(/[-\s]/g, '');
+    if (!raw || raw.length < 7) return;
+    const key = '0' + raw.replace(/^0+/, '');
+    const order = DEMO[key] || DEMO['0' + raw];
+    document.getElementById('resultsCard').style.display = 'none';
+    document.getElementById('emptyCard').style.display   = 'none';
+    if (order) { showResults(order); }
+    else { document.getElementById('emptyCard').style.display = 'block'; }
+  }
+
+  function showResults(o) {
+    const sl = STATUS_LABELS[o.status] || STATUS_LABELS.processing;
+    document.getElementById('orderMeta').innerHTML = `
+      <div class="meta-card"><div class="lbl">رقم الطلب</div><div class="val">${o.id}</div></div>
+      <div class="meta-card"><div class="lbl">الحالة</div><div class="val"><span class="status-badge ${sl.cls}">${sl.text}</span></div></div>
+      <div class="meta-card"><div class="lbl">المنتج</div><div class="val">${o.product}</div></div>
+      <div class="meta-card"><div class="lbl">المدينة</div><div class="val">${o.city}</div></div>
+      <div class="meta-card"><div class="lbl">تاريخ الطلب</div><div class="val">${o.date}</div></div>
+      <div class="meta-card"><div class="lbl">الإجمالي</div><div class="val" style="color:#1a6b3c">${o.total}</div></div>
+    `;
+    document.getElementById('trackTimeline').innerHTML = o.steps.map((s, i) => {
+      const isLast  = i === o.steps.length - 1;
+      const dotCls  = s.done ? 'done' : s.active ? 'active' : 'wait';
+      const titleCls = (s.done || s.active) ? '' : 'wait';
+      return `<div class="t-step">
+        <div class="t-left">
+          <div class="t-dot ${dotCls}">${STEP_ICONS[i]}</div>
+          ${!isLast ? `<div class="t-line${s.done ? ' done' : ''}"></div>` : ''}
+        </div>
+        <div class="t-body">
+          <div class="t-title ${titleCls}">${s.label}</div>
+          <div class="t-desc">${s.desc}</div>
+          <div class="t-time">${s.time}</div>
+        </div>
+      </div>`;
+    }).join('');
+    document.getElementById('resultsCard').style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('trackPhone').value = '';
+    document.getElementById('resultsCard').style.display = 'none';
+    document.getElementById('emptyCard').style.display   = 'none';
+    document.getElementById('trackBtn').style.opacity = '.6';
+    document.getElementById('trackPhone').focus();
+  }
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

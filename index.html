@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="وصلك - متجرك الليبي الموثوق. تسوق بأمان وادفع عند الاستلام. توصيل سريع لجميع مدن ليبيا."/>
+  <meta name="keywords" content="وصلك, متجر ليبيا, تسوق اونلاين ليبيا, دفع عند الاستلام, توصيل طرابلس, بنغازي, wasalak"/>
+  <meta name="author" content="wasalak.com"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="geo.region" content="LY"/>
+  <meta name="geo.placename" content="Libya"/>
+  <meta property="og:title" content="وصلك | تسوق بأمان وادفع عند الاستلام"/>
+  <meta property="og:description" content="أفضل تجربة تسوق إلكتروني في ليبيا - منتجات أصلية، توصيل سريع، دفع عند الاستلام."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://wasalak.com/"/>
+  <meta property="og:image" content="https://wasalak.com/assets/og-image.png"/>
+  <meta property="og:locale" content="ar_LY"/>
+  <meta property="og:site_name" content="وصلك - wasalak.com"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="وصلك | تسوق بأمان وادفع عند الاستلام"/>
+  <meta name="twitter:image" content="https://wasalak.com/assets/og-image.png"/>
+  <title>وصلك | تسوق بأمان وادفع عند الاستلام – wasalak.com</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <link rel="apple-touch-icon" href="assets/favicon.png"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','YOUR_PIXEL_ID');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Store",
+    "name":"وصلك",
+    "alternateName":"wasalak",
+    "url":"https://wasalak.com",
+    "logo":"https://wasalak.com/assets/logo.png",
+    "description":"متجر إلكتروني ليبي موثوق - دفع عند الاستلام لجميع مدن ليبيا",
+    "address":{"@type":"PostalAddress","addressLocality":"طرابلس","addressCountry":"LY"},
+    "telephone":"+218912345678",
+    "email":"info@wasalak.com",
+    "currenciesAccepted":"LYD",
+    "paymentAccepted":"Cash on Delivery",
+    "areaServed":"LY"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- ============================================================
+       CSS PATCH – Header compact + icônes SVG
+       (à migrer dans style.css lors de la refonte globale)
+  ============================================================ -->
+  <style>
+    /* ── Icônes SVG génériques ── */
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .icon svg {
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Top-bar plus fine ── */
+    .top-bar {
+      padding: 6px 0;
+      font-size: 0.78rem;
+      background: #1a6b3c;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* ── Header compact ── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      box-shadow: 0 1px 8px rgba(0,0,0,.08);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 12px;      /* ← réduit (était ~16-20px) */
+      padding-bottom: 12px;   /* ← réduit */
+      min-height: 68px;      /* ← hauteur totale compacte */
+    }
+
+    /* ── Logo ── */
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-link img {
+      height: 52px;          /* ← réduit vs 52px */
+      width: auto;
+      display: block;
+      object-fit: contain;
+      transition: opacity .2s;
+    }
+    .logo-link img:hover { opacity: .85; }
+
+    /* ── Nav ── */
+    .nav-menu { display: flex; align-items: center; gap: 4px; }
+    .nav-link {
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background .2s, color .2s;
+      white-space: nowrap;
+    }
+    .nav-link:hover,
+    .nav-link.active { background: #e8f5ee; color: #1a6b3c; }
+
+    /* ── Actions header ── */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 7px;
+      border-radius: 8px;
+      color: #1a1a1a;
+      transition: background .2s, color .2s;
+      position: relative;
+      text-decoration: none;
+    }
+    .icon-btn:hover { background: #e8f5ee; color: #1a6b3c; }
+
+    /* Badge panier */
+    .cart-count {
+      position: absolute;
+      top: 2px;
+      left: 2px;          /* RTL : left au lieu de right */
+      background: #f0a500;
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      min-width: 16px;
+      height: 16px;
+      border-radius: 99px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* ── Hamburger ── */
+    .menu-toggle {
+      display: none;         /* caché desktop, visible mobile */
+    }
+    @media (max-width: 768px) {
+      .nav-menu  { display: none; }
+      .nav-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0; left: 0;
+        background: #fff;
+        padding: 12px 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,.1);
+        z-index: 999;
+      }
+      .menu-toggle { display: inline-flex; }
+    }
+
+    /* ── Search bar ── */
+    .search-bar {
+      border-top: 1px solid #e8f0e8;
+      padding: 10px 0;
+      background: #fff;
+    }
+    .search-bar .container {
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 9px 44px 9px 14px;
+      border: 1.5px solid #d0e8d8;
+      border-radius: 10px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      direction: rtl;
+      transition: border-color .2s;
+    }
+    .search-input:focus { border-color: #1a6b3c; }
+
+    /* ── Réassurance – icônes SVG ── */
+    .r-icon svg { width:36px; height:36px; stroke:#1a6b3c; }
+
+    /* ── Social Proof toast ── */
+    .sale-notification {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      z-index: 9999;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.15);
+      padding: 12px 16px;
+      max-width: 300px;
+      border-right: 4px solid #1a6b3c;
+    }
+    .notif-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .notif-icon svg { width:24px; height:24px; stroke:#1a6b3c; }
+    .notif-close {
+      background: none; border: none; cursor: pointer;
+      color: #999; margin-right: auto; padding: 2px 6px;
+      border-radius: 4px; font-size: .9rem;
+    }
+    .notif-close:hover { color: #e53e3e; background: #fff5f5; }
+
+    /* ── WhatsApp float ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9998;
+      width: 54px; height: 54px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,.45);
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37,211,102,.55);
+    }
+    .whatsapp-float svg { width:28px; height:28px; }
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 62px;
+      background: #333;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: .75rem;
+      white-space: nowrap;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+      font-family: 'Cairo', sans-serif;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+
+    /* ── Scroll-top ── */
+    .scroll-top {
+      position: fixed;
+      bottom: 88px;
+      left: 24px;
+      z-index: 9997;
+      width: 42px; height: 42px;
+      background: #1a6b3c;
+      color: #fff;
+      border: none; border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(26,107,60,.35);
+      transition: opacity .3s, transform .2s;
+      opacity: 0; pointer-events: none;
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top:hover { transform: translateY(-2px); }
+    .scroll-top svg { width:18px; height:18px; stroke:#fff; }
+
+    /* ── Reviewer / testimonials ── */
+    .reviewer-avatar svg { width:38px;height:38px;stroke:#1a6b3c; }
+
+    /* ── Footer brand logo ── */
+    .footer-logo { height:36px; filter: brightness(0) invert(1); }
+
+    /* ── Payment icons ── */
+    .payment-icon svg { width:22px;height:22px;stroke:#aaa;display:inline-block;vertical-align:middle; }
+
+    /* ── Social btn SVG ── */
+    .social-btn {
+      display:inline-flex;align-items:center;gap:6px;
+      padding:6px 12px; border-radius:8px;
+      background:#1f7a47; color:#fff;
+      font-size:.82rem; font-weight:600;
+      text-decoration:none; transition:background .2s;
+    }
+    .social-btn:hover { background:#145c35; }
+    .social-btn svg { width:16px;height:16px;fill:#fff;stroke:none; }
+  </style>
+</head>
+<body>
+
+<!-- ===== شريط الإشعار العلوي ===== -->
+<div class="top-bar">
+  <span>
+    <!-- SVG : camion livraison -->
+    <svg class="icon" style="width:14px;height:14px;vertical-align:middle;margin-left:3px;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    توصيل مجاني للطلبات فوق 150 د.ل
+    &nbsp;|&nbsp;
+    <!-- SVG : téléphone -->
+    <svg class="icon" style="width:13px;height:13px;vertical-align:middle;margin-left:3px;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.9v2.02z"/></svg>
+    للتواصل: 0912-345-678
+    &nbsp;|&nbsp;
+    <!-- SVG : check shield -->
+    <svg class="icon" style="width:13px;height:13px;vertical-align:middle;margin-left:3px;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    الدفع عند الاستلام في جميع أنحاء ليبيا
+  </span>
+</div>
+
+<!-- ===== الهيدر ===== -->
+<header class="header" id="mainHeader">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo-link" aria-label="وصلك - الصفحة الرئيسية">
+      <img
+        src="assets/logo.png"
+        alt="وصلك | wasalak.com"
+        height="40"
+        width="auto"
+        loading="eager"
+        fetchpriority="high"
+        onerror="this.onerror=null;this.src='assets/logo-fallback.svg';"
+      />
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav-menu" id="navMenu" role="navigation" aria-label="القائمة الرئيسية">
+      <a href="index.html"   class="nav-link active">الرئيسية</a>
+      <a href="catalog.html" class="nav-link">المنتجات</a>
+      <a href="about.html"   class="nav-link">من نحن</a>
+      <a href="track.html"   class="nav-link">تتبع طلبي</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="header-actions">
+
+      <!-- Bouton Recherche -->
+      <button class="icon-btn search-btn" onclick="toggleSearch()" aria-label="بحث">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+
+      <!-- Bouton Panier -->
+      <a href="catalog.html" class="icon-btn cart-btn" aria-label="عربة التسوق">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9"  cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+
+      <!-- Hamburger mobile -->
+      <button class="icon-btn menu-toggle" onclick="toggleMenu()" aria-label="القائمة" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Barre de recherche -->
+  <div class="search-bar" id="searchBar" style="display:none;">
+    <div class="container" style="position:relative;">
+      <svg style="position:absolute;top:50%;transform:translateY(-50%);right:14px;pointer-events:none;width:18px;height:18px;"
+           viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="text"
+        placeholder="ابحث عن منتج..."
+        class="search-input"
+        oninput="searchProducts(this.value)"
+        aria-label="بحث عن منتج"
+      />
+      <div class="search-results" id="searchResults" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" aria-label="الصفحة الرئيسية" style="padding: 50px 0 40px; min-height: unset;">
+  <div class="hero-bg"></div>
+  <div class="container hero-content" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="hero-badge">
+      <svg style="width:14px;height:14px;vertical-align:middle;margin-left:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      وصل حديثاً
+    </div>
+    <h1 class="hero-title">
+      تسوّق بثقة<br/>
+      <span class="highlight">وادفع عند الاستلام</span>
+    </h1>
+    <p class="hero-subtitle">أفضل المنتجات بأسعار مناسبة، توصيل لجميع مدن ليبيا</p>
+    <div class="hero-actions">
+      <a href="catalog.html" class="btn btn-primary btn-large">
+        تسوق الآن
+        <svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+      <a href="track.html" class="btn btn-outline btn-large">
+        <svg style="width:16px;height:16px;vertical-align:middle;margin-left:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        تتبع طلبي
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <strong>+5,000</strong>
+        <span>عميل راضٍ</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true">|</div>
+      <div class="stat">
+        <strong>48h</strong>
+        <span>توصيل طرابلس</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true">|</div>
+      <div class="stat">
+        <strong>100%</strong>
+        <span>دفع آمن عند الاستلام</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator" aria-hidden="true" style="padding-bottom: 12px;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+
+<!-- ===== Réassurance ===== -->
+<section class="reassurance" aria-label="مميزاتنا">
+  <div class="container">
+    <div class="reassurance-grid">
+
+      <div class="reassurance-item">
+        <span class="r-icon" aria-hidden="true">
+          <!-- SVG : camion -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </span>
+        <h3>توصيل سريع</h3>
+        <p>طرابلس 24-48 ساعة<br/>باقي المدن 3-5 أيام</p>
+      </div>
+
+      <div class="reassurance-item">
+        <span class="r-icon" aria-hidden="true">
+          <!-- SVG : wallet COD -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="17" cy="15" r="1" fill="currentColor"/></svg>
+        </span>
+        <h3>الدفع عند الاستلام</h3>
+        <p>ادفع فقط عند وصول منتجك<br/>بالدينار الليبي</p>
+      </div>
+
+      <div class="reassurance-item">
+        <span class="r-icon" aria-hidden="true">
+          <!-- SVG : retour / refresh -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        </span>
+        <h3>إرجاع مجاني</h3>
+        <p>ضمان الإرجاع خلال 14 يوم<br/>بدون أسئلة</p>
+      </div>
+
+      <div class="reassurance-item">
+        <span class="r-icon" aria-hidden="true">
+          <!-- SVG : shield check -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </span>
+        <h3>منتجات موثوقة</h3>
+        <p>جميع منتجاتنا أصلية<br/>ومضمونة الجودة</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== المنتجات المميزة ===== -->
+<section class="featured-products section" aria-label="المنتجات المميزة">
+  <div class="container">
+    <div class="section-header">
+      <h2>المنتجات <span class="highlight">المميزة</span></h2>
+      <a href="catalog.html" class="view-all">
+        عرض الكل
+        <svg style="width:14px;height:14px;vertical-align:middle;margin-right:3px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+    </div>
+    <div class="products-grid" id="featuredProducts" role="list"></div>
+  </div>
+</section>
+
+<!-- ===== بانر العروض ===== -->
+<section class="promo-banner" aria-label="عروض خاصة">
+  <div class="container">
+    <div class="promo-content">
+      <span class="promo-tag">
+        <svg style="width:14px;height:14px;vertical-align:middle;margin-left:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        عرض محدود
+      </span>
+      <h2>خصم 20% على جميع المنتجات الإلكترونية</h2>
+      <p>العرض ينتهي قريباً - لا تفوت الفرصة!</p>
+      <a href="catalog.html?cat=electronics" class="btn btn-primary">اكتشف العرض</a>
+    </div>
+    <div class="promo-timer" id="promoTimer" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===== الأكثر مبيعاً ===== -->
+<section class="bestsellers section" aria-label="الأكثر مبيعاً">
+  <div class="container">
+    <div class="section-header">
+      <h2>الأكثر <span class="highlight">مبيعاً</span></h2>
+      <div class="category-tabs" id="categoryTabs" role="tablist">
+        <button class="tab-btn active" data-cat="all"         role="tab" aria-selected="true">الكل</button>
+        <button class="tab-btn"        data-cat="electronics" role="tab" aria-selected="false">إلكترونيات</button>
+        <button class="tab-btn"        data-cat="fashion"     role="tab" aria-selected="false">أزياء</button>
+        <button class="tab-btn"        data-cat="home"        role="tab" aria-selected="false">منزل</button>
+      </div>
+    </div>
+    <div class="products-grid" id="bestsellerProducts" role="list"></div>
+  </div>
+</section>
+
+<!-- ===== Social Proof Toast ===== -->
+<div class="sale-notification" id="saleNotification" style="display:none;"
+     role="alert" aria-live="polite" aria-atomic="true">
+  <div class="notif-content">
+    <span class="notif-icon">
+      <!-- SVG : panier -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="#1a6b3c" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9"  cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+      </svg>
+    </span>
+    <div class="notif-text">
+      <strong id="notifCity">عميل من طرابلس</strong>
+      <span id="notifProduct">اشترى للتو هذا المنتج</span>
+    </div>
+    <button onclick="closeSaleNotif()" class="notif-close" aria-label="إغلاق الإشعار">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6"  y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- ===== آراء العملاء ===== -->
+<section class="testimonials section" aria-label="آراء العملاء">
+  <div class="container">
+    <h2 class="text-center">ماذا يقول <span class="highlight">عملاؤنا</span></h2>
+    <div class="testimonials-slider" id="testimonialsSlider">
+
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 نجوم">
+          <!-- 5 étoiles SVG -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"الخدمة ممتازة والمنتج وصل في وقته تماماً. سأتسوق مرة أخرى بالتأكيد!"</p>
+        <div class="reviewer">
+          <span class="reviewer-avatar" aria-hidden="true">
+            <!-- SVG : user -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a6b3c" stroke-width="1.8"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <strong>أحمد الطرابلسي</strong>
+          <small>طرابلس</small>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 نجوم">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"أخيراً متجر ليبي موثوق. المنتج أفضل مما توقعت والدفع عند الاستلام يعطيني ثقة كاملة."</p>
+        <div class="reviewer">
+          <span class="reviewer-avatar" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a6b3c" stroke-width="1.8"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <strong>فاطمة البنغازية</strong>
+          <small>بنغازي</small>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 نجوم">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"سرعة التوصيل مذهلة! طلبت من مصراتة ووصل في يومين. شكراً لكم."</p>
+        <div class="reviewer">
+          <span class="reviewer-avatar" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a6b3c" stroke-width="1.8"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <strong>محمد المصراتي</strong>
+          <small>مصراتة</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo-link" aria-label="وصلك - الصفحة الرئيسية">
+          <img src="assets/logo.png" alt="وصلك | wasalak.com"
+               height="36" width="auto" loading="lazy"
+               class="footer-logo"
+               onerror="this.onerror=null;this.src='assets/logo-fallback.svg';"/>
+        </a>
+        <p>متجرك الليبي الموثوق لأفضل المنتجات بأسعار مناسبة مع توصيل لجميع مدن ليبيا.</p>
+        <div class="social-links">
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/wasalak" class="social-btn"
+             aria-label="فيسبوك" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            فيسبوك
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/wasalak" class="social-btn"
+             aria-label="انستغرام" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            انستغرام
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/218912345678" class="social-btn"
+             aria-label="واتساب" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            واتساب
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Liens rapides -->
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="catalog.html">المنتجات</a></li>
+          <li><a href="track.html">تتبع طلبي</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="checkout.html">اطلب الآن</a></li>
+        </ul>
+      </div>
+
+      <!-- Légal -->
+      <div class="footer-col">
+        <h4>المعلومات القانونية</h4>
+        <ul>
+          <li><a href="privacy.html">سياسة الخصوصية</a></li>
+          <li><a href="terms.html">الشروط والأحكام</a></li>
+          <li><a href="returns.html">سياسة الاسترجاع</a></li>
+          <li><a href="shipping.html">سياسة التوصيل</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <address class="contact-info" style="font-style:normal;">
+          <p>
+            <svg class="payment-icon" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:middle;margin-left:4px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.9v2.02z"/></svg>
+            <a href="tel:+218912345678">0912-345-678</a>
+          </p>
+          <p>
+            <svg style="width:15px;height:15px;vertical-align:middle;margin-left:4px;" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@wasalak.com">info@wasalak.com</a>
+          </p>
+          <p>
+            <svg style="width:15px;height:15px;vertical-align:middle;margin-left:4px;" viewBox="0 0 24 24" fill="#aaa" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <a href="https://wa.me/218912345678" target="_blank" rel="noopener">واتساب مباشر</a>
+          </p>
+          <p>
+            <svg style="width:15px;height:15px;vertical-align:middle;margin-left:4px;" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            طرابلس، ليبيا
+          </p>
+        </address>
+
+        <div class="payment-methods">
+          <span style="display:inline-flex;align-items:center;gap:5px;">
+            <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            دفع عند الاستلام
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:5px;">
+            <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20M7 15h2m4 0h4"/></svg>
+            تحويل بنكي
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <strong>وصلك</strong> – wasalak.com. جميع الحقوق محفوظة.</p>
+      <p>الأسعار بالدينار الليبي (د.ل) شاملة الضريبة</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WhatsApp Floating ===== -->
+<a href="https://wa.me/218912345678?text=مرحباً، أريد الاستفسار عن منتج من وصلك"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="تواصل معنا عبر واتساب">
+  <!-- SVG WhatsApp officiel -->
+  <svg viewBox="0 0 24 24" fill="#ffffff">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="whatsapp-tooltip">تواصل معنا عبر واتساب</span>
+</a>
+
+<!-- ===== Scroll Top ===== -->
+<button class="scroll-top" id="scrollTop"
+        onclick="scrollToTop()"
+        aria-label="العودة لأعلى الصفحة">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script src="js/app.js"></script>
+</body>
+</html>

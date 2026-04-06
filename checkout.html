@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+  <title>إتمام الطلب | وصلك – wasalak.com</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* ============================================================
+       CHECKOUT PAGE – Styles dédiés
+       ============================================================ */
+
+    /* ── Variables locales ── */
+    :root {
+      --green:        #1a6b3c;
+      --green-light:  #e8f5ee;
+      --green-dark:   #145530;
+      --green-glow:   rgba(26,107,60,.15);
+      --gold:         #d4a017;
+      --gold-light:   #fdf6e3;
+      --red:          #c0392b;
+      --red-light:    #fdecea;
+      --gray-50:      #f8f9fa;
+      --gray-100:     #f1f3f4;
+      --gray-200:     #e8eaed;
+      --gray-300:     #dadce0;
+      --gray-500:     #80868b;
+      --gray-700:     #3c4043;
+      --gray-900:     #1a1a1a;
+      --white:        #ffffff;
+      --radius:       12px;
+      --shadow-sm:    0 2px 8px rgba(0,0,0,.06);
+      --shadow-md:    0 4px 24px rgba(0,0,0,.09);
+      --shadow-lg:    0 8px 40px rgba(0,0,0,.13);
+      --transition:   .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      direction: rtl;
+      min-height: 100vh;
+    }
+
+    /* ============================================================
+       HEADER CHECKOUT
+       ============================================================ */
+    .checkout-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .checkout-header .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Logo */
+    .checkout-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .checkout-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      transition: opacity var(--transition);
+    }
+    .checkout-logo:hover img { opacity: .85; }
+    .checkout-logo-fallback {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--green);
+      display: none;
+    }
+
+    /* Secure badge */
+    .checkout-secure-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-light);
+      color: var(--green);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: .78rem;
+      font-weight: 700;
+      border: 1px solid rgba(26,107,60,.2);
+      flex-shrink: 0;
+    }
+    .checkout-secure-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Steps */
+    .checkout-steps {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap;
+    }
+    .checkout-step {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      white-space: nowrap;
+    }
+    .checkout-step .step-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--gray-300);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+    .checkout-step.active { color: var(--green); }
+    .checkout-step.active .step-num {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+    }
+    .checkout-step.done { color: var(--green); }
+    .checkout-step.done .step-num {
+      background: var(--green-light);
+      border-color: var(--green);
+      color: var(--green);
+    }
+    .step-arrow {
+      color: var(--gray-300);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       TRUST BAR
+       ============================================================ */
+    .trust-bar {
+      background: linear-gradient(135deg, #1a6b3c 0%, #145530 100%);
+      color: var(--white);
+      padding: 10px 20px;
+    }
+    .trust-bar-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .78rem;
+      font-weight: 700;
+      white-space: nowrap;
+      opacity: .95;
+    }
+    .trust-item svg { width: 16px; height: 16px; flex-shrink: 0; opacity: .9; }
+
+    /* ============================================================
+       MAIN LAYOUT
+       ============================================================ */
+    .checkout-section {
+      padding: 32px 0 60px;
+    }
+    .checkout-section .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ============================================================
+       FORM WRAPPER
+       ============================================================ */
+    .checkout-form-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .form-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--gray-100);
+      background: var(--gray-50);
+    }
+    .form-card-header svg { width: 18px; height: 18px; color: var(--green); flex-shrink: 0; }
+    .form-card-title {
+      font-size: .95rem;
+      font-weight: 900;
+      color: var(--gray-900);
+    }
+    .form-card-body { padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+
+    /* Fields */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .field-label {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--gray-700);
+    }
+    .req { color: var(--red); margin-right: 2px; }
+    .field-input, .field-select, .field-textarea {
+      background: var(--white);
+      border: 1.5px solid var(--gray-300);
+      border-radius: 9px;
+      padding: 11px 14px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .88rem;
+      color: var(--gray-900);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      direction: rtl;
+      width: 100%;
+    }
+    .field-input:focus, .field-select:focus, .field-textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .field-input.error, .field-select.error {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(192,57,43,.1);
+    }
+    .field-textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+
+    /* Phone input */
+    .phone-wrapper {
+      display: flex;
+      align-items: stretch;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 9px;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      background: var(--white);
+    }
+    .phone-wrapper:focus-within {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .phone-wrapper.error { border-color: var(--red); }
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 14px;
+      background: var(--gray-50);
+      border-left: 1.5px solid var(--gray-200);
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .phone-prefix svg { width: 18px; height: 12px; }
+    .phone-input {
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Field hint & error */
+    .field-hint {
+      font-size: .72rem;
+      color: var(--gray-500);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .field-hint svg { width: 12px; height: 12px; color: var(--green); flex-shrink: 0; }
+    .field-error {
+      font-size: .72rem;
+      color: var(--red);
+      font-weight: 600;
+      min-height: 16px;
+      display: none;
+    }
+    .field-error.visible { display: block; }
+
+    /* ── Delivery info box ── */
+    .delivery-info-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--green-light);
+      border: 1px solid rgba(26,107,60,.2);
+      border-radius: 9px;
+      padding: 12px 16px;
+      animation: slideDown .25s ease;
+    }
+    @keyframes slideDown { from { opacity:0; transform:translateY(-8px) } to { opacity:1; transform:translateY(0) } }
+    .delivery-icon {
+      width: 40px; height: 40px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .delivery-icon svg { width: 20px; height: 20px; }
+    .delivery-details { flex: 1; }
+    .delivery-details strong { display: block; font-size: .88rem; color: var(--green); font-weight: 900; }
+    .delivery-details small { font-size: .78rem; color: var(--gray-700); margin-top: 2px; display: block; }
+    .delivery-cost-badge {
+      background: var(--green);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: .78rem;
+      font-weight: 900;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Payment options ── */
+    .payment-options { display: flex; flex-direction: column; gap: 10px; }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 2px solid var(--gray-200);
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+      background: var(--white);
+    }
+    .payment-option:hover { border-color: var(--green); background: var(--green-light); }
+    .payment-option input[type="radio"] { display: none; }
+    .payment-option.selected {
+      border-color: var(--green);
+      background: var(--green-light);
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .payment-option-radio {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--gray-300);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+    .payment-option.selected .payment-option-radio {
+      border-color: var(--green);
+      background: var(--green);
+    }
+    .payment-option.selected .payment-option-radio::after {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--white);
+      border-radius: 50%;
+    }
+    .payment-icon-wrap {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--gray-100);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .payment-option.selected .payment-icon-wrap { background: rgba(26,107,60,.15); }
+    .payment-icon-wrap svg { width: 22px; height: 22px; color: var(--gray-600); }
+    .payment-option.selected .payment-icon-wrap svg { color: var(--green); }
+    .payment-text { flex: 1; }
+    .payment-text strong { display: block; font-size: .88rem; font-weight: 900; color: var(--gray-900); }
+    .payment-text small { font-size: .75rem; color: var(--gray-500); margin-top: 2px; display: block; }
+    .recommended-badge {
+      background: var(--gold);
+      color: var(--white);
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: .65rem;
+      font-weight: 900;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Bank details (hidden by default) ── */
+    .bank-details {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 9px;
+      padding: 14px 16px;
+      display: none;
+      gap: 8px;
+      flex-direction: column;
+    }
+    .bank-details.visible { display: flex; animation: slideDown .25s ease; }
+    .bank-detail-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .82rem; }
+    .bank-detail-label { color: var(--gray-500); font-weight: 600; }
+    .bank-detail-value { font-weight: 900; color: var(--gray-900); font-family: monospace; direction: ltr; }
+    .copy-btn {
+      background: none;
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: .68rem;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      color: var(--green);
+      font-weight: 700;
+      transition: all var(--transition);
+    }
+    .copy-btn:hover { background: var(--green-light); border-color: var(--green); }
+
+    /* ── Terms ── */
+    .terms-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      font-size: .82rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    .terms-checkbox-input {
+      width: 18px; height: 18px;
+      accent-color: var(--green);
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .terms-label a { color: var(--green); font-weight: 700; text-decoration: none; }
+    .terms-label a:hover { text-decoration: underline; }
+
+    /* ============================================================
+       SUBMIT BUTTON
+       ============================================================ */
+    .btn-submit-order {
+      width: 100%;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #1a6b3c 0%, #145530 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(26,107,60,.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-submit-order::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,.08);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .btn-submit-order:hover::before { opacity: 1; }
+    .btn-submit-order:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,107,60,.4); }
+    .btn-submit-order:active { transform: translateY(0); }
+    .btn-submit-order:disabled { opacity: .7; cursor: not-allowed; transform: none; }
+    .btn-submit-order svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* Spinner */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      display: none;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Security strip ── */
+    .checkout-security-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px 0 0;
+      flex-wrap: wrap;
+    }
+    .security-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .72rem;
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+    .security-item svg { width: 13px; height: 13px; color: var(--green); }
+
+    /* ============================================================
+       ORDER SUMMARY (sidebar)
+       ============================================================ */
+    .order-summary {
+      position: sticky;
+      top: 88px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .summary-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .summary-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 20px;
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .summary-card-header svg { width: 16px; height: 16px; color: var(--green); }
+    .summary-card-title { font-size: .9rem; font-weight: 900; color: var(--gray-900); }
+    .summary-card-count {
+      margin-right: auto;
+      background: var(--green);
+      color: var(--white);
+      font-size: .7rem;
+      font-weight: 900;
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+
+    /* Items */
+    .order-items { padding: 0 20px; max-height: 280px; overflow-y: auto; }
+    .order-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .order-item:last-child { border-bottom: none; }
+    .order-item-img {
+      width: 54px; height: 54px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--gray-200);
+      background: var(--gray-100);
+      flex-shrink: 0;
+    }
+    .order-item-details { flex: 1; min-width: 0; }
+    .order-item-name {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .order-item-meta { font-size: .7rem; color: var(--gray-500); margin-top: 2px; }
+    .order-item-qty {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: .7rem;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .order-item-price {
+      font-size: .88rem;
+      font-weight: 900;
+      color: var(--green);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Coupon */
+    .coupon-section { padding: 14px 20px; border-bottom: 1px solid var(--gray-100); }
+    .coupon-row { display: flex; gap: 8px; }
+    .coupon-input {
+      flex: 1;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .82rem;
+      color: var(--gray-900);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      direction: ltr;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .coupon-input:focus { border-color: var(--green); box-shadow: 0 0 0 3px var(--green-glow); }
+    .btn-coupon {
+      background: var(--gray-900);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 9px 16px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .btn-coupon:hover { background: var(--green); }
+    .coupon-result {
+      margin-top: 8px;
+      font-size: .75rem;
+      font-weight: 700;
+      display: none;
+    }
+    .coupon-result.success { color: var(--green); display: block; }
+    .coupon-result.error   { color: var(--red);   display: block; }
+
+    /* Totals */
+    .order-totals { padding: 14px 20px; border-top: 1px solid var(--gray-100); display: flex; flex-direction: column; gap: 10px; }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: .85rem;
+      color: var(--gray-700);
+    }
+    .total-row.discount { color: var(--red); }
+    .total-row.final {
+      border-top: 2px solid var(--gray-200);
+      padding-top: 12px;
+      margin-top: 4px;
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--gray-900);
+    }
+    .final-price { font-size: 1.2rem; color: var(--green); font-weight: 900; }
+    .shipping-pending { font-size: .78rem; color: var(--gray-500); font-style: italic; }
+
+    /* Guarantees */
+    .summary-guarantees {
+      background: var(--green-light);
+      border-top: 1px solid rgba(26,107,60,.15);
+      padding: 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .guarantee-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .78rem;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .guarantee-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Trust logos */
+    .trust-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 20px;
+      border-top: 1px solid var(--gray-100);
+      flex-wrap: wrap;
+    }
+    .trust-logos-label { font-size: .68rem; color: var(--gray-500); font-weight: 600; width: 100%; text-align: center; }
+    .trust-logo-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: .68rem;
+      font-weight: 700;
+      color: var(--gray-600);
+    }
+    .trust-logo-item svg { width: 14px; height: 14px; }
+
+    /* ============================================================
+       SUCCESS MODAL
+       ============================================================ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      z-index: 900;
+      backdrop-filter: blur(4px);
+      display: none;
+    }
+    .success-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 901;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .success-modal.visible { display: flex; }
+    .success-modal-box {
+      background: var(--white);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 480px;
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      animation: modalIn .4s cubic-bezier(.34,1.56,.64,1);
+      position: relative;
+    }
+    @keyframes modalIn {
+      from { opacity:0; transform:scale(.85) translateY(30px); }
+      to   { opacity:1; transform:scale(1) translateY(0); }
+    }
+
+    /* Success animation */
+    .success-icon-wrap {
+      width: 80px; height: 80px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+    .success-icon-wrap svg { width: 40px; height: 40px; color: var(--green); }
+    .success-icon-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 3px solid var(--green-light);
+      animation: pulse-ring 1.5s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { transform:scale(.9); opacity:1; }
+      100% { transform:scale(1.3); opacity:0; }
+    }
+
+    .success-title { font-size: 1.4rem; font-weight: 900; color: var(--gray-900); margin-bottom: 8px; }
+    .success-order-num {
+      background: var(--green-light);
+      color: var(--green);
+      padding: 8px 20px;
+      border-radius: 99px;
+      font-size: .88rem;
+      font-weight: 900;
+      display: inline-block;
+      margin-bottom: 16px;
+      border: 1px solid rgba(26,107,60,.2);
+    }
+    .success-desc { font-size: .875rem; color: var(--gray-700); line-height: 1.7; margin-bottom: 16px; }
+
+    .whatsapp-confirm-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      border-radius: 10px;
+      padding: 12px 16px;
+      text-align: right;
+      margin-bottom: 24px;
+    }
+    .whatsapp-confirm-box svg { width: 22px; height: 22px; color: #25d366; flex-shrink: 0; }
+    .whatsapp-confirm-box span { font-size: .8rem; color: var(--gray-700); font-weight: 600; line-height: 1.5; }
+    .whatsapp-confirm-box strong { color: var(--gray-900); }
+
+    .success-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-track {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--green);
+      color: var(--white);
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .btn-track:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-track svg { width: 16px; height: 16px; }
+    .btn-home {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1.5px solid var(--gray-300);
+      transition: all var(--transition);
+    }
+    .btn-home:hover { background: var(--gray-200); }
+    .btn-home svg { width: 16px; height: 16px; }
+
+    /* WhatsApp float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 500;
+      background: #25d366;
+      color: var(--white);
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(37,211,102,.45);
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,.55); }
+    .whatsapp-float svg { width: 26px; height: 26px; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 900px) {
+      .checkout-layout { grid-template-columns: 1fr; }
+      .order-summary { position: static; order: -1; }
+      .checkout-steps { display: none; }
+    }
+    @media (max-width: 600px) {
+      .checkout-section { padding: 16px 0 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-bar-inner { gap: 14px; }
+      .trust-item:nth-child(3) { display: none; }
+      .success-modal-box { padding: 28px 20px; }
+      .success-actions { flex-direction: column; }
+    }
+    @media (max-width: 400px) {
+      .checkout-secure-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="checkout-header">
+  <div class="container">
+
+    <!-- Logo -->
+    <a href="index.html" class="checkout-logo" aria-label="وصلك – الصفحة الرئيسية">
+      <img src="assets/logo.png" alt="وصلك | wasalak.com" height="44"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/>
+      <span class="checkout-logo-fallback" id="logoFallback">وصلك</span>
+    </a>
+
+    <!-- Steps -->
+    <div class="checkout-steps" aria-label="خطوات الطلب">
+      <div class="checkout-step active" id="step1">
+        <div class="step-num">1</div>
+        <span>معلوماتك</span>
+      </div>
+      <span class="step-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+      <div class="checkout-step" id="step2">
+        <div class="step-num">2</div>
+        <span>تأكيد الطلب</span>
+      </div>
+      <span class="step-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+      <div class="checkout-step" id="step3">
+        <div class="step-num">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span>تم الطلب</span>
+      </div>
+    </div>
+
+    <!-- Secure badge -->
+    <div class="checkout-secure-badge" aria-label="طلب آمن">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      طلب آمن ومحمي
+    </div>
+
+  </div>
+</header>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar" role="complementary" aria-label="ضمانات الشراء">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      الدفع عند الاستلام — لا مخاطرة
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 4v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      توصيل لجميع مدن ليبيا
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+      إرجاع مجاني خلال 14 يوم
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      دعم واتساب 24/7
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<section class="checkout-section">
+  <div class="container">
+    <div class="checkout-layout">
+
+      <!-- ══════════════════════════════════
+           FORMULAIRE CHECKOUT
+           ══════════════════════════════════ -->
+      <div class="checkout-form-wrapper">
+
+        <!-- ── 1. Informations personnelles ── -->
+        <div class="form-card">
+          <div class="form-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="form-card-title">معلوماتك الشخصية</span>
+          </div>
+          <div class="form-card-body">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="field-label" for="firstName">الاسم الأول <span class="req">*</span></label>
+                <input class="field-input" type="text" id="firstName" name="firstName"
+                       placeholder="محمد" required autocomplete="given-name"/>
+                <span class="field-error" id="firstNameError"></span>
+              </div>
+              <div class="form-group">
+                <label class="field-label" for="lastName">اسم العائلة <span class="req">*</span></label>
+                <input class="field-input" type="text" id="lastName" name="lastName"
+                       placeholder="الأمين" required autocomplete="family-name"/>
+                <span class="field-error" id="lastNameError"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="phone">رقم الهاتف <span class="req">*</span></label>
+              <div class="phone-wrapper" id="phoneWrapper">
+                <span class="phone-prefix" aria-hidden="true">
+                  <!-- Libyan flag SVG -->
+                  <svg viewBox="0 0 900 600" width="20" height="13" style="border-radius:2px">
+                    <rect width="900" height="600" fill="#239e46"/>
+                    <rect width="900" height="200" fill="#000"/>
+                    <rect width="900" height="200" y="400" fill="#e70013"/>
+                    <g transform="translate(450,300)" fill="#fff">
+                      <path d="M0-80a80 80 0 1 0 .001 0zm0 15a65 65 0 1 1-.001 0zM20-55l8 25h26l-21 15 8 25-21-15-21 15 8-25-21-15h26z" transform="translate(-10,0)"/>
+                    </g>
+                  </svg>
+                  +218
+                </span>
+                <input class="field-input phone-input" type="tel" id="phone" name="phone"
+                       placeholder="91-234-5678" required
+                       pattern="[0-9]{9,10}" maxlength="10"
+                       autocomplete="tel-national" inputmode="numeric"
+                       oninput="this.value=this.value.replace(/[^0-9]/g,'')"/>
+              </div>
+              <span class="field-error" id="phoneError"></span>
+              <div class="field-hint">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                سيتم إرسال تأكيد طلبك على هذا الرقم عبر واتساب
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── 2. Adresse de livraison ── -->
+        <div class="form-card">
+          <div class="form-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="form-card-title">عنوان التوصيل</span>
+          </div>
+          <div class="form-card-body">
+
+            <div class="form-group">
+              <label class="field-label" for="city">المدينة <span class="req">*</span></label>
+              <select class="field-select" id="city" name="city" required
+                      onchange="updateDeliveryInfo()">
+                <option value="">— اختر مدينتك —</option>
+                <optgroup label="المنطقة أ · توصيل 24-48 ساعة">
+                  <option value="tripoli">طرابلس</option>
+                  <option value="janzur">جنزور</option>
+                  <option value="tajura">تاجوراء</option>
+                  <option value="ain-zara">عين زارة</option>
+                </optgroup>
+                <optgroup label="المنطقة ب · توصيل 3-5 أيام">
+                  <option value="benghazi">بنغازي</option>
+                  <option value="misrata">مصراتة</option>
+                  <option value="zawiya">الزاوية</option>
+                  <option value="zliten">زليتن</option>
+                  <option value="khoms">الخمس</option>
+                  <option value="derna">درنة</option>
+                  <option value="bayda">البيضاء</option>
+                  <option value="tobruk">طبرق</option>
+                  <option value="zintan">الزنتان</option>
+                  <option value="gharyan">غريان</option>
+                </optgroup>
+                <optgroup label="المنطقة ج · حسب الموقع">
+                  <option value="sebha">سبها</option>
+                  <option value="murzuq">مرزق</option>
+                  <option value="kufra">الكفرة</option>
+                  <option value="ghat">غات</option>
+                  <option value="other">مدينة أخرى</option>
+                </optgroup>
+              </select>
+              <span class="field-error" id="cityError"></span>
+            </div>
+
+            <!-- Delivery info dynamic box -->
+            <div class="delivery-info-box" id="deliveryInfoBox" style="display:none" aria-live="polite">
+              <div class="delivery-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 4v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <div class="delivery-details">
+                <strong id="deliveryTime"></strong>
+                <small id="deliveryCostText"></small>
+              </div>
+              <span class="delivery-cost-badge" id="deliveryCostBadge"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="district">الحي / المنطقة <span class="req">*</span></label>
+              <input class="field-input" type="text" id="district" name="district"
+                     placeholder="مثال: السياحية، طريق المطار..." required
+                     autocomplete="address-level2"/>
+              <span class="field-error" id="districtError"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="address">العنوان التفصيلي</label>
+              <textarea class="field-textarea" id="address" name="address"
+                        placeholder="رقم البناية، الشارع، أقرب معلم..." rows="2"
+                        autocomplete="street-address"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="orderNotes">ملاحظات خاصة للتوصيل</label>
+              <input class="field-input" type="text" id="orderNotes" name="orderNotes"
+                     placeholder="مثال: الرنين مرتين، التوصيل بعد العصر..."/>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── 3. Mode de paiement ── -->
+        <div class="form-card">
+          <div class="form-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span class="form-card-title">طريقة الدفع</span>
+          </div>
+          <div class="form-card-body">
+
+            <div class="payment-options" role="radiogroup" aria-label="طريقة الدفع">
+
+              <!-- COD -->
+              <label class="payment-option selected" id="payOptCod" onclick="selectPayment('cod',this)">
+                <input type="radio" name="payment" value="cod" checked aria-label="الدفع عند الاستلام"/>
+                <div class="payment-option-radio" aria-hidden="true"></div>
+                <div class="payment-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg>
+                </div>
+                <div class="payment-text">
+                  <strong>الدفع عند الاستلام</strong>
+                  <small>ادفع نقداً عند وصول طلبك — لا بطاقة مطلوبة</small>
+                </div>
+                <span class="recommended-badge">الأوفر</span>
+              </label>
+
+              <!-- Bank transfer -->
+              <label class="payment-option" id="payOptBank" onclick="selectPayment('bank',this)">
+                <input type="radio" name="payment" value="bank" aria-label="تحويل بنكي"/>
+                <div class="payment-option-radio" aria-hidden="true"></div>
+                <div class="payment-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                </div>
+                <div class="payment-text">
+                  <strong>تحويل بنكي مسبق</strong>
+                  <small>حول المبلغ وأرسل إيصالاً عبر واتساب</small>
+                </div>
+              </label>
+
+            </div>
+
+            <!-- Bank details (shown when bank selected) -->
+            <div class="bank-details" id="bankDetails">
+              <div class="bank-detail-row">
+                <span class="bank-detail-label">البنك</span>
+                <span class="bank-detail-value">Jumhouria Bank</span>
+              </div>
+              <div class="bank-detail-row">
+                <span class="bank-detail-label">اسم الحساب</span>
+                <span class="bank-detail-value">وصلك للتجارة</span>
+              </div>
+              <div class="bank-detail-row">
+                <span class="bank-detail-label">رقم الحساب</span>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span class="bank-detail-value" id="bankAccountNum">1234-5678-9012-3456</span>
+                  <button class="copy-btn" onclick="copyBankNum()" aria-label="نسخ رقم الحساب">نسخ</button>
+                </div>
+              </div>
+              <div style="font-size:.72rem;color:var(--gray-500);margin-top:4px">
+                بعد التحويل، أرسل صورة الإيصال عبر
+                <a href="https://wa.me/218912345678" target="_blank" rel="noopener"
+                   style="color:#25d366;font-weight:700">واتساب</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── 4. Termes & Submit ── -->
+        <div class="form-card">
+          <div class="form-card-body">
+
+            <label class="terms-label" for="termsAccepted">
+              <input class="terms-checkbox-input" type="checkbox" id="termsAccepted" required/>
+              <span>
+                أوافق على
+                <a href="terms.html" target="_blank" rel="noopener">الشروط والأحكام</a>
+                و
+                <a href="returns.html" target="_blank" rel="noopener">سياسة الإرجاع</a>
+                وأعلم أن الدفع يتم عند الاستلام فقط
+              </span>
+            </label>
+            <span class="field-error" id="termsError"></span>
+
+            <button type="button" class="btn-submit-order" id="submitOrderBtn"
+                    onclick="submitOrder(event)" aria-label="تأكيد الطلب">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span id="submitBtnText">تأكيد الطلب — الدفع عند الاستلام</span>
+              <div class="spinner" id="submitSpinner"></div>
+            </button>
+
+            <!-- Security strip -->
+            <div class="checkout-security-strip" role="complementary">
+              <div class="security-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                طلبك آمن ومحمي
+              </div>
+              <div class="security-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 4v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                توصيل مضمون لليبيا
+              </div>
+              <div class="security-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+                إرجاع مجاني 14 يوم
+              </div>
+              <div class="security-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                دعم واتساب 24/7
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /.checkout-form-wrapper -->
+
+      <!-- ══════════════════════════════════
+           ORDER SUMMARY SIDEBAR
+           ══════════════════════════════════ -->
+      <aside class="order-summary" aria-label="ملخص الطلب">
+        <div class="summary-card">
+
+          <!-- Header -->
+          <div class="summary-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="summary-card-title">ملخص طلبك</span>
+            <span class="summary-card-count" id="itemsCount">0</span>
+          </div>
+
+          <!-- Items list -->
+          <div class="order-items" id="orderItems" role="list" aria-label="منتجات الطلب">
+            <!-- Generated by JS -->
+          </div>
+
+          <!-- Coupon -->
+          <div class="coupon-section">
+            <div class="coupon-row">
+              <input class="coupon-input" type="text" id="couponCode"
+                     placeholder="WASALAK10" autocomplete="off"
+                     aria-label="كود الخصم" maxlength="20"
+                     oninput="this.value=this.value.toUpperCase()"/>
+              <button class="btn-coupon" onclick="applyCoupon()" aria-label="تطبيق كود الخصم">تطبيق</button>
+            </div>
+            <div class="coupon-result" id="couponResult" role="alert" aria-live="polite"></div>
+          </div>
+
+          <!-- Totals -->
+          <div class="order-totals">
+            <div class="total-row">
+              <span>المجموع الفرعي</span>
+              <span id="subtotal">0 د.ل</span>
+            </div>
+            <div class="total-row discount" id="discountRow" style="display:none">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" style="vertical-align:middle;margin-left:4px"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                خصم الكوبون
+              </span>
+              <span id="discountAmount">— 0 د.ل</span>
+            </div>
+            <div class="total-row">
+              <span>رسوم التوصيل</span>
+              <span id="shippingCost"><span class="shipping-pending">اختر مدينتك</span></span>
+            </div>
+            <div class="total-row final">
+              <span>الإجمالي النهائي</span>
+              <span class="final-price" id="grandTotal">0 د.ل</span>
+            </div>
+          </div>
+
+          <!-- Guarantees -->
+          <div class="summary-guarantees">
+            <div class="guarantee-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              الدفع عند الاستلام فقط — لا مخاطرة
+            </div>
+            <div class="guarantee-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+              إرجاع مجاني خلال 14 يوم
+            </div>
+            <div class="guarantee-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              تتبع طلبك في الوقت الحقيقي
+            </div>
+          </div>
+
+          <!-- Trust logos -->
+          <div class="trust-logos" aria-label="علامات الأمان">
+            <div class="trust-logos-label">مدعوم بأنظمة موثوقة</div>
+            <div class="trust-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              SSL مشفّر
+            </div>
+            <div class="trust-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              COD آمن
+            </div>
+            <div class="trust-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              واتساب
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div><!-- /.checkout-layout -->
+  </div>
+</section>
+
+<!-- ===== SUCCESS MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true"></div>
+<div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+  <div class="success-modal-box">
+
+    <!-- Icon -->
+    <div class="success-icon-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <h2 class="success-title" id="successTitle">تم استلام طلبك بنجاح!</h2>
+
+    <div class="success-order-num">
+      رقم الطلب: <span id="orderNumber">—</span>
+    </div>
+
+    <p class="success-desc">
+      شكراً لثقتك بوصلك! سيتواصل معك فريقنا خلال ساعات قليلة لتأكيد طلبك وتحديد موعد التوصيل.
+    </p>
+
+    <!-- WhatsApp confirm -->
+    <div class="whatsapp-confirm-box">
+      <svg viewBox="0 0 32 32" fill="#25d366" width="22" height="22" aria-hidden="true">
+        <path d="M16 3C9.37 3 4 8.37 4 15c0 2.26.63 4.47 1.83 6.38L4 29l7.82-1.79A12.9 12.9 0 0016 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm6.11 16.54c-.26.72-1.52 1.38-2.09 1.45-.54.07-1.22.1-1.96-.12-.45-.14-1.03-.33-1.77-.65-3.12-1.35-5.15-4.5-5.31-4.71-.15-.21-1.27-1.69-1.27-3.22s.8-2.28 1.09-2.59c.29-.31.63-.39.84-.39l.61.01c.19 0 .46-.07.72.55.27.63.9 2.21.98 2.37.08.16.13.34.03.55-.1.21-.15.34-.3.52-.14.18-.3.39-.43.52-.14.14-.28.29-.12.57.16.29.71 1.17 1.52 1.89 1.04.93 1.92 1.21 2.21 1.35.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.2-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.21.55.33.07.13.07.73-.19 1.44z"/>
+      </svg>
+      <span>تم إرسال تأكيد على واتساب للرقم: <strong id="confirmedPhone">—</strong></span>
+    </div>
+
+    <!-- Actions -->
+    <div class="success-actions">
+      <a href="track.html" class="btn-track">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        تتبع طلبي
+      </a>
+      <a href="index.html" class="btn-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        العودة للمتجر
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== WhatsApp Float ===== -->
+<a href="https://wa.me/218912345678?text=مرحباً، أريد الاستفسار عن طلبي من وصلك"
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+   aria-label="تواصل معنا عبر واتساب">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16 3C9.37 3 4 8.37 4 15c0 2.26.63 4.47 1.83 6.38L4 29l7.82-1.79A12.9 12.9 0 0016 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm6.11 16.54c-.26.72-1.52 1.38-2.09 1.45-.54.07-1.22.1-1.96-.12-.45-.14-1.03-.33-1.77-.65-3.12-1.35-5.15-4.5-5.31-4.71-.15-.21-1.27-1.69-1.27-3.22s.8-2.28 1.09-2.59c.29-.31.63-.39.84-.39l.61.01c.19 0 .46-.07.72.55.27.63.9 2.21.98 2.37.08.16.13.34.03.55-.1.21-.15.34-.3.52-.14.18-.3.39-.43.52-.14.14-.28.29-.12.57.16.29.71 1.17 1.52 1.89 1.04.93 1.92 1.21 2.21 1.35.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.2-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.21.55.33.07.13.07.73-.19 1.44z"/>
+  </svg>
+</a>
+
+<script src="js/app.js"></script>
+<script>
+/* ============================================================
+   CHECKOUT PAGE – Logique locale
+   (complète et enrichit les fonctions de js/app.js)
+   ============================================================ */
+
+/* ── Zones de livraison ── */
+const DELIVERY_ZONES_LOCAL = {
+  tripoli:  { time: 'توصيل خلال 24–48 ساعة', cost: 15,  zone: 'A', costText: '15 د.ل' },
+  janzur:   { time: 'توصيل خلال 24–48 ساعة', cost: 15,  zone: 'A', costText: '15 د.ل' },
+  tajura:   { time: 'توصيل خلال 24–48 ساعة', cost: 15,  zone: 'A', costText: '15 د.ل' },
+  'ain-zara':{ time:'توصيل خلال 24–48 ساعة', cost: 15,  zone: 'A', costText: '15 د.ل' },
+  benghazi: { time: 'توصيل خلال 3–5 أيام',   cost: 25,  zone: 'B', costText: '25 د.ل' },
+  misrata:  { time: 'توصيل خلال 3–5 أيام',   cost: 20,  zone: 'B', costText: '20 د.ل' },
+  zawiya:   { time: 'توصيل خلال 2–3 أيام',   cost: 18,  zone: 'B', costText: '18 د.ل' },
+  zliten:   { time: 'توصيل خلال 3–4 أيام',   cost: 20,  zone: 'B', costText: '20 د.ل' },
+  khoms:    { time: 'توصيل خلال 2–3 أيام',   cost: 18,  zone: 'B', costText: '18 د.ل' },
+  derna:    { time: 'توصيل خلال 4–6 أيام',   cost: 28,  zone: 'B', costText: '28 د.ل' },
+  bayda:    { time: 'توصيل خلال 4–6 أيام',   cost: 28,  zone: 'B', costText: '28 د.ل' },
+  tobruk:   { time: 'توصيل خلال 5–7 أيام',   cost: 30,  zone: 'B', costText: '30 د.ل' },
+  zintan:   { time: 'توصيل خلال 3–4 أيام',   cost: 22,  zone: 'B', costText: '22 د.ل' },
+  gharyan:  { time: 'توصيل خلال 2–3 أيام',   cost: 20,  zone: 'B', costText: '20 د.ل' },
+  sebha:    { time: 'توصيل خلال 5–7 أيام',   cost: 35,  zone: 'C', costText: '35 د.ل' },
+  murzuq:   { time: 'توصيل حسب الموقع',      cost: 45,  zone: 'C', costText: '45 د.ل' },
+  kufra:    { time: 'توصيل حسب الموقع',      cost: 50,  zone: 'C', costText: '50 د.ل' },
+  ghat:     { time: 'توصيل حسب الموقع',      cost: 50,  zone: 'C', costText: '50 د.ل' },
+  other:    { time: 'التواصل لتحديد التوصيل', cost: 0,   zone: 'C', costText: 'يُحدَّد لاحقاً' },
+};
+
+let currentShippingCost = 0;
+let currentDiscount     = 0;
+
+/* ── Initialisation ── */
+document.addEventListener('DOMContentLoaded', () => {
+  initCheckoutPage();
+  setupPaymentListeners();
+});
+
+function initCheckoutPage() {
+  if (typeof initCheckout === 'function') {
+    initCheckout();
+  } else {
+    renderOrderItemsLocal();
+    updateTotalsLocal();
+  }
+}
+
+/* ── Rendu des articles du panier ── */
+function renderOrderItemsLocal() {
+  const cart = JSON.parse(localStorage.getItem('wasalak_cart') || '[]');
+  const container = document.getElementById('orderItems');
+  const countEl   = document.getElementById('itemsCount');
+
+  if (!container) return;
+
+  if (!cart.length) {
+    container.innerHTML = `
+      <div style="padding:24px;text-align:center;color:var(--gray-500)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+             width="40" height="40" style="margin-bottom:8px;opacity:.4"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <p style="font-size:.82rem">سلة المشتريات فارغة</p>
+        <a href="catalog.html" style="color:var(--green);font-weight:700;font-size:.8rem">تسوق الآن</a>
+      </div>`;
+    if (countEl) countEl.textContent = '0';
+    return;
+  }
+
+  if (countEl) countEl.textContent = cart.reduce((s, i) => s + (i.qty || 1), 0);
+
+  container.innerHTML = cart.map(item => `
+    <div class="order-item" role="listitem">
+      <img class="order-item-img"
+           src="${escapeHtml(item.image || 'https://picsum.photos/54/54')}"
+           alt="${escapeHtml(item.name || '')}"
+           loading="lazy"
+           onerror="this.src='https://picsum.photos/54/54'"/>
+      <div class="order-item-details">
+        <div class="order-item-name">${escapeHtml(item.name || 'منتج')}</div>
+        <div class="order-item-meta">${escapeHtml(item.option || '')}</div>
+      </div>
+      <span class="order-item-qty">×${item.qty || 1}</span>
+      <span class="order-item-price">${((item.price || 0) * (item.qty || 1)).toFixed(0)} د.ل</span>
+    </div>`).join('');
+}
+
+/* ── Mise à jour des totaux ── */
+function updateTotalsLocal() {
+  const cart     = JSON.parse(localStorage.getItem('wasalak_cart') || '[]');
+  const subtotal = cart.reduce((s, i) => s + (i.price || 0) * (i.qty || 1), 0);
+  const grand    = Math.max(0, subtotal - currentDiscount) + currentShippingCost;
+
+  setText('subtotal',     subtotal.toFixed(0) + ' د.ل');
+  setText('grandTotal',   grand.toFixed(0)    + ' د.ل');
+
+  if (currentDiscount > 0) {
+    show('discountRow');
+    setText('discountAmount', '— ' + currentDiscount.toFixed(0) + ' د.ل');
+  } else {
+    hide('discountRow');
+  }
+
+  if (currentShippingCost > 0) {
+    setText('shippingCost', currentShippingCost + ' د.ل');
+  } else if (currentShippingCost === 0 && document.getElementById('city')?.value === 'other') {
+    document.getElementById('shippingCost').innerHTML = '<span class="shipping-pending">يُحدَّد لاحقاً</span>';
+  } else {
+    document.getElementById('shippingCost').innerHTML = '<span class="shipping-pending">اختر مدينتك</span>';
+  }
+}
+
+/* ── Livraison dynamique ── */
+function updateDeliveryInfo() {
+  const cityVal = document.getElementById('city')?.value;
+  const box     = document.getElementById('deliveryInfoBox');
+  if (!cityVal || !box) return;
+
+  const zone = DELIVERY_ZONES_LOCAL[cityVal];
+  if (!zone) { box.style.display = 'none'; return; }
+
+  setText('deliveryTime',     zone.time);
+  setText('deliveryCostText', 'رسوم التوصيل: ' + zone.costText);
+  setText('deliveryCostBadge', zone.costText);
+  box.style.display = 'flex';
+
+  currentShippingCost = zone.cost;
+  updateTotalsLocal();
+}
+
+/* ── Paiement ── */
+function setupPaymentListeners() {
+  document.querySelectorAll('.payment-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const radio = opt.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+    });
+  });
+}
+
+function selectPayment(type, el) {
+  document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  const bankDetails = document.getElementById('bankDetails');
+  if (bankDetails) {
+    if (type === 'bank') bankDetails.classList.add('visible');
+    else bankDetails.classList.remove('visible');
+  }
+}
+
+/* ── Copie numéro de compte ── */
+function copyBankNum() {
+  const num = document.getElementById('bankAccountNum')?.textContent || '';
+  navigator.clipboard.writeText(num).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    if (btn) { btn.textContent = 'تم النسخ ✓'; setTimeout(() => btn.textContent = 'نسخ', 2000); }
+  });
+}
+
+/* ── Coupon ── */
+const COUPONS_LOCAL = {
+  'WASALAK10': { discount: 0.10, label: 'خصم 10%' },
+  'LIBYA20':   { discount: 0.20, label: 'خصم 20%' },
+  'WELCOME15': { discount: 0.15, label: 'خصم 15%' },
+};
+
+function applyCoupon() {
+  const code   = (document.getElementById('couponCode')?.value || '').trim().toUpperCase();
+  const result = document.getElementById('couponResult');
+  if (!result) return;
+
+  if (!code) { showCouponResult('أدخل كود الخصم', 'error'); return; }
+
+  const coupon = COUPONS_LOCAL[code];
+  const cart   = JSON.parse(localStorage.getItem('wasalak_cart') || '[]');
+  const sub    = cart.reduce((s, i) => s + (i.price || 0) * (i.qty || 1), 0);
+
+  if (!coupon) {
+    showCouponResult('الكود غير صحيح أو منتهي الصلاحية', 'error');
+    currentDiscount = 0;
+  } else {
+    currentDiscount = sub * coupon.discount;
+    showCouponResult('✓ تم تطبيق ' + coupon.label + ' — وفّرت ' + currentDiscount.toFixed(0) + ' د.ل', 'success');
+  }
+  updateTotalsLocal();
+}
+
+function showCouponResult(msg, type) {
+  const el = document.getElementById('couponResult');
+  if (!el) return;
+  el.textContent  = msg;
+  el.className    = 'coupon-result ' + type;
+}
+
+/* ── Validation & Soumission ── */
+function submitOrder(e) {
+  if (e) e.preventDefault();
+  if (!validateCheckoutForm()) return;
+
+  const btn     = document.getElementById('submitOrderBtn');
+  const btnText = document.getElementById('submitBtnText');
+  const spinner = document.getElementById('submitSpinner');
+
+  // État chargement
+  if (btn)     btn.disabled   = true;
+  if (spinner) spinner.style.display = 'block';
+  if (btnText) btnText.textContent   = 'جاري إرسال الطلب...';
+
+  // Étapes de progression visuelles
+  setStepDone(1);
+  setStepActive(2);
+
+  setTimeout(() => {
+    const order = buildOrderObject();
+    saveOrderLocal(order);
+    clearCart();
+
+    setStepDone(2);
+    setStepDone(3);
+
+    if (btn)     btn.disabled   = false;
+    if (spinner) spinner.style.display = 'none';
+    if (btnText) btnText.textContent   = 'تأكيد الطلب — الدفع عند الاستلام';
+
+    showSuccessModal(order);
+  }, 1800);
+}
+
+function validateCheckoutForm() {
+  let valid = true;
+
+  const checks = [
+    { id: 'firstName',    errId: 'firstNameError',  msg: 'أدخل اسمك الأول' },
+    { id: 'lastName',     errId: 'lastNameError',   msg: 'أدخل اسم العائلة' },
+    { id: 'phone',        errId: 'phoneError',      msg: 'أدخل رقم هاتف ليبي صحيح (9 أرقام)',
+      extra: v => v.replace(/[^0-9]/g,'').length >= 9 },
+    { id: 'city',         errId: 'cityError',       msg: 'اختر مدينتك' },
+    { id: 'district',     errId: 'districtError',   msg: 'أدخل الحي أو المنطقة' },
+  ];
+
+  checks.forEach(({ id, errId, msg, extra }) => {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(errId);
+    const val = el?.value?.trim() || '';
+    const ok  = val && (!extra || extra(val));
+
+    if (!ok) {
+      showFieldError(el, err, msg);
+      valid = false;
+    } else {
+      clearFieldError(el, err);
+    }
+  });
+
+  // Terms
+  const terms    = document.getElementById('termsAccepted');
+  const termsErr = document.getElementById('termsError');
+  if (!terms?.checked) {
+    if (termsErr) { termsErr.textContent = 'يجب الموافقة على الشروط للمتابعة'; termsErr.classList.add('visible'); }
+    valid = false;
+  } else {
+    if (termsErr) { termsErr.textContent = ''; termsErr.classList.remove('visible'); }
+  }
+
+  // Cart not empty
+  const cart = JSON.parse(localStorage.getItem('wasalak_cart') || '[]');
+  if (!cart.length) {
+    alert('سلة المشتريات فارغة. أضف منتجات للمتابعة.');
+    valid = false;
+  }
+
+  return valid;
+}
+
+function showFieldError(input, errEl, msg) {
+  if (input)  input.classList.add('error');
+  if (errEl)  { errEl.textContent = msg; errEl.classList.add('visible'); }
+}
+function clearFieldError(input, errEl) {
+  if (input)  input.classList.remove('error');
+  if (errEl)  { errEl.textContent = ''; errEl.classList.remove('visible'); }
+}
+
+/* ── Construction de l'objet commande ── */
+function buildOrderObject() {
+  const cart     = JSON.parse(localStorage.getItem('wasalak_cart') || '[]');
+  const subtotal = cart.reduce((s, i) => s + (i.price || 0) * (i.qty || 1), 0);
+  const total    = Math.max(0, subtotal - currentDiscount) + currentShippingCost;
+
+  return {
+    id:        generateOrderId(),
+    date:      new Date().toISOString(),
+    status:    'pending',
+    customer: {
+      firstName: getVal('firstName'),
+      lastName:  getVal('lastName'),
+      phone:     '+218' + getVal('phone'),
+    },
+    shipping: {
+      city:     getVal('city'),
+      district: getVal('district'),
+      address:  getVal('address'),
+      notes:    getVal('orderNotes'),
+      cost:     currentShippingCost,
+    },
+    payment: {
+      method:   document.querySelector('input[name="payment"]:checked')?.value || 'cod',
+    },
+    items:    cart,
+    subtotal, discount: currentDiscount, total,
+  };
+}
+
+function saveOrderLocal(order) {
+  const orders = JSON.parse(localStorage.getItem('wasalak_orders') || '[]');
+  orders.unshift(order);
+  localStorage.setItem('wasalak_orders', JSON.stringify(orders));
+  localStorage.setItem('wasalak_last_order', JSON.stringify(order));
+}
+
+function clearCart() {
+  localStorage.removeItem('wasalak_cart');
+  const badge = document.getElementById('cartCount');
+  if (badge) badge.textContent = '0';
+}
+
+/* ── Success modal ── */
+function showSuccessModal(order) {
+  setText('orderNumber',    '#' + order.id);
+  setText('confirmedPhone', order.customer.phone);
+
+  const overlay = document.getElementById('modalOverlay');
+  const modal   = document.getElementById('successModal');
+  if (overlay) overlay.style.display = 'block';
+  if (modal)   modal.classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+/* ── Steps visuels ── */
+function setStepActive(n) {
+  const el = document.getElementById('step' + n);
+  if (el) { el.classList.remove('done'); el.classList.add('active'); }
+}
+function setStepDone(n) {
+  const el = document.getElementById('step' + n);
+  if (el) { el.classList.remove('active'); el.classList.add('done'); }
+}
+
+/* ── Helpers ── */
+function generateOrderId() {
+  return 'WS' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).substr(2,4).toUpperCase();
+}
+function getVal(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+function setText(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+function show(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = '';
+}
+function hide(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'none';
+}
+function escapeHtml(str) {
+  return String(str || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── Live validation ── */
+['firstName','lastName','district'].forEach(id => {
+  document.getElementById(id)?.addEventListener('blur', function() {
+    const errEl = document.getElementById(id + 'Error');
+    if (this.value.trim()) clearFieldError(this, errEl);
+    else showFieldError(this, errEl, 'هذا الحقل مطلوب');
+  });
+});
+document.getElementById('phone')?.addEventListener('blur', function() {
+  const errEl = document.getElementById('phoneError');
+  if (this.value.replace(/[^0-9]/g,'').length >= 9) clearFieldError(this, errEl);
+  else showFieldError(this, errEl, 'أدخل رقم هاتف ليبي صحيح (9 أرقام)');
+});
+</script>
+
+</body>
+</html>

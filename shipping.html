@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="سياسة الشحن والتوصيل لمتجر وصلك — مناطق التوصيل، الرسوم، المواعيد، والتتبع في ليبيا"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+  <title>سياسة الشحن والتوصيل | وصلك – wasalak.com</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* ============================================================
+       SHIPPING PAGE — Référentiel terms.html appliqué à 100%
+       ============================================================ */
+    :root {
+      --green:       #1a6b3c;
+      --green-light: #e8f5ee;
+      --green-dark:  #145530;
+      --green-glow:  rgba(26,107,60,.12);
+      --red:         #c0392b;
+      --red-light:   #fdecea;
+      --orange:      #e67e22;
+      --orange-light:#fef5ec;
+      --blue:        #2563eb;
+      --blue-light:  #eff6ff;
+      --gray-50:     #f8f9fa;
+      --gray-100:    #f1f3f4;
+      --gray-200:    #e8eaed;
+      --gray-300:    #dadce0;
+      --gray-500:    #80868b;
+      --gray-600:    #5f6368;
+      --gray-700:    #3c4043;
+      --gray-900:    #1a1a1a;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,.06);
+      --shadow-md:   0 4px 24px rgba(0,0,0,.09);
+      --transition:  .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      direction: rtl;
+      line-height: 1.8;
+    }
+
+    /* ══════════════════════════════════════
+       HEADER — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .terms-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      gap: 16px;
+    }
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity var(--transition);
+    }
+    .header-logo:hover img { opacity: .85; }
+    .logo-fallback {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--green);
+      display: none;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-nav a {
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .header-nav a:hover  { background: var(--gray-100); color: var(--gray-900); }
+    .header-nav a.active { background: var(--green-light); color: var(--green); font-weight: 700; }
+
+    /* ══════════════════════════════════════
+       HERO — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-hero {
+      background: linear-gradient(135deg, #1a6b3c 0%, #0f4a28 100%);
+      color: var(--white);
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .terms-hero-icon {
+      width: 68px; height: 68px;
+      background: rgba(255,255,255,.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      border: 2px solid rgba(255,255,255,.2);
+    }
+    .terms-hero-icon svg { width: 32px; height: 32px; color: var(--white); }
+    .terms-hero h1 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .terms-hero p {
+      font-size: .9rem;
+      opacity: .85;
+      max-width: 540px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+    .terms-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .terms-meta svg { width: 13px; height: 13px; }
+
+    /* ══════════════════════════════════════
+       LAYOUT — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-layout {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ══════════════════════════════════════
+       SIDEBAR TOC — identique terms.html
+       ══════════════════════════════════════ */
+    .toc-sidebar {
+      position: sticky;
+      top: 86px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 18px;
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .toc-header svg  { width: 15px; height: 15px; color: var(--green); }
+    .toc-header span { font-size: .82rem; font-weight: 900; color: var(--gray-900); }
+    .toc-list { list-style: none; padding: 8px 0; }
+    .toc-list li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: all var(--transition);
+      border-right: 3px solid transparent;
+    }
+    .toc-list li a:hover,
+    .toc-list li a.toc-active {
+      background: var(--green-light);
+      color: var(--green);
+      border-right-color: var(--green);
+    }
+    .toc-list li a .toc-num {
+      width: 20px; height: 20px;
+      background: var(--gray-100);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem;
+      font-weight: 900;
+      color: var(--gray-500);
+      flex-shrink: 0;
+    }
+    .toc-list li a:hover .toc-num,
+    .toc-list li a.toc-active .toc-num { background: var(--green); color: var(--white); }
+
+    .toc-contact {
+      margin: 8px 12px 12px;
+      background: var(--green-light);
+      border: 1px solid rgba(26,107,60,.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .toc-contact-title { font-size: .72rem; font-weight: 900; color: var(--green); }
+    .toc-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .72rem;
+      color: var(--gray-700);
+      text-decoration: none;
+    }
+    .toc-contact-item svg { width: 13px; height: 13px; color: var(--green); flex-shrink: 0; }
+    .toc-contact-item:hover { color: var(--green); }
+
+    /* ══════════════════════════════════════
+       CONTENT COMPONENTS — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Alert box */
+    .terms-alert {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--green-light);
+      border: 1px solid rgba(26,107,60,.25);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .terms-alert-icon {
+      width: 36px; height: 36px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .terms-alert-icon svg { width: 18px; height: 18px; color: var(--white); }
+    .terms-alert-text { flex: 1; }
+    .terms-alert-text strong { display: block; font-size: .88rem; color: var(--green); margin-bottom: 4px; }
+    .terms-alert-text p { font-size: .8rem; color: var(--gray-700); line-height: 1.6; margin: 0; }
+
+    /* Article card */
+    .article-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      scroll-margin-top: 90px;
+    }
+    .article-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .article-num {
+      width: 34px; height: 34px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .article-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .article-icon svg { width: 18px; height: 18px; }
+    .article-icon.green  { background: var(--green-light);  color: var(--green); }
+    .article-icon.orange { background: var(--orange-light); color: var(--orange); }
+    .article-icon.red    { background: var(--red-light);    color: var(--red); }
+    .article-icon.blue   { background: var(--blue-light);   color: var(--blue); }
+    .article-title {
+      font-size: .95rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      flex: 1;
+    }
+    .article-body {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .article-body p {
+      font-size: .875rem;
+      color: var(--gray-700);
+      line-height: 1.85;
+    }
+    .article-body p strong { color: var(--gray-900); }
+    .article-body p a { color: var(--green); font-weight: 700; text-decoration: none; }
+    .article-body p a:hover { text-decoration: underline; }
+    .article-body h4 {
+      font-size: .85rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-body h4 svg { width: 15px; height: 15px; color: var(--green); }
+
+    /* Listes */
+    .terms-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .terms-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .85rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+    .terms-list li .li-icon {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .terms-list li .li-icon svg { width: 100%; height: 100%; }
+    .terms-list.check  li .li-icon { color: var(--green); }
+    .terms-list.cross  li .li-icon { color: var(--red); }
+    .terms-list.bullet li .li-icon { color: var(--gray-400); }
+
+    /* Info box */
+    .info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      border-radius: 9px;
+      padding: 14px 16px;
+    }
+    .info-box.green  { background: var(--green-light);  border: 1px solid rgba(26,107,60,.2); }
+    .info-box.orange { background: var(--orange-light); border: 1px solid rgba(230,126,34,.2); }
+    .info-box.red    { background: var(--red-light);    border: 1px solid rgba(192,57,43,.2); }
+    .info-box.blue   { background: var(--blue-light);   border: 1px solid #bfdbfe; }
+    .info-box-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+    .info-box-icon svg { width: 100%; height: 100%; }
+    .info-box.green  .info-box-icon { color: var(--green); }
+    .info-box.orange .info-box-icon { color: var(--orange); }
+    .info-box.red    .info-box-icon { color: var(--red); }
+    .info-box.blue   .info-box-icon { color: var(--blue); }
+    .info-box-text { font-size: .82rem; color: var(--gray-700); line-height: 1.7; flex: 1; }
+    .info-box-text strong { display: block; font-weight: 900; margin-bottom: 2px; }
+
+    /* Steps */
+    .steps-list { display: flex; flex-direction: column; gap: 12px; }
+    .step-item  { display: flex; align-items: flex-start; gap: 14px; }
+    .step-item-num {
+      width: 28px; height: 28px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-item-content { flex: 1; }
+    .step-item-content strong { display: block; font-size: .85rem; font-weight: 900; color: var(--gray-900); margin-bottom: 2px; }
+    .step-item-content span   { font-size: .8rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* Grille garanties */
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .guarantee-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 9px;
+      padding: 12px 14px;
+      transition: border-color var(--transition);
+    }
+    .guarantee-card:hover { border-color: var(--green); }
+    .guarantee-card-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    .guarantee-card-icon svg { width: 16px; height: 16px; }
+    .guarantee-card-icon.orange { background: var(--orange-light); color: var(--orange); }
+    .guarantee-card-icon.red    { background: var(--red-light);    color: var(--red); }
+    .guarantee-card-icon.blue   { background: var(--blue-light);   color: var(--blue); }
+    .guarantee-card-text strong { display: block; font-size: .8rem; font-weight: 900; color: var(--gray-900); }
+    .guarantee-card-text span   { font-size: .72rem; color: var(--gray-500); line-height: 1.5; }
+
+    /* Tableau zones livraison — identique terms.html */
+    .delivery-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .82rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .delivery-table thead th {
+      background: var(--green);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: right;
+      font-weight: 700;
+      font-size: .78rem;
+    }
+    .delivery-table tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-700);
+      vertical-align: middle;
+    }
+    .delivery-table tbody tr:nth-child(even) td { background: var(--gray-50); }
+    .delivery-table tbody tr:last-child td { border-bottom: none; }
+
+    /* Zone badges — identique terms.html */
+    .zone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .zone-a { background: #dcfce7; color: #15803d; }
+    .zone-b { background: #fef9c3; color: #854d0e; }
+    .zone-c { background: #fee2e2; color: #b91c1c; }
+
+    /* Calculateur */
+    .calc-widget {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .calc-widget h4 {
+      font-size: .85rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .calc-widget h4 svg { width: 15px; height: 15px; color: var(--green); }
+    .calc-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .calc-row select {
+      flex: 1;
+      min-width: 160px;
+      padding: 8px 12px;
+      border: 1px solid var(--gray-300);
+      border-radius: 8px;
+      font-family: 'Cairo', sans-serif;
+      font-size: .82rem;
+      color: var(--gray-900);
+      background: var(--white);
+      cursor: pointer;
+      outline: none;
+      transition: border-color var(--transition);
+      direction: rtl;
+    }
+    .calc-row select:focus { border-color: var(--green); }
+    .calc-result {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: var(--green-light);
+      border: 1px solid rgba(26,107,60,.2);
+      border-radius: 8px;
+      font-size: .82rem;
+      color: var(--green-dark);
+      font-weight: 700;
+      display: none;
+    }
+    .calc-result.visible { display: block; }
+
+    /* ══════════════════════════════════════
+       FOOTER — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-footer {
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      padding: 28px 24px;
+      margin-top: 20px;
+    }
+    .terms-footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .footer-logo img { height: 34px; width: auto; object-fit: contain; }
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-legal-links a {
+      font-size: .75rem;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: all var(--transition);
+    }
+    .footer-legal-links a:hover   { background: var(--green-light); color: var(--green); }
+    .footer-legal-links a.current { color: var(--green); font-weight: 700; }
+    .footer-sep  { color: var(--gray-300); font-size: .7rem; }
+    .footer-copy { font-size: .72rem; color: var(--gray-500); }
+
+    /* ══════════════════════════════════════
+       SCROLL-TO-TOP — identique terms.html
+       ══════════════════════════════════════ */
+    .scroll-top {
+      position: fixed;
+      bottom: 24px; left: 24px;
+      width: 44px; height: 44px;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(26,107,60,.35);
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      z-index: 200;
+    }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scroll-top:hover   { background: var(--green-dark); transform: translateY(-2px); }
+    .scroll-top svg     { width: 20px; height: 20px; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — identique terms.html
+       ══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .terms-layout    { grid-template-columns: 1fr; }
+      .toc-sidebar     { position: static; }
+      .guarantees-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .terms-hero h1  { font-size: 1.4rem; }
+      .terms-layout   { padding: 0 14px; margin: 20px auto; }
+      .article-body   { padding: 16px; }
+      .article-header { padding: 14px 16px; }
+      .header-nav     { display: none; }
+      .delivery-table { font-size: .72rem; }
+      .delivery-table thead th,
+      .delivery-table tbody td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER — identique terms.html
+═══════════════════════════════════════════ -->
+<header class="terms-header">
+  <div class="terms-header-inner">
+    <a href="index.html" class="header-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك | wasalak.com" height="42"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/>
+      <span class="logo-fallback" id="logoFallback">وصلك</span>
+    </a>
+    <nav class="header-nav" aria-label="التنقل الرئيسي">
+      <a href="index.html">الرئيسية</a>
+      <a href="catalog.html">المنتجات</a>
+      <a href="about.html">من نحن</a>
+      <a href="track.html">تتبع طلبي</a>
+      <a href="shipping.html" class="active" aria-current="page">الشحن</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     HERO — identique terms.html, SVG adapté
+═══════════════════════════════════════════ -->
+<div class="terms-hero" role="banner">
+  <div class="terms-hero-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="2"/>
+      <path d="M16 8h4l3 4v3h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+  </div>
+  <h1>سياسة الشحن والتوصيل</h1>
+  <p>نوصّل لجميع مدن ليبيا بأسعار ثابتة وشفافة. تعرّف على مناطق التوصيل، الرسوم، المواعيد، وكيفية تتبع طلبك لحظةً بلحظة.</p>
+  <div class="terms-meta" aria-label="تاريخ آخر تحديث">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+    </svg>
+    آخر تحديث: 1 أبريل 2026 · الإصدار 2.0
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN LAYOUT — identique terms.html
+═══════════════════════════════════════════ -->
+<div class="terms-layout">
+
+  <!-- ══ SIDEBAR TOC ══ -->
+  <aside class="toc-sidebar" aria-label="فهرس المحتوى">
+    <div class="toc-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+        <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+      <span>فهرس المحتوى</span>
+    </div>
+    <ul class="toc-list" role="navigation" aria-label="انتقال سريع للمواد">
+      <li><a href="#art1"><span class="toc-num">1</span>مناطق التوصيل</a></li>
+      <li><a href="#art2"><span class="toc-num">2</span>رسوم التوصيل</a></li>
+      <li><a href="#art3"><span class="toc-num">3</span>مواعيد التوصيل</a></li>
+      <li><a href="#art4"><span class="toc-num">4</span>مراحل معالجة الطلب</a></li>
+      <li><a href="#art5"><span class="toc-num">5</span>تتبع الطلب</a></li>
+      <li><a href="#art6"><span class="toc-num">6</span>استلام الطلب والدفع</a></li>
+      <li><a href="#art7"><span class="toc-num">7</span>التوصيل الفاشل</a></li>
+      <li><a href="#art8"><span class="toc-num">8</span>الشحن المجاني</a></li>
+      <li><a href="#art9"><span class="toc-num">9</span>التلف أثناء الشحن</a></li>
+      <li><a href="#art10"><span class="toc-num">10</span>القوة القاهرة</a></li>
+      <li><a href="#art11"><span class="toc-num">11</span>تواصل معنا</a></li>
+    </ul>
+
+    <!-- Calculateur rapide -->
+    <div class="toc-contact" role="complementary" aria-label="تواصل سريع">
+      <div class="toc-contact-title">تواصل سريع</div>
+      <a href="https://wa.me/218912345678" class="toc-contact-item"
+         target="_blank" rel="noopener" aria-label="واتساب">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        واتساب: 0912-345-678
+      </a>
+      <a href="track.html" class="toc-contact-item" aria-label="تتبع الطلب">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        تتبع طلبي الآن
+      </a>
+    </div>
+  </aside>
+
+  <!-- ══ CONTENT ══ -->
+  <main class="terms-content" id="shippingContent">
+
+    <!-- Alert intro -->
+    <div class="terms-alert" role="note">
+      <div class="terms-alert-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13" rx="2"/>
+          <path d="M16 8h4l3 4v3h-7V8z"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+      </div>
+      <div class="terms-alert-text">
+        <strong>التوصيل لجميع مدن ليبيا</strong>
+        <p>يُغطّي متجر وصلك جميع مدن ومناطق ليبيا بأسعار ثابتة وشفافة. رسوم التوصيل محددة مسبقاً حسب المنطقة ولا تتغير بعد تأكيد الطلب. الدفع نقداً عند الاستلام فقط — لا دفع مسبق.</p>
+      </div>
+    </div>
+
+    <!-- ══════════ ART. 1 — مناطق التوصيل ══════════ -->
+    <article class="article-card" id="art1">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">1</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الأولى — مناطق التوصيل</h2>
+      </div>
+      <div class="article-body">
+        <p>يُقسَّم التوصيل إلى ثلاث مناطق جغرافية حسب البُعد عن المخزن الرئيسي في طرابلس:</p>
+
+        <div style="overflow-x:auto; border-radius:8px; border:1px solid var(--gray-200)">
+          <table class="delivery-table" aria-label="جدول مناطق ورسوم التوصيل">
+            <thead>
+              <tr>
+                <th scope="col">المنطقة</th>
+                <th scope="col">المدن</th>
+                <th scope="col">مدة التوصيل</th>
+                <th scope="col">رسوم التوصيل</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="zone-badge zone-a">أ — سريع</span></td>
+                <td>طرابلس، جنزور، تاجوراء، عين زارة، قرجي، سوق الجمعة، أبو سليم</td>
+                <td><strong>24 – 48 ساعة</strong></td>
+                <td><strong>15 د.ل</strong></td>
+              </tr>
+              <tr>
+                <td><span class="zone-badge zone-b">ب — قياسي</span></td>
+                <td>بنغازي، مصراتة، الزاوية، زليتن، الخمس، درنة، البيضاء، طبرق، الزنتان، غريان، ترهونة، صرمان، صبراتة، زوارة، القره بوللي، سرت</td>
+                <td><strong>3 – 6 أيام</strong></td>
+                <td><strong>18 – 30 د.ل</strong></td>
+              </tr>
+              <tr>
+                <td><span class="zone-badge zone-c">ج — موسّع</span></td>
+                <td>سبها، مرزق، الكفرة، غات، أوباري، براك الشاطئ، وغيرها من المدن الجنوبية والنائية</td>
+                <td><strong>5 – 10 أيام</strong></td>
+                <td><strong>35 – 50 د.ل</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Calculateur de frais -->
+        <div class="calc-widget">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="8" y1="10" x2="16" y2="10"/>
+              <line x1="8" y1="14" x2="12" y2="14"/>
+            </svg>
+            احسب رسوم توصيلك
+          </h4>
+          <div class="calc-row">
+            <select id="citySelect" aria-label="اختر مدينتك" onchange="calcShipping()">
+              <option value="">— اختر مدينتك —</option>
+              <optgroup label="المنطقة أ — سريع (24-48 س)">
+                <option value="a|15 د.ل|24 – 48 ساعة">طرابلس</option>
+                <option value="a|15 د.ل|24 – 48 ساعة">جنزور</option>
+                <option value="a|15 د.ل|24 – 48 ساعة">تاجوراء</option>
+                <option value="a|15 د.ل|24 – 48 ساعة">عين زارة</option>
+                <option value="a|15 د.ل|24 – 48 ساعة">قرجي</option>
+                <option value="a|15 د.ل|24 – 48 ساعة">أبو سليم</option>
+              </optgroup>
+              <optgroup label="المنطقة ب — قياسي (3-6 أيام)">
+                <option value="b|25 د.ل|3 – 5 أيام">بنغازي</option>
+                <option value="b|22 د.ل|3 – 4 أيام">مصراتة</option>
+                <option value="b|18 د.ل|2 – 3 أيام">الزاوية</option>
+                <option value="b|20 د.ل|2 – 4 أيام">زليتن</option>
+                <option value="b|20 د.ل|2 – 3 أيام">الخمس</option>
+                <option value="b|28 د.ل|4 – 6 أيام">درنة</option>
+                <option value="b|28 د.ل|4 – 6 أيام">البيضاء</option>
+                <option value="b|30 د.ل|5 – 6 أيام">طبرق</option>
+                <option value="b|22 د.ل|3 – 5 أيام">الزنتان</option>
+                <option value="b|22 د.ل|3 – 4 أيام">غريان</option>
+                <option value="b|20 د.ل|2 – 4 أيام">ترهونة</option>
+                <option value="b|18 د.ل|2 – 3 أيام">صرمان</option>
+                <option value="b|18 د.ل|2 – 3 أيام">صبراتة</option>
+                <option value="b|20 د.ل|2 – 4 أيام">زوارة</option>
+                <option value="b|25 د.ل|3 – 5 أيام">سرت</option>
+              </optgroup>
+              <optgroup label="المنطقة ج — موسّع (5-10 أيام)">
+                <option value="c|40 د.ل|5 – 7 أيام">سبها</option>
+                <option value="c|45 د.ل|7 – 10 أيام">مرزق</option>
+                <option value="c|50 د.ل|8 – 10 أيام">الكفرة</option>
+                <option value="c|45 د.ل|7 – 10 أيام">غات</option>
+                <option value="c|42 د.ل|6 – 9 أيام">أوباري</option>
+                <option value="c|38 د.ل|5 – 8 أيام">براك الشاطئ</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="calc-result" id="calcResult" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="info-box blue">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>مدينتك غير موجودة في القائمة؟</strong>
+            تواصل معنا عبر واتساب <a href="https://wa.me/218912345678" target="_blank" rel="noopener">0912-345-678</a> وسنحدد رسوم التوصيل لمنطقتك خلال دقائق.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 2 — رسوم التوصيل ══════════ -->
+    <article class="article-card" id="art2">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">2</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الثانية — رسوم التوصيل</h2>
+      </div>
+      <div class="article-body">
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>رسوم التوصيل ثابتة حسب المنطقة، تُضاف إلى قيمة الطلب وتُعرض بشكل واضح قبل التأكيد.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>الرسوم المُعلنة لحظة تأكيد الطلب هي الرسوم الملزمة، ولا تتأثر بأي تغيير لاحق في أسعار التوصيل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>طلب واحد = رسوم توصيل واحدة، بغض النظر عن عدد المنتجات في الطلب.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>الطلبات التي تتجاوز قيمتها <strong>300 د.ل</strong> تستفيد من الشحن المجاني في المناطق أ و ب.</span>
+          </li>
+        </ul>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>الدفع نقداً عند الاستلام</strong>
+            تُدفع رسوم التوصيل ضمن المبلغ الإجمالي نقداً للمندوب عند الاستلام. لا يُطلب أي دفع مسبق بأي وسيلة كانت.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 3 — مواعيد التوصيل ══════════ -->
+    <article class="article-card" id="art3">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">3</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الثالثة — مواعيد التوصيل</h2>
+      </div>
+      <div class="article-body">
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>أيام العمل</strong>
+              <span>السبت إلى الخميس، من 9 صباحاً حتى 9 مساءً.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>التوصيل المسائي</strong>
+              <span>متاح في طرابلس الكبرى حتى الساعة 9 مساءً بالتنسيق المسبق.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>عطلة الجمعة</strong>
+              <span>لا يوجد توصيل يوم الجمعة. الطلبات تُجهَّز وتُشحن السبت.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>شهر رمضان</strong>
+              <span>يُعدَّل جدول التوصيل خلال رمضان ويُعلَن عنه مسبقاً عبر واتساب.</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-box orange">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>المواعيد تقديرية</strong>
+            مدد التوصيل المذكورة تقديرية وغير ملزمة قانونياً. قد تتأثر بالظروف الأمنية أو الطقسية أو ضغط الطلبات في المواسم. سيُبلَّغ العميل بأي تأخير فور علمنا به.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 4 — مراحل معالجة الطلب ══════════ -->
+    <article class="article-card" id="art4">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">4</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الرابعة — مراحل معالجة الطلب</h2>
+      </div>
+      <div class="article-body">
+        <p>يمرّ كل طلب بخمس مراحل واضحة من لحظة تقديمه حتى الاستلام:</p>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">1</div>
+            <div class="step-item-content">
+              <strong>استلام الطلب — فوري</strong>
+              <span>يُسجَّل الطلب تلقائياً ويحصل العميل على رقم مرجعي فريد (WS…) فور الضغط على «تأكيد الطلب».</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">2</div>
+            <div class="step-item-content">
+              <strong>التأكيد البشري — خلال 2-4 ساعات</strong>
+              <span>يتواصل أحد مندوبينا مع العميل عبر واتساب أو الهاتف خلال ساعات العمل للتأكيد وتحديد موعد التوصيل.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">3</div>
+            <div class="step-item-content">
+              <strong>التحضير والتغليف — نفس اليوم أو اليوم التالي</strong>
+              <span>يُحضَّر المنتج ويُغلَّف بعناية مع فاتورة الطلب. يتم الفحص الأخير للتأكد من مطابقة المحتوى للطلب.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">4</div>
+            <div class="step-item-content">
+              <strong>الشحن — حسب المنطقة</strong>
+              <span>يُسلَّم الطرد لمندوب التوصيل المختص بمنطقتك. تُرسَل رسالة إشعار عبر واتساب عند الشحن.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">5</div>
+            <div class="step-item-content">
+              <strong>التوصيل والدفع — عند الاستلام</strong>
+              <span>يتصل المندوب قبل الوصول بـ 30-60 دقيقة. يُسلَّم المنتج ويُدفع المبلغ الإجمالي نقداً.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 5 — تتبع الطلب ══════════ -->
+    <article class="article-card" id="art5">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">5</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الخامسة — تتبع الطلب</h2>
+      </div>
+      <div class="article-body">
+        <p>يمكن تتبع حالة طلبك في الوقت الفعلي عبر صفحة <a href="track.html">تتبع الطلبات</a> بإدخال رقم هاتفك المسجّل فقط، دون الحاجة لأي حساب أو كلمة مرور.</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>تتبع فوري:</strong> اعرف حالة طلبك لحظةً بلحظة من «قيد المعالجة» إلى «تم التوصيل».</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>إشعارات واتساب:</strong> تلقّى تحديثاً فورياً عبر واتساب عند تغيّر حالة طلبك.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>رقم الطلب:</strong> يمكن البحث برقم الطلب (WS…) أو برقم الهاتف المسجّل.</span>
+          </li>
+        </ul>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>تتبع مباشر</strong>
+            توجّه الآن لصفحة <a href="track.html">تتبع الطلب</a> وأدخل رقم هاتفك لمعرفة آخر تحديث على طلبك.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 6 — الاستلام والدفع ══════════ -->
+    <article class="article-card" id="art6">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">6</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <path d="M12 12h.01M6 12h.01M18 12h.01"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة السادسة — استلام الطلب والدفع</h2>
+      </div>
+      <div class="article-body">
+        <p>عند وصول المندوب، يحق للعميل التحقق من الطلب قبل الدفع:</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>فحص التغليف الخارجي:</strong> يحق لك التحقق من سلامة التغليف وعدم وجود تلف ظاهر قبل استلام الطلب.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>تأكيد المحتوى:</strong> تأكّد أن اسم المنتج على الطرد مطابق لما طلبته قبل قبول الاستلام.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>المبلغ الدقيق:</strong> ادفع المبلغ المذكور في تأكيد الطلب فقط. لا يحق للمندوب المطالبة بأي مبلغ إضافي.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>الفاتورة:</strong> تُسلَّم فاتورة مع كل طلب. احتفظ بها لأي طلب إرجاع أو ضمان.</span>
+          </li>
+        </ul>
+        <div class="info-box red">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>تحذير من الاحتيال</strong>
+            لا يطلب مندوبو وصلك أي مبالغ إضافية فوق المبلغ الموضح في تأكيد الطلب. إذا طُلب منك ذلك، تواصل معنا فوراً عبر واتساب.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 7 — التوصيل الفاشل ══════════ -->
+    <article class="article-card" id="art7">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">7</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة السابعة — حالات التوصيل الفاشل</h2>
+      </div>
+      <div class="article-body">
+        <p>يُعدّ التوصيل فاشلاً في الحالات التالية، وتُطبَّق عليها الإجراءات المحددة:</p>
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6z"/>
+          </svg>
+          عدم الرد على المندوب
+        </h4>
+        <ul class="terms-list bullet">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>يُحاوَل التواصل مرتين قبل الوصول. في حال عدم الرد، يُنتظر 15 دقيقة أمام العنوان ثم يُعاد الطلب.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>تُجرَى محاولة توصيل ثانية في اليوم التالي. بعد المحاولتين، يُعاد الطلب للمخزن.</span>
+          </li>
+        </ul>
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          خطأ في العنوان
+        </h4>
+        <ul class="terms-list bullet">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>يُحاوَل التواصل مع العميل لتصحيح العنوان وإعادة الجدولة. قد تُطبَّق رسوم توصيل إضافية.</span>
+          </li>
+        </ul>
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+          رفض الاستلام دون سبب
+        </h4>
+        <ul class="terms-list bullet">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>الرفض المشروع (عيب ظاهر، منتج مختلف) مقبول دون أي عواقب.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>الرفض غير المبرر المتكرر (أكثر من مرتين) قد يؤدي لتعليق الحساب وفق الشروط والأحكام.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 8 — الشحن المجاني ══════════ -->
+    <article class="article-card" id="art8">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">8</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الثامنة — شروط الشحن المجاني</h2>
+      </div>
+      <div class="article-body">
+        <p>تستفيد من الشحن المجاني عند استيفاء الشرط التالي:</p>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>شحن مجاني للطلبات فوق 300 د.ل — المناطق أ و ب فقط</strong>
+            كل طلب تتجاوز قيمته 300 دينار ليبي يستفيد تلقائياً من التوصيل المجاني في طرابلس الكبرى والمدن القياسية. يُطبَّق الخصم تلقائياً في صفحة الدفع.
+          </div>
+        </div>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>يُحسَب حد الـ 300 د.ل على قيمة المنتجات قبل إضافة رسوم التوصيل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>قسائم التخفيض تُطبَّق على قيمة المنتجات، وإذا نزل الإجمالي عن 300 د.ل تُستعاد رسوم التوصيل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>المنطقة ج (الجنوب والمناطق النائية) مستثناة من الشحن المجاني نظراً لتكاليف التوصيل المرتفعة.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 9 — التلف أثناء الشحن ══════════ -->
+    <article class="article-card" id="art9">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">9</div>
+        <div class="article-icon red" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة التاسعة — التلف أثناء الشحن</h2>
+      </div>
+      <div class="article-body">
+        <p>نتحمل المسؤولية الكاملة عن أي تلف يقع للمنتج خلال عملية الشحن والتوصيل:</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>رفض فوري عند الاستلام:</strong> في حال وجود تلف ظاهر في التغليف، يمكن رفض الاستلام دون دفع أي مبلغ.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>اكتشاف التلف بعد الاستلام:</strong> إذا اكتشف العميل تلفاً داخلياً بعد الفتح، يُقبَل الإرجاع خلال 14 يوماً مجاناً.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>التعويض:</strong> نُرسَل بديلاً جديداً بالأولوية القصوى، أو نسترد المبلغ كاملاً حسب اختيار العميل.</span>
+          </li>
+        </ul>
+        <p>للاطلاع على تفاصيل إجراءات الإرجاع، يُرجى زيارة صفحة <a href="returns.html">سياسة الإرجاع والاستبدال</a>.</p>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 10 — القوة القاهرة ══════════ -->
+    <article class="article-card" id="art10">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">10</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة العاشرة — القوة القاهرة والظروف الاستثنائية</h2>
+      </div>
+      <div class="article-body">
+        <p>لا تتحمل وصلك المسؤولية عن تأخيرات التوصيل الناجمة عن أسباب خارجة تماماً عن إرادتها، من بينها:</p>
+        <ul class="terms-list bullet">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>الظروف الأمنية أو الاضطرابات التي تحول دون الوصول لمناطق معينة.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>الكوارث الطبيعية أو الظروف الجوية القاسية كالفيضانات أو العواصف الرملية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>إغلاق الطرق الرئيسية أو الحصار الذي يعيق حركة الشحن.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>قرارات حكومية رسمية تتعلق بتقييد الحركة أو إغلاق المناطق.</span>
+          </li>
+        </ul>
+        <div class="info-box blue">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>التزامنا في الظروف الاستثنائية</strong>
+            في حال حدوث قوة قاهرة، نُبلّغ العميل فوراً عبر واتساب بالوضع والمدة المتوقعة. يحق للعميل إلغاء الطلب واسترداد المبلغ كاملاً دون أي رسوم إن لم يُشحن بعد.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 11 — تواصل معنا ══════════ -->
+    <article class="article-card" id="art11">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">11</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الحادية عشرة — تواصل معنا</h2>
+      </div>
+      <div class="article-body">
+        <p>لأي استفسار عن توصيل طلبك أو لتعديل عنوانك أو موعد التوصيل، تواصل معنا عبر القنوات الرسمية. نلتزم بالرد خلال <strong>3 ساعات عمل</strong>.</p>
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" style="background:#e8f5e9;color:#25d366" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>واتساب (الأسرع)</strong>
+              <span><a href="https://wa.me/218912345678" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">0912-345-678</a> — متاح 24/7</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>البريد الإلكتروني</strong>
+              <span><a href="mailto:shipping@wasalak.com" style="color:var(--green);font-weight:700">shipping@wasalak.com</a></span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6z"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>الهاتف</strong>
+              <span><a href="tel:+218912345678" style="color:var(--green);font-weight:700">218-91-234-5678+</a></span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>تتبع الطلب</strong>
+              <span><a href="track.html" style="color:var(--green);font-weight:700">track.html</a> — برقم هاتفك</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:.8rem;color:var(--gray-500);text-align:center;margin-top:4px">
+          ساعات العمل: السبت – الخميس <strong style="color:var(--green)">9ص – 9م</strong>
+        </p>
+      </div>
+    </article>
+
+    <!-- Signature finale -->
+    <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:24px;text-align:center;box-shadow:var(--shadow-sm)">
+      <p style="font-size:.82rem;color:var(--gray-600);line-height:1.8;max-width:600px;margin:0 auto">
+        تُمثّل هذه الوثيقة سياسة الشحن والتوصيل الكاملة لمتجر وصلك. نلتزم بتحديثها عند أي تغيير في المناطق أو الرسوم مع الإشعار المسبق.
+        <br/><br/>
+        <strong style="color:var(--green)">وصلك – wasalak.com</strong><br/>
+        <span style="font-size:.75rem;color:var(--gray-400)">طرابلس، ليبيا · تاريخ الإصدار: 1 أبريل 2026 · الإصدار 2.0</span>
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — identique terms.html
+═══════════════════════════════════════════ -->
+<footer class="terms-footer" role="contentinfo">
+  <div class="terms-footer-inner">
+    <a href="index.html" class="footer-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك" height="34"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span style="display:none;font-size:1.1rem;font-weight:900;color:var(--green)">وصلك</span>
+    </a>
+    <nav class="footer-legal-links" aria-label="الروابط القانونية">
+      <a href="index.html">الرئيسية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="terms.html">الشروط والأحكام</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="returns.html">سياسة الإرجاع</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="shipping.html" class="current" aria-current="page">سياسة الشحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="about.html">من نحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="track.html">تتبع الطلب</a>
+    </nav>
+    <p class="footer-copy">
+      © 2026 وصلك – wasalak.com · جميع الحقوق محفوظة · طرابلس، ليبيا
+    </p>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTopBtn"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="العودة للأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+  /* ── Scroll-to-top ── */
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTopBtn');
+    if (btn) btn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+
+  /* ── TOC active highlight ── */
+  const articles = document.querySelectorAll('.article-card[id]');
+  const tocLinks  = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => {
+          link.classList.toggle('toc-active',
+            link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  articles.forEach(a => observer.observe(a));
+
+  /* ── Calculateur de frais ── */
+  function calcShipping() {
+    const sel = document.getElementById('citySelect');
+    const res = document.getElementById('calcResult');
+    if (!sel.value) { res.classList.remove('visible'); return; }
+    const parts = sel.value.split('|');
+    const zone  = parts[0] === 'a' ? 'أ — سريع' : parts[0] === 'b' ? 'ب — قياسي' : 'ج — موسّع';
+    res.innerHTML = `📦 رسوم التوصيل: <strong>${parts[1]}</strong> &nbsp;|&nbsp; ⏱ المدة: <strong>${parts[2]}</strong> &nbsp;|&nbsp; 🗺 المنطقة: <strong>${zone}</strong>`;
+    res.classList.add('visible');
+  }
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

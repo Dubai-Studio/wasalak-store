@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="تصفح جميع منتجات وصلك - إلكترونيات، أزياء، منزل، جمال. توصيل لجميع مدن ليبيا، دفع عند الاستلام."/>
+  <meta name="keywords" content="منتجات وصلك, تسوق ليبيا, إلكترونيات, أزياء, wasalak"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="المنتجات | وصلك – wasalak.com"/>
+  <meta property="og:description" content="تصفح آلاف المنتجات بأسعار مناسبة وادفع عند الاستلام"/>
+  <meta property="og:url" content="https://wasalak.com/catalog.html"/>
+  <meta property="og:type" content="website"/>
+  <title>المنتجات | وصلك – wasalak.com</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+
+    /* ══════════════════════════════
+       HEADER (identique index/about)
+    ══════════════════════════════ */
+    .top-bar {
+      padding: 6px 0;
+      font-size: 0.78rem;
+      background: #1a6b3c;
+      color: #fff;
+      text-align: center;
+    }
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #fff;
+      box-shadow: 0 1px 8px rgba(0,0,0,.08);
+    }
+    .header-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 12px;
+      padding-top: 12px; padding-bottom: 12px;
+      min-height: 68px;
+    }
+    .logo-link {
+      display: inline-flex; align-items: center;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .logo-link img {
+      height: 48px; width: auto; display: block;
+      object-fit: contain; transition: opacity .2s;
+    }
+    .logo-link img:hover { opacity: .85; }
+    .nav-menu { display: flex; align-items: center; gap: 4px; }
+    .nav-link {
+      padding: 6px 12px; font-size: 0.88rem; font-weight: 600;
+      color: #1a1a1a; text-decoration: none; border-radius: 6px;
+      transition: background .2s, color .2s; white-space: nowrap;
+    }
+    .nav-link:hover,
+    .nav-link.active { background: #e8f5ee; color: #1a6b3c; }
+    .header-actions { display: flex; align-items: center; gap: 6px; }
+    .icon-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer; padding: 7px;
+      border-radius: 8px; color: #1a1a1a;
+      transition: background .2s, color .2s; text-decoration: none;
+      position: relative;
+    }
+    .icon-btn:hover { background: #e8f5ee; color: #1a6b3c; }
+    .cart-count {
+      position: absolute; top: 2px; left: 2px;
+      background: #f0a500; color: #fff;
+      font-size: 0.62rem; font-weight: 800;
+      min-width: 16px; height: 16px; border-radius: 99px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .menu-toggle { display: none; }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .nav-menu.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 100%; right: 0; left: 0;
+        background: #fff; padding: 12px 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,.1); z-index: 999;
+      }
+      .menu-toggle { display: inline-flex; }
+    }
+
+    /* ══════════════════════════════
+       CATALOG HERO
+    ══════════════════════════════ */
+    .catalog-hero {
+      background: linear-gradient(135deg, #0d2b1a 0%, #1a6b3c 60%, #22a05a 100%);
+      padding: 40px 0 36px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .catalog-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .catalog-hero h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900; margin-bottom: 20px;
+      display: flex; align-items: center;
+      justify-content: center; gap: 10px;
+    }
+    .catalog-search {
+      display: flex; align-items: center;
+      gap: 10px; max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .search-input-large {
+      flex: 1; padding: 12px 44px 12px 16px;
+      border: none; border-radius: 12px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95rem; outline: none;
+      direction: rtl;
+      box-shadow: 0 2px 12px rgba(0,0,0,.15);
+    }
+    .search-input-large:focus {
+      box-shadow: 0 0 0 3px rgba(240,165,0,.4);
+    }
+    .search-icon-inside {
+      position: absolute; right: 14px; top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none; color: #aaa;
+    }
+    .btn-search {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #f0a500; color: #111; border: none;
+      padding: 12px 22px; border-radius: 12px;
+      font-weight: 700; font-size: .9rem;
+      font-family: 'Cairo', sans-serif;
+      cursor: pointer; white-space: nowrap;
+      transition: background .2s, transform .2s;
+      flex-shrink: 0;
+    }
+    .btn-search:hover { background: #e09500; transform: translateY(-1px); }
+
+    /* ══════════════════════════════
+       LAYOUT CATALOG
+    ══════════════════════════════ */
+    .catalog-section { padding: 32px 0 48px; background: #f7faf8; }
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .catalog-layout { grid-template-columns: 1fr; }
+      .filters-sidebar { display: none; }
+      .filters-sidebar.open { display: block; }
+    }
+
+    /* ══════════════════════════════
+       SIDEBAR FILTRES
+    ══════════════════════════════ */
+    .filters-sidebar {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      position: sticky;
+      top: 84px;
+    }
+    .filter-header {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #eee;
+    }
+    .filter-header h3 {
+      font-size: 1rem; font-weight: 700; color: #111;
+      display: flex; align-items: center; gap: 8px; margin: 0;
+    }
+    .reset-btn {
+      background: none; border: 1px solid #ddd;
+      padding: 4px 10px; border-radius: 6px;
+      font-size: .78rem; color: #666; cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      transition: border-color .2s, color .2s;
+    }
+    .reset-btn:hover { border-color: #e53e3e; color: #e53e3e; }
+    .filter-group {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .filter-group:last-child { border-bottom: none; margin-bottom: 0; }
+    .filter-group h4 {
+      font-size: .85rem; font-weight: 700;
+      color: #333; margin-bottom: 12px;
+    }
+    .filter-group label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .85rem; color: #555;
+      padding: 5px 0; cursor: pointer;
+      transition: color .2s;
+    }
+    .filter-group label:hover { color: #1a6b3c; }
+    .filter-group input[type="radio"],
+    .filter-group input[type="checkbox"] {
+      accent-color: #1a6b3c;
+      width: 15px; height: 15px; cursor: pointer;
+    }
+
+    /* Stars dans filtres */
+    .star-row {
+      display: inline-flex; align-items: center; gap: 2px;
+    }
+    .star-row svg { width: 13px; height: 13px; }
+
+    /* Price range */
+    .price-range { display: flex; flex-direction: column; gap: 8px; }
+    .price-range input[type="range"] {
+      width: 100%; accent-color: #1a6b3c; cursor: pointer;
+    }
+    .price-display {
+      display: flex; justify-content: space-between;
+      font-size: .8rem; color: #666; font-weight: 600;
+    }
+
+    /* ══════════════════════════════
+       TOOLBAR
+    ══════════════════════════════ */
+    .catalog-toolbar {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap;
+      gap: 10px; margin-bottom: 20px;
+      background: #fff; border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.05);
+    }
+    #productCount {
+      font-size: .85rem; color: #666; font-weight: 600;
+    }
+    .sort-options {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .sort-options label { font-size: .85rem; color: #555; white-space: nowrap; }
+    .sort-options select {
+      padding: 6px 10px; border: 1px solid #ddd;
+      border-radius: 8px; font-family: 'Cairo', sans-serif;
+      font-size: .85rem; color: #333; cursor: pointer;
+      outline: none; background: #fafafa;
+      transition: border-color .2s;
+    }
+    .sort-options select:focus { border-color: #1a6b3c; }
+    .view-toggle {
+      display: flex; gap: 4px;
+    }
+    .view-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 8px;
+      border: 1px solid #ddd; background: #fafafa;
+      cursor: pointer; color: #666;
+      transition: all .2s;
+    }
+    .view-btn:hover,
+    .view-btn.active {
+      background: #1a6b3c; border-color: #1a6b3c; color: #fff;
+    }
+    .view-btn svg { width: 16px; height: 16px; }
+
+    /* Bouton filtre mobile */
+    .filter-mobile-btn {
+      display: none;
+      align-items: center; gap: 7px;
+      background: #1a6b3c; color: #fff; border: none;
+      padding: 8px 16px; border-radius: 8px;
+      font-family: 'Cairo', sans-serif; font-size: .85rem;
+      font-weight: 600; cursor: pointer;
+    }
+    .filter-mobile-btn svg { width: 16px; height: 16px; }
+    @media (max-width: 900px) {
+      .filter-mobile-btn { display: inline-flex; }
+    }
+
+    /* ══════════════════════════════
+       PRODUCT CARDS
+    ══════════════════════════════ */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .products-grid.list-view {
+      grid-template-columns: 1fr;
+    }
+    .product-card {
+      background: #fff; border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+      transition: transform .2s, box-shadow .2s;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.1);
+    }
+    .product-img-wrap {
+      position: relative; overflow: hidden;
+      aspect-ratio: 1 / 1; background: #f5f5f5;
+    }
+    .product-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .3s;
+    }
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.04);
+    }
+    .product-badge {
+      position: absolute; top: 10px; right: 10px;
+      background: #e53e3e; color: #fff;
+      font-size: .7rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 6px;
+    }
+    .product-badge.new { background: #1a6b3c; }
+    .product-badge.hot { background: #f0a500; color: #111; }
+    .product-body { padding: 14px; }
+    .product-cat {
+      font-size: .72rem; color: #1a6b3c;
+      font-weight: 600; margin-bottom: 4px;
+      text-transform: uppercase; letter-spacing: .3px;
+    }
+    .product-name {
+      font-size: .92rem; font-weight: 700;
+      color: #111; margin-bottom: 8px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .product-stars {
+      display: flex; align-items: center; gap: 3px;
+      margin-bottom: 10px;
+    }
+    .product-stars svg { width: 13px; height: 13px; }
+    .product-stars span { font-size: .75rem; color: #888; margin-right: 3px; }
+    .product-price-row {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 6px;
+    }
+    .product-price {
+      font-size: 1.05rem; font-weight: 900; color: #1a6b3c;
+    }
+    .product-price-old {
+      font-size: .8rem; color: #aaa;
+      text-decoration: line-through;
+    }
+    .btn-add-cart {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: #1a6b3c; color: #fff; border: none;
+      padding: 7px 12px; border-radius: 8px;
+      font-size: .78rem; font-weight: 700;
+      font-family: 'Cairo', sans-serif;
+      cursor: pointer; transition: background .2s;
+      white-space: nowrap;
+    }
+    .btn-add-cart:hover { background: #145c35; }
+    .btn-add-cart svg { width: 14px; height: 14px; }
+
+/* Vue liste — corrigé, hauteur adaptée pour tout afficher */
+.products-grid.list-view {
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.products-grid.list-view .product-card {
+  flex-direction: row;
+  height: 120px;
+  overflow: hidden;
+}
+.products-grid.list-view .p-img-wrap {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  aspect-ratio: auto;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+.products-grid.list-view .p-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.products-grid.list-view .p-overlay { display: none; }
+.products-grid.list-view .p-wish    { width: 26px; height: 26px; top: 5px; left: 5px; }
+.products-grid.list-view .p-badges  { top: 5px; right: 5px; }
+.products-grid.list-view .p-badge   { font-size: .62rem; padding: 2px 6px; }
+
+/* Body en grid 2 colonnes : infos | prix+actions */
+.products-grid.list-view .p-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 130px;
+  grid-template-rows: auto auto auto;
+  column-gap: 10px;
+  padding: 10px 14px;
+  overflow: hidden;
+  min-width: 0;
+  align-content: center;
+}
+
+/* ── Colonne gauche ── */
+.products-grid.list-view .p-cat {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: .68rem;
+  margin-bottom: 1px;
+}
+.products-grid.list-view .p-name {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: .86rem;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  -webkit-line-clamp: unset;
+}
+.products-grid.list-view .p-stars {
+  grid-column: 1;
+  grid-row: 3;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.products-grid.list-view .p-reviews { font-size: .7rem; }
+.products-grid.list-view .p-urgency { display: none; }
+
+/* ── Colonne droite : prix en haut, boutons en bas ── */
+.products-grid.list-view .p-price-row {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-top: 2px;
+  gap: 2px;
+}
+.products-grid.list-view .p-prices {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+.products-grid.list-view .p-price { font-size: 1rem; white-space: nowrap; }
+.products-grid.list-view .p-old   { font-size: .74rem; }
+.products-grid.list-view .p-disc  {
+  font-size: .65rem;
+  padding: 1px 6px;
+  margin-top: 1px;
+  align-self: flex-end;
+}
+
+.products-grid.list-view .p-actions {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+.products-grid.list-view .p-btn-cart {
+  flex: 1;
+  padding: 5px 8px;
+  font-size: .74rem;
+  border-radius: 7px;
+  white-space: nowrap;
+  gap: 4px;
+}
+.products-grid.list-view .p-btn-cart svg { width: 13px; height: 13px; }
+.products-grid.list-view .p-btn-view {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 7px;
+}
+
+@media (max-width: 600px) {
+  .products-grid.list-view .product-card    { height: 100px; }
+  .products-grid.list-view .p-img-wrap      { width: 100px; min-width: 100px; height: 100px; }
+  .products-grid.list-view .p-body          { grid-template-columns: 1fr 110px; padding: 8px 10px; }
+  .products-grid.list-view .p-name          { font-size: .78rem; }
+  .products-grid.list-view .p-btn-cart      { font-size: .68rem; padding: 4px 6px; }
+}
+
+    /* ══════════════════════════════
+       PAGINATION
+    ══════════════════════════════ */
+    .pagination {
+      display: flex; justify-content: center;
+      gap: 6px; margin-top: 28px; flex-wrap: wrap;
+    }
+    .page-btn {
+      min-width: 36px; height: 36px;
+      border-radius: 8px; border: 1px solid #ddd;
+      background: #fff; color: #333;
+      font-family: 'Cairo', sans-serif;
+      font-size: .85rem; font-weight: 600;
+      cursor: pointer; display: inline-flex;
+      align-items: center; justify-content: center;
+      transition: all .2s; padding: 0 10px;
+    }
+    .page-btn:hover,
+    .page-btn.active {
+      background: #1a6b3c; border-color: #1a6b3c; color: #fff;
+    }
+
+    /* ══════════════════════════════
+       EMPTY STATE
+    ══════════════════════════════ */
+    .empty-state {
+      text-align: center; padding: 60px 20px;
+      grid-column: 1 / -1;
+    }
+    .empty-state svg { width: 64px; height: 64px; stroke: #ccc; margin-bottom: 16px; }
+    .empty-state h3 { font-size: 1.1rem; color: #555; margin-bottom: 8px; }
+    .empty-state p  { font-size: .9rem; color: #aaa; }
+
+    /* ══════════════════════════════
+       WHATSAPP FLOAT
+    ══════════════════════════════ */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+      width: 54px; height: 54px; background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,.45);
+      transition: transform .2s; text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 28px; height: 28px; }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .footer-simple {
+      background: #0d2b1a; color: #aaa;
+      padding: 20px 0; text-align: center;
+      font-size: .82rem;
+    }
+    .footer-simple a { color: #22a05a; text-decoration: none; }
+    .footer-simple a:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════
+       RESPONSIVE GÉNÉRAL
+    ══════════════════════════════ */
+    @media (max-width: 480px) {
+      .catalog-hero { padding: 28px 0 24px; }
+      .catalog-search { flex-direction: column; }
+      .btn-search { width: 100%; justify-content: center; }
+      .catalog-toolbar { flex-direction: column; align-items: flex-start; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .products-grid.list-view .product-img-wrap { width: 100px; min-width: 100px; height: 100px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ===== Top Bar ===== -->
+<div class="top-bar">
+  <span>
+    <svg style="width:14px;height:14px;vertical-align:middle;margin-left:4px;"
+         viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="1"/>
+      <path d="M16 8h4l3 5v3h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+    توصيل مجاني للطلبات فوق 150 د.ل
+    &nbsp;|&nbsp;
+    <svg style="width:13px;height:13px;vertical-align:middle;margin-left:3px;"
+         viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    الدفع عند الاستلام
+  </span>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="header" id="mainHeader">
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo-link" aria-label="وصلك - الصفحة الرئيسية">
+      <img
+        src="assets/logo.png"
+        alt="وصلك | wasalak.com"
+        height="48" width="auto"
+        loading="eager" fetchpriority="high"
+        onerror="this.onerror=null;this.src='assets/logo-fallback.svg';"
+      />
+    </a>
+
+    <nav class="nav-menu" id="navMenu" role="navigation" aria-label="القائمة الرئيسية">
+      <a href="index.html"   class="nav-link">الرئيسية</a>
+      <a href="catalog.html" class="nav-link active">المنتجات</a>
+      <a href="about.html"   class="nav-link">من نحن</a>
+      <a href="track.html"   class="nav-link">تتبع طلبي</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="catalog.html" class="icon-btn" aria-label="عربة التسوق">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9"  cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <button class="icon-btn menu-toggle" onclick="toggleMenu()"
+              aria-label="القائمة" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero Catalog ===== -->
+<section class="catalog-hero">
+  <div class="container">
+    <h1>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="#f0a500" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      جميع المنتجات
+    </h1>
+    <div class="catalog-search">
+      <svg class="search-icon-inside" width="18" height="18"
+           viewBox="0 0 24 24" fill="none" stroke="#aaa"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="text"
+        id="catalogSearch"
+        placeholder="ابحث عن منتج..."
+        class="search-input-large"
+        oninput="filterProducts()"
+        aria-label="بحث عن منتج"
+      />
+      <button class="btn-search" onclick="filterProducts()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        بحث
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Catalog Section ===== -->
+<section class="catalog-section">
+  <div class="container catalog-layout">
+
+    <!-- ── Sidebar Filtres ── -->
+    <aside class="filters-sidebar" id="filtersSidebar">
+      <div class="filter-header">
+        <h3>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+          تصفية المنتجات
+        </h3>
+        <button onclick="resetFilters()" class="reset-btn">إعادة ضبط</button>
+      </div>
+
+      <!-- الفئة -->
+      <div class="filter-group">
+        <h4>الفئة</h4>
+        <label>
+          <input type="radio" name="category" value="all" checked onchange="filterProducts()"/>
+          الكل
+        </label>
+        <label>
+          <input type="radio" name="category" value="electronics" onchange="filterProducts()"/>
+          إلكترونيات
+        </label>
+        <label>
+          <input type="radio" name="category" value="fashion" onchange="filterProducts()"/>
+          أزياء
+        </label>
+        <label>
+          <input type="radio" name="category" value="home" onchange="filterProducts()"/>
+          منزل ومطبخ
+        </label>
+        <label>
+          <input type="radio" name="category" value="beauty" onchange="filterProducts()"/>
+          جمال وعناية
+        </label>
+        <label>
+          <input type="radio" name="category" value="sports" onchange="filterProducts()"/>
+          رياضة
+        </label>
+      </div>
+
+      <!-- السعر -->
+      <div class="filter-group">
+        <h4>نطاق السعر (د.ل)</h4>
+        <div class="price-range">
+          <input type="range" id="priceRange" min="0" max="1000"
+                 value="1000" oninput="updatePrice(this.value)" onchange="filterProducts()"/>
+          <div class="price-display">
+            <span>0 د.ل</span>
+            <span id="maxPriceDisplay">1000 د.ل</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- التقييم -->
+      <div class="filter-group">
+        <h4>التقييم</h4>
+        <label>
+          <input type="checkbox" value="5" onchange="filterProducts()"/>
+          <span class="star-row">
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          فقط
+        </label>
+        <label>
+          <input type="checkbox" value="4" onchange="filterProducts()"/>
+          <span class="star-row">
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#ddd" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          وأعلى
+        </label>
+        <label>
+          <input type="checkbox" value="3" onchange="filterProducts()"/>
+          <span class="star-row">
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#f0a500" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#ddd" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="#ddd" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          وأعلى
+        </label>
+      </div>
+
+      <!-- التوافر -->
+      <div class="filter-group">
+        <h4>التوافر</h4>
+        <label>
+          <input type="checkbox" id="inStockOnly" onchange="filterProducts()"/>
+          متوفر فقط
+        </label>
+      </div>
+    </aside>
+
+    <!-- ── Main Catalog ── -->
+    <main class="catalog-main">
+
+      <div class="catalog-toolbar">
+        <span id="productCount">عرض 0 منتج</span>
+
+        <!-- Bouton filtre mobile -->
+        <button class="filter-mobile-btn" onclick="toggleFilters()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+          الفلاتر
+        </button>
+
+        <div class="sort-options">
+          <label>ترتيب حسب:</label>
+          <select id="sortSelect" onchange="filterProducts()">
+            <option value="default">الافتراضي</option>
+            <option value="price-asc">السعر: الأقل أولاً</option>
+            <option value="price-desc">السعر: الأعلى أولاً</option>
+            <option value="rating">الأعلى تقييماً</option>
+            <option value="newest">الأحدث</option>
+          </select>
+        </div>
+
+        <div class="view-toggle">
+          <!-- Vue grille -->
+          <button class="view-btn active" id="gridViewBtn"
+                  onclick="setView('grid')" aria-label="عرض شبكة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3"  y="3"  width="7" height="7"/>
+              <rect x="14" y="3"  width="7" height="7"/>
+              <rect x="3"  y="14" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+            </svg>
+          </button>
+          <!-- Vue liste -->
+          <button class="view-btn" id="listViewBtn"
+                  onclick="setView('list')" aria-label="عرض قائمة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8"  y1="6"  x2="21" y2="6"/>
+              <line x1="8"  y1="12" x2="21" y2="12"/>
+              <line x1="8"  y1="18" x2="21" y2="18"/>
+              <line x1="3"  y1="6"  x2="3.01" y2="6"/>
+              <line x1="3"  y1="12" x2="3.01" y2="12"/>
+              <line x1="3"  y1="18" x2="3.01" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Grille produits (remplie par JS) -->
+      <div class="products-grid" id="catalogProducts" role="list"></div>
+
+      <!-- Pagination (remplie par JS) -->
+      <div class="pagination" id="pagination"></div>
+
+    </main>
+  </div>
+</section>
+
+<!-- ===== WhatsApp Float ===== -->
+<a href="https://wa.me/218912345678?text=مرحباً، أريد الاستفسار عن منتج من وصلك"
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+   aria-label="تواصل معنا عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="#fff">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ===== Footer — identique shipping.html ===== -->
+<style>
+  /* Footer terms-style pour catalog */
+  .terms-footer {
+    background: var(--white, #ffffff);
+    border-top: 1px solid #e8eaed;
+    padding: 28px 24px;
+    margin-top: 20px;
+  }
+  .terms-footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+  .footer-logo img { height: 34px; width: auto; object-fit: contain; }
+  .footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-legal-links a {
+    font-size: .75rem;
+    color: #5f6368;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: background .22s, color .22s;
+  }
+  .footer-legal-links a:hover   { background: #e8f5ee; color: #1a6b3c; }
+  .footer-legal-links a.current { color: #1a6b3c; font-weight: 700; }
+  .footer-sep  { color: #dadce0; font-size: .7rem; }
+  .footer-copy { font-size: .72rem; color: #80868b; }
+</style>
+
+<footer class="terms-footer" role="contentinfo">
+  <div class="terms-footer-inner">
+    <a href="index.html" class="footer-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك" height="34"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span style="display:none;font-size:1.1rem;font-weight:900;color:#1a6b3c">وصلك</span>
+    </a>
+    <nav class="footer-legal-links" aria-label="الروابط القانونية">
+      <a href="index.html">الرئيسية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="catalog.html" class="current" aria-current="page">المنتجات</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="terms.html">الشروط والأحكام</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="returns.html">سياسة الإرجاع</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="shipping.html">سياسة الشحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="about.html">من نحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="track.html">تتبع الطلب</a>
+    </nav>
+    <p class="footer-copy">
+      © 2026 وصلك – wasalak.com · جميع الحقوق محفوظة · طرابلس، ليبيا
+    </p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  /* ── Helpers page catalog ── */
+  function updatePrice(val) {
+    document.getElementById('maxPriceDisplay').textContent = val + ' د.ل';
+  }
+  function toggleFilters() {
+    document.getElementById('filtersSidebar').classList.toggle('open');
+  }
+  function setView(type) {
+    const grid    = document.getElementById('catalogProducts');
+    const btnGrid = document.getElementById('gridViewBtn');
+    const btnList = document.getElementById('listViewBtn');
+    if (type === 'list') {
+      grid.classList.add('list-view');
+      btnList.classList.add('active');
+      btnGrid.classList.remove('active');
+    } else {
+      grid.classList.remove('list-view');
+      btnGrid.classList.add('active');
+      btnList.classList.remove('active');
+    }
+  }
+</script>
+</body>
+</html>

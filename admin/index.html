@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>لوحة التحكم | وصلك – wasalak.com</title>
+  <link rel="icon" href="../assets/favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/admin.css"/>
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <img src="../assets/logo.png" alt="وصلك"
+         onerror="this.onerror=null;this.style.display='none';document.getElementById('brandText').style.display='flex'"/>
+    <span class="brand-text" id="brandText">وصلك</span>
+    <span class="brand-sub">لوحة التحكم</span>
+  </div>
+  <nav class="sidebar-nav">
+    <button class="nav-item active" onclick="showSection('dashboard')" aria-label="الرئيسية">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>الرئيسية</span>
+    </button>
+    <button class="nav-item" onclick="showSection('products')" aria-label="المنتجات">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span>المنتجات</span>
+      <span class="nav-badge" id="navProductCount">0</span>
+    </button>
+    <button class="nav-item" onclick="showSection('add-product')" aria-label="إضافة منتج">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      <span>إضافة منتج</span>
+    </button>
+    <button class="nav-item" onclick="showSection('import-export')" aria-label="استيراد وتصدير">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"/></svg>
+      <span>استيراد / تصدير</span>
+    </button>
+    <button class="nav-item" onclick="showSection('image-tools')" aria-label="أدوات الصور">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>أدوات الصور</span>
+    </button>
+    <div class="nav-divider"></div>
+    <a class="nav-item" href="../index.html" target="_blank" rel="noopener" aria-label="عرض الموقع">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      <span>عرض الموقع</span>
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="user-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div>
+        <div class="user-name">جواد لخماملي</div>
+        <div class="user-role">مدير المتجر</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ===== TOPBAR ===== -->
+<div class="admin-topbar">
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="قائمة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="topbar-title" id="topbarTitle">لوحة التحكم</div>
+  <div class="topbar-actions">
+    <button class="topbar-btn" onclick="exportProducts()" title="تصدير JSON">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    </button>
+    <a href="../index.html" target="_blank" class="topbar-btn" title="عرض الموقع" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="admin-main" id="adminMain">
+
+  <!-- ── DASHBOARD ── -->
+  <section class="admin-section active" id="section-dashboard">
+    <div class="section-header">
+      <h1 class="section-title">لوحة التحكم</h1>
+      <p class="section-sub">مرحباً جواد، إليك ملخص متجرك اليوم</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card" style="--accent:#1a6b3c">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-value" id="statProducts">0</div>
+          <div class="stat-label">إجمالي المنتجات</div>
+        </div>
+      </div>
+      <div class="stat-card" style="--accent:#e67e22">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-value" id="statFeatured">0</div>
+          <div class="stat-label">منتجات مميزة</div>
+        </div>
+      </div>
+      <div class="stat-card" style="--accent:#c0392b">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-value" id="statBestseller">0</div>
+          <div class="stat-label">الأكثر مبيعاً</div>
+        </div>
+      </div>
+      <div class="stat-card" style="--accent:#2980b9">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="stat-info">
+          <div class="stat-value" id="statWishlist">0</div>
+          <div class="stat-label">قائمة الرغبات</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick product table -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">آخر المنتجات المضافة</h2>
+        <button class="btn-sm btn-primary" onclick="showSection('products')">عرض الكل</button>
+      </div>
+      <div class="table-wrap">
+        <table class="admin-table" id="dashboardTable">
+          <thead>
+            <tr>
+              <th>الصورة</th>
+              <th>الاسم</th>
+              <th>الفئة</th>
+              <th>السعر</th>
+              <th>المخزون</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody id="dashboardTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTS LIST ── -->
+  <section class="admin-section" id="section-products">
+    <div class="section-header">
+      <h1 class="section-title">إدارة المنتجات</h1>
+      <button class="btn btn-primary" onclick="showSection('add-product')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        إضافة منتج
+      </button>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchProducts" placeholder="ابحث عن منتج..." oninput="filterProductsAdmin()"/>
+      </div>
+      <select id="filterCategory" onchange="filterProductsAdmin()" class="select-sm">
+        <option value="">كل الفئات</option>
+        <option value="electronics">إلكترونيات</option>
+        <option value="fashion">أزياء وموضة</option>
+        <option value="home">منزل ومطبخ</option>
+        <option value="beauty">جمال وعناية</option>
+        <option value="sports">رياضة</option>
+        <option value="other">أخرى</option>
+      </select>
+      <select id="filterStatus" onchange="filterProductsAdmin()" class="select-sm">
+        <option value="">كل الحالات</option>
+        <option value="featured">مميز</option>
+        <option value="bestseller">الأكثر مبيعاً</option>
+        <option value="sale">تخفيض</option>
+        <option value="new">جديد</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table class="admin-table" id="productsTable">
+        <thead>
+          <tr>
+            <th style="width:60px">الصورة</th>
+            <th>الاسم</th>
+            <th>الفئة</th>
+            <th>السعر</th>
+            <th>المخزون</th>
+            <th>الحالة</th>
+            <th style="width:130px">الإجراءات</th>
+          </tr>
+        </thead>
+        <tbody id="productsTableBody"></tbody>
+      </table>
+    </div>
+    <div class="empty-state" id="productsEmpty" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="64" height="64"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <p>لا توجد منتجات</p>
+      <button class="btn btn-primary" onclick="showSection('add-product')">إضافة أول منتج</button>
+    </div>
+  </section>
+
+  <!-- ── ADD / EDIT PRODUCT ── -->
+  <section class="admin-section" id="section-add-product">
+    <div class="section-header">
+      <h1 class="section-title" id="formTitle">إضافة منتج جديد</h1>
+      <button class="btn btn-ghost" onclick="showSection('products')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 14 4 9 9 4"/><line x1="20" y1="9" x2="4" y2="9"/></svg>
+        رجوع
+      </button>
+    </div>
+
+    <form id="productForm" onsubmit="saveProduct(event)" novalidate>
+      <input type="hidden" id="editProductId"/>
+
+      <div class="form-grid">
+
+        <!-- COL 1 : Infos générales -->
+        <div class="form-col">
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">المعلومات الأساسية</h2></div>
+            <div class="form-body">
+
+              <div class="field">
+                <label class="field-label" for="fName">اسم المنتج <span class="req">*</span></label>
+                <input class="field-input" type="text" id="fName" placeholder="مثال: سماعات بلوتوث لاسلكية" required/>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="fCategory">الفئة <span class="req">*</span></label>
+                <select class="field-input" id="fCategory" required>
+                  <option value="">اختر فئة</option>
+                  <option value="electronics">إلكترونيات</option>
+                  <option value="fashion">أزياء وموضة</option>
+                  <option value="home">منزل ومطبخ</option>
+                  <option value="beauty">جمال وعناية</option>
+                  <option value="sports">رياضة</option>
+                  <option value="other">أخرى</option>
+                </select>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="fPrice">السعر الحالي (د.ل) <span class="req">*</span></label>
+                  <input class="field-input" type="number" id="fPrice" min="0" step="0.5" placeholder="299" required/>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="fOriginalPrice">السعر الأصلي (د.ل)</label>
+                  <input class="field-input" type="number" id="fOriginalPrice" min="0" step="0.5" placeholder="399"/>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="fStock">المخزون <span class="req">*</span></label>
+                  <input class="field-input" type="number" id="fStock" min="0" placeholder="50" required/>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="fRating">التقييم (1-5)</label>
+                  <input class="field-input" type="number" id="fRating" min="1" max="5" step="0.1" placeholder="4.5"/>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="fReviews">عدد المراجعات</label>
+                <input class="field-input" type="number" id="fReviews" min="0" placeholder="128"/>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="fDescription">الوصف</label>
+                <textarea class="field-input field-textarea" id="fDescription" rows="4" placeholder="اكتب وصفاً جذاباً للمنتج..."></textarea>
+              </div>
+
+              <!-- Badges -->
+              <div class="field">
+                <label class="field-label">الشارة</label>
+                <div class="badge-selector">
+                  <label class="badge-opt" style="--c:#e74c3c">
+                    <input type="radio" name="fBadge" value="sale"/>
+                    <span>تخفيض</span>
+                  </label>
+                  <label class="badge-opt" style="--c:#27ae60">
+                    <input type="radio" name="fBadge" value="new"/>
+                    <span>جديد</span>
+                  </label>
+                  <label class="badge-opt" style="--c:#e67e22">
+                    <input type="radio" name="fBadge" value="hot"/>
+                    <span>رائج</span>
+                  </label>
+                  <label class="badge-opt" style="--c:#95a5a6">
+                    <input type="radio" name="fBadge" value="" checked/>
+                    <span>بدون</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="fBadgeText">نص الشارة</label>
+                <input class="field-input" type="text" id="fBadgeText" placeholder="مثال: خصم 25%"/>
+              </div>
+
+              <!-- Toggles -->
+              <div class="toggle-group">
+                <label class="toggle-item">
+                  <span class="toggle-label">منتج مميز</span>
+                  <input type="checkbox" id="fFeatured" class="toggle-check"/>
+                  <span class="toggle-switch"></span>
+                </label>
+                <label class="toggle-item">
+                  <span class="toggle-label">الأكثر مبيعاً</span>
+                  <input type="checkbox" id="fBestseller" class="toggle-check"/>
+                  <span class="toggle-switch"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPECS -->
+          <div class="card" style="margin-top:20px">
+            <div class="card-header">
+              <h2 class="card-title">المواصفات التقنية</h2>
+              <button type="button" class="btn-sm btn-ghost" onclick="addSpecRow()">+ إضافة</button>
+            </div>
+            <div class="form-body">
+              <div id="specsContainer"></div>
+            </div>
+          </div>
+
+          <!-- OPTIONS -->
+          <div class="card" style="margin-top:20px">
+            <div class="card-header"><h2 class="card-title">خيارات المنتج</h2></div>
+            <div class="form-body">
+              <div class="field">
+                <label class="field-label" for="fSizes">المقاسات (افصل بفاصلة)</label>
+                <input class="field-input" type="text" id="fSizes" placeholder="S, M, L, XL"/>
+              </div>
+              <div class="field">
+                <label class="field-label" for="fColors">الألوان (افصل بفاصلة)</label>
+                <input class="field-input" type="text" id="fColors" placeholder="أسود, أبيض, رمادي"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COL 2 : Images -->
+        <div class="form-col">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">صور المنتج</h2>
+              <span class="card-hint">يتم تحسين الصور تلقائياً</span>
+            </div>
+            <div class="form-body">
+
+              <!-- Main image upload -->
+              <div class="field">
+                <label class="field-label">الصورة الرئيسية <span class="req">*</span></label>
+                <div class="upload-zone" id="mainUploadZone"
+                     ondragover="handleDragOver(event,'mainUploadZone')"
+                     ondragleave="handleDragLeave('mainUploadZone')"
+                     ondrop="handleDrop(event,'mainImageInput','main')"
+                     onclick="document.getElementById('mainImageInput').click()">
+                  <div class="upload-placeholder" id="mainUploadPlaceholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <p>اسحب صورة أو اضغط للاختيار</p>
+                    <small>800×800 px · JPEG/PNG/WEBP · أقصى حجم 5MB</small>
+                    <small class="upload-hint-badge">يتم الضغط والتحسين تلقائياً</small>
+                  </div>
+                  <img id="mainPreview" class="upload-preview" style="display:none" alt="معاينة الصورة الرئيسية"/>
+                  <input type="file" id="mainImageInput" accept="image/*" style="display:none"
+                         onchange="processImage(this,'mainPreview','mainImageData','main')"/>
+                </div>
+                <input type="hidden" id="mainImageData"/>
+                <!-- Image info bar -->
+                <div class="img-info-bar" id="mainImgInfo" style="display:none">
+                  <div class="img-info-row">
+                    <span id="mainImgOrigSize"></span>
+                    <span class="arrow-icon">→</span>
+                    <span id="mainImgNewSize" class="size-green"></span>
+                    <span class="img-dims" id="mainImgDims"></span>
+                    <button type="button" class="btn-xs btn-danger" onclick="clearImage('mainPreview','mainImageInput','mainImageData','mainUploadPlaceholder','mainImgInfo')">حذف</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gallery images -->
+              <div class="field">
+                <label class="field-label">صور إضافية (حتى 4)</label>
+                <div class="gallery-upload-grid" id="galleryGrid">
+                  <!-- slots generated by JS -->
+                </div>
+                <input type="hidden" id="galleryImagesData"/>
+              </div>
+
+              <!-- URL fallback -->
+              <div class="field">
+                <label class="field-label" for="fImageUrl">أو أدخل رابط صورة خارجي</label>
+                <div class="url-input-row">
+                  <input class="field-input" type="url" id="fImageUrl" placeholder="https://example.com/image.jpg"/>
+                  <button type="button" class="btn-sm btn-primary" onclick="previewExternalUrl()">معاينة</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Image resize presets -->
+          <div class="card" style="margin-top:20px">
+            <div class="card-header">
+              <h2 class="card-title">إعدادات تحسين الصور</h2>
+            </div>
+            <div class="form-body">
+              <div class="preset-grid">
+                <button type="button" class="preset-btn active" data-preset="product" onclick="selectPreset(this,'product')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg>
+                  <span>منتج</span>
+                  <small>800×800</small>
+                </button>
+                <button type="button" class="preset-btn" data-preset="thumbnail" onclick="selectPreset(this,'thumbnail')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+                  <span>مصغرة</span>
+                  <small>300×300</small>
+                </button>
+                <button type="button" class="preset-btn" data-preset="banner" onclick="selectPreset(this,'banner')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="6" width="18" height="12" rx="2"/></svg>
+                  <span>بانر</span>
+                  <small>1200×400</small>
+                </button>
+                <button type="button" class="preset-btn" data-preset="og" onclick="selectPreset(this,'og')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/></svg>
+                  <span>مشاركة</span>
+                  <small>1200×630</small>
+                </button>
+              </div>
+
+              <div class="field-row" style="margin-top:12px">
+                <div class="field">
+                  <label class="field-label" for="resizeW">العرض (px)</label>
+                  <input class="field-input" type="number" id="resizeW" value="800" min="50" max="3000"/>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="resizeH">الارتفاع (px)</label>
+                  <input class="field-input" type="number" id="resizeH" value="800" min="50" max="3000"/>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="resizeQ">الجودة %</label>
+                  <input class="field-input" type="number" id="resizeQ" value="85" min="10" max="100"/>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label">تنسيق الإخراج</label>
+                <div class="format-selector">
+                  <label class="format-opt"><input type="radio" name="outputFmt" value="image/jpeg" checked/><span>JPEG</span></label>
+                  <label class="format-opt"><input type="radio" name="outputFmt" value="image/webp"/><span>WEBP</span></label>
+                  <label class="format-opt"><input type="radio" name="outputFmt" value="image/png"/><span>PNG</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label">وضع القص</label>
+                <div class="format-selector">
+                  <label class="format-opt"><input type="radio" name="cropMode" value="cover" checked/><span>تغطية</span></label>
+                  <label class="format-opt"><input type="radio" name="cropMode" value="contain"/><span>احتواء</span></label>
+                  <label class="format-opt"><input type="radio" name="cropMode" value="stretch"/><span>تمديد</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FORM ACTIONS -->
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" onclick="resetForm()">إلغاء</button>
+        <button type="button" class="btn btn-secondary" onclick="saveProductDraft()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          حفظ كمسودة
+        </button>
+        <button type="submit" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+          حفظ المنتج
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ── IMPORT / EXPORT ── -->
+  <section class="admin-section" id="section-import-export">
+    <div class="section-header">
+      <h1 class="section-title">استيراد / تصدير</h1>
+    </div>
+
+    <div class="import-export-grid">
+
+      <!-- Import JSON -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"/></svg>
+            استيراد منتجات (JSON)
+          </h2>
+        </div>
+        <div class="form-body">
+          <div class="upload-zone import-zone"
+               ondragover="handleDragOver(event,'importZone')"
+               ondragleave="handleDragLeave('importZone')"
+               ondrop="handleJsonDrop(event)"
+               onclick="document.getElementById('jsonFileInput').click()"
+               id="importZone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"/></svg>
+            <p>اسحب ملف JSON أو اضغط للاختيار</p>
+            <small>الصيغة المدعومة: Wasalak JSON · WooCommerce · Shopify CSV→JSON</small>
+            <input type="file" id="jsonFileInput" accept=".json" style="display:none" onchange="importFromJson(this)"/>
+          </div>
+
+          <div class="field" style="margin-top:16px">
+            <label class="field-label">أو الصق بيانات JSON مباشرة</label>
+            <textarea class="field-input field-textarea code-area" id="jsonPasteArea" rows="8" placeholder='[{"id":101,"name":"اسم المنتج","category":"electronics","price":299,...}]'></textarea>
+          </div>
+
+          <div class="import-options">
+            <label class="toggle-item">
+              <span class="toggle-label">دمج مع المنتجات الحالية</span>
+              <input type="checkbox" id="mergeModeCheck" class="toggle-check" checked/>
+              <span class="toggle-switch"></span>
+            </label>
+            <label class="toggle-item">
+              <span class="toggle-label">تجاهل المنتجات المكررة</span>
+              <input type="checkbox" id="skipDuplicatesCheck" class="toggle-check" checked/>
+              <span class="toggle-switch"></span>
+            </label>
+          </div>
+
+          <div class="form-actions" style="justify-content:flex-start;margin-top:12px">
+            <button class="btn btn-primary" onclick="runJsonImport()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"/></svg>
+              استيراد
+            </button>
+            <button class="btn btn-ghost" onclick="validateJson()">التحقق من الصحة</button>
+          </div>
+
+          <div id="importFeedback" class="import-feedback" style="display:none"></div>
+        </div>
+      </div>
+
+      <!-- Export -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            تصدير المنتجات
+          </h2>
+        </div>
+        <div class="form-body">
+          <div class="export-options">
+            <div class="export-card" onclick="exportProducts()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <strong>JSON</strong>
+              <small>تنسيق وصلك الكامل</small>
+            </div>
+            <div class="export-card" onclick="exportCSV()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+              <strong>CSV</strong>
+              <small>Excel / WooCommerce</small>
+            </div>
+            <div class="export-card" onclick="exportMinified()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <strong>JSON Minifié</strong>
+              <small>للنشر المباشر</small>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:20px">
+            <label class="field-label">معاينة JSON</label>
+            <textarea class="field-input field-textarea code-area" id="exportPreview" rows="10" readonly></textarea>
+          </div>
+          <button class="btn btn-ghost" onclick="refreshExportPreview()" style="margin-top:8px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+            تحديث المعاينة
+          </button>
+        </div>
+      </div>
+
+      <!-- Schema reference -->
+      <div class="card schema-card">
+        <div class="card-header"><h2 class="card-title">مرجع هيكل البيانات (JSON Schema)</h2></div>
+        <div class="form-body">
+          <pre class="code-block">{
+  "id":           123,           // رقم فريد
+  "name":         "اسم المنتج", // النص العربي
+  "category":     "electronics",// الفئة
+  "price":        299,           // السعر الحالي
+  "originalPrice":399,           // السعر قبل الخصم
+  "image":        "https://...", // الصورة الرئيسية
+  "images":       ["https://..."],// مصفوفة صور
+  "rating":       4.5,           // التقييم 1-5
+  "reviews":      128,           // عدد المراجعات
+  "stock":        50,            // الكمية المتوفرة
+  "badge":        "sale",        // sale|new|hot|""
+  "badgeText":    "خصم 25%",
+  "description":  "وصف المنتج...",
+  "featured":     true,          // منتج مميز
+  "bestseller":   false,
+  "specs": {
+    "الماركة":    "Samsung",
+    "اللون":      "أسود"
+  },
+  "options": {
+    "size":  ["S","M","L"],
+    "color": ["أسود","أبيض"]
+  }
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IMAGE TOOLS ── -->
+  <section class="admin-section" id="section-image-tools">
+    <div class="section-header">
+      <h1 class="section-title">أدوات تحسين الصور</h1>
+      <p class="section-sub">ضغط، تغيير حجم، تحويل الصيغة — كل ذلك محلياً في المتصفح</p>
+    </div>
+
+    <div class="image-tools-grid">
+      <div class="card">
+        <div class="card-header"><h2 class="card-title">رفع الصور</h2></div>
+        <div class="form-body">
+          <div class="upload-zone"
+               ondragover="handleDragOver(event,'toolZone')"
+               ondragleave="handleDragLeave('toolZone')"
+               ondrop="handleToolDrop(event)"
+               onclick="document.getElementById('toolImagesInput').click()"
+               id="toolZone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <p>اسحب صوراً متعددة أو اضغط للاختيار</p>
+            <small>JPEG · PNG · WEBP · GIF · حتى 20 صورة</small>
+            <input type="file" id="toolImagesInput" accept="image/*" multiple style="display:none" onchange="loadToolImages(this)"/>
+          </div>
+
+          <div class="tool-presets">
+            <div class="tool-preset-header">
+              <span>إعدادات سريعة</span>
+            </div>
+            <div class="preset-grid" style="grid-template-columns:repeat(4,1fr)">
+              <button type="button" class="preset-btn active" data-preset="product" onclick="selectToolPreset(this,'product')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg>
+                <span>منتج</span><small>800×800</small>
+              </button>
+              <button type="button" class="preset-btn" data-preset="thumbnail" onclick="selectToolPreset(this,'thumbnail')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                <span>مصغرة</span><small>300×300</small>
+              </button>
+              <button type="button" class="preset-btn" data-preset="banner" onclick="selectToolPreset(this,'banner')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="6" width="18" height="12" rx="2"/></svg>
+                <span>بانر</span><small>1200×400</small>
+              </button>
+              <button type="button" class="preset-btn" data-preset="og" onclick="selectToolPreset(this,'og')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/></svg>
+                <span>مشاركة</span><small>1200×630</small>
+              </button>
+            </div>
+
+            <div class="tool-controls">
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="toolW">العرض (px)</label>
+                  <input class="field-input" type="number" id="toolW" value="800" min="50" max="3000"/>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="toolH">الارتفاع (px)</label>
+                  <input class="field-input" type="number" id="toolH" value="800" min="50" max="3000"/>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="toolQ">الجودة %</label>
+                  <input class="field-input" type="number" id="toolQ" value="85" min="10" max="100"/>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label">تنسيق</label>
+                  <div class="format-selector">
+                    <label class="format-opt"><input type="radio" name="toolFmt" value="image/jpeg" checked/><span>JPEG</span></label>
+                    <label class="format-opt"><input type="radio" name="toolFmt" value="image/webp"/><span>WEBP</span></label>
+                    <label class="format-opt"><input type="radio" name="toolFmt" value="image/png"/><span>PNG</span></label>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="field-label">وضع القص</label>
+                  <div class="format-selector">
+                    <label class="format-opt"><input type="radio" name="toolCrop" value="cover" checked/><span>تغطية</span></label>
+                    <label class="format-opt"><input type="radio" name="toolCrop" value="contain"/><span>احتواء</span></label>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="processAllToolImages()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                معالجة الكل
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool results -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">النتائج</h2>
+          <button class="btn-sm btn-primary" onclick="downloadAllToolImages()" id="downloadAllBtn" style="display:none">تحميل الكل ZIP</button>
+        </div>
+        <div class="form-body">
+          <div id="toolResultsGrid" class="tool-results-grid">
+            <div class="empty-tools">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <p>ارفع صوراً للبدء</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== DELETE MODAL ===== -->
+<div class="modal-overlay" id="deleteModal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+  <div class="modal-box">
+    <div class="modal-icon modal-icon-danger">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+    </div>
+    <h3 id="deleteModalTitle">حذف المنتج</h3>
+    <p id="deleteModalMsg">هل أنت متأكد من حذف هذا المنتج؟ لا يمكن التراجع.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeDeleteModal()">إلغاء</button>
+      <button class="btn btn-danger" onclick="confirmDelete()">حذف</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="admin-toast" id="adminToast" role="alert" aria-live="polite"></div>
+
+<!-- Hidden canvas for image processing -->
+<canvas id="processCanvas" style="display:none"></canvas>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

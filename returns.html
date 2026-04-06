@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="سياسة الإرجاع والاستبدال لمتجر وصلك — تعرّف على حقوقك وشروط إرجاع المنتجات خلال 14 يوماً"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+  <title>سياسة الإرجاع والاستبدال | وصلك – wasalak.com</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* ============================================================
+       RETURNS PAGE — Référentiel terms.html appliqué à 100%
+       ============================================================ */
+    :root {
+      --green:       #1a6b3c;
+      --green-light: #e8f5ee;
+      --green-dark:  #145530;
+      --green-glow:  rgba(26,107,60,.12);
+      --red:         #c0392b;
+      --red-light:   #fdecea;
+      --orange:      #e67e22;
+      --orange-light:#fef5ec;
+      --blue:        #2563eb;
+      --blue-light:  #eff6ff;
+      --gray-50:     #f8f9fa;
+      --gray-100:    #f1f3f4;
+      --gray-200:    #e8eaed;
+      --gray-300:    #dadce0;
+      --gray-500:    #80868b;
+      --gray-600:    #5f6368;
+      --gray-700:    #3c4043;
+      --gray-900:    #1a1a1a;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,.06);
+      --shadow-md:   0 4px 24px rgba(0,0,0,.09);
+      --transition:  .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      direction: rtl;
+      line-height: 1.8;
+    }
+
+    /* ══════════════════════════════════════
+       HEADER — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .terms-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      gap: 16px;
+    }
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity var(--transition);
+    }
+    .header-logo:hover img { opacity: .85; }
+    .logo-fallback {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--green);
+      display: none;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-nav a {
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .header-nav a:hover  { background: var(--gray-100); color: var(--gray-900); }
+    .header-nav a.active { background: var(--green-light); color: var(--green); font-weight: 700; }
+
+    /* ══════════════════════════════════════
+       HERO — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-hero {
+      background: linear-gradient(135deg, #1a6b3c 0%, #0f4a28 100%);
+      color: var(--white);
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .terms-hero-icon {
+      width: 68px; height: 68px;
+      background: rgba(255,255,255,.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      border: 2px solid rgba(255,255,255,.2);
+    }
+    .terms-hero-icon svg { width: 32px; height: 32px; color: var(--white); }
+    .terms-hero h1 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .terms-hero p {
+      font-size: .9rem;
+      opacity: .85;
+      max-width: 540px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+    .terms-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .terms-meta svg { width: 13px; height: 13px; }
+
+    /* ══════════════════════════════════════
+       LAYOUT — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-layout {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ══════════════════════════════════════
+       SIDEBAR TOC — identique terms.html
+       ══════════════════════════════════════ */
+    .toc-sidebar {
+      position: sticky;
+      top: 86px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 18px;
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .toc-header svg  { width: 15px; height: 15px; color: var(--green); }
+    .toc-header span { font-size: .82rem; font-weight: 900; color: var(--gray-900); }
+    .toc-list { list-style: none; padding: 8px 0; }
+    .toc-list li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: all var(--transition);
+      border-right: 3px solid transparent;
+    }
+    .toc-list li a:hover,
+    .toc-list li a.toc-active {
+      background: var(--green-light);
+      color: var(--green);
+      border-right-color: var(--green);
+    }
+    .toc-list li a .toc-num {
+      width: 20px; height: 20px;
+      background: var(--gray-100);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem;
+      font-weight: 900;
+      color: var(--gray-500);
+      flex-shrink: 0;
+    }
+    .toc-list li a:hover .toc-num,
+    .toc-list li a.toc-active .toc-num { background: var(--green); color: var(--white); }
+
+    .toc-contact {
+      margin: 8px 12px 12px;
+      background: var(--green-light);
+      border: 1px solid rgba(26,107,60,.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .toc-contact-title { font-size: .72rem; font-weight: 900; color: var(--green); }
+    .toc-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .72rem;
+      color: var(--gray-700);
+      text-decoration: none;
+    }
+    .toc-contact-item svg { width: 13px; height: 13px; color: var(--green); flex-shrink: 0; }
+    .toc-contact-item:hover { color: var(--green); }
+
+    /* ══════════════════════════════════════
+       CONTENT COMPONENTS — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Alert box */
+    .terms-alert {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--green-light);
+      border: 1px solid rgba(26,107,60,.25);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .terms-alert-icon {
+      width: 36px; height: 36px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .terms-alert-icon svg { width: 18px; height: 18px; color: var(--white); }
+    .terms-alert-text { flex: 1; }
+    .terms-alert-text strong { display: block; font-size: .88rem; color: var(--green); margin-bottom: 4px; }
+    .terms-alert-text p { font-size: .8rem; color: var(--gray-700); line-height: 1.6; margin: 0; }
+
+    /* Article card */
+    .article-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      scroll-margin-top: 90px;
+    }
+    .article-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .article-num {
+      width: 34px; height: 34px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .article-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .article-icon svg { width: 18px; height: 18px; }
+    .article-icon.green  { background: var(--green-light);  color: var(--green); }
+    .article-icon.orange { background: var(--orange-light); color: var(--orange); }
+    .article-icon.red    { background: var(--red-light);    color: var(--red); }
+    .article-icon.blue   { background: var(--blue-light);   color: var(--blue); }
+    .article-title {
+      font-size: .95rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      flex: 1;
+    }
+    .article-body {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .article-body p {
+      font-size: .875rem;
+      color: var(--gray-700);
+      line-height: 1.85;
+    }
+    .article-body p strong { color: var(--gray-900); }
+    .article-body p a { color: var(--green); font-weight: 700; text-decoration: none; }
+    .article-body p a:hover { text-decoration: underline; }
+    .article-body h4 {
+      font-size: .85rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-body h4 svg { width: 15px; height: 15px; color: var(--green); }
+
+    /* Listes */
+    .terms-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .terms-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .85rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+    .terms-list li .li-icon {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .terms-list li .li-icon svg { width: 100%; height: 100%; }
+    .terms-list.check  li .li-icon { color: var(--green); }
+    .terms-list.cross  li .li-icon { color: var(--red); }
+    .terms-list.bullet li .li-icon { color: var(--gray-400); }
+
+    /* Info box */
+    .info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      border-radius: 9px;
+      padding: 14px 16px;
+    }
+    .info-box.green  { background: var(--green-light);  border: 1px solid rgba(26,107,60,.2); }
+    .info-box.orange { background: var(--orange-light); border: 1px solid rgba(230,126,34,.2); }
+    .info-box.red    { background: var(--red-light);    border: 1px solid rgba(192,57,43,.2); }
+    .info-box.blue   { background: var(--blue-light);   border: 1px solid #bfdbfe; }
+    .info-box-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+    .info-box-icon svg { width: 100%; height: 100%; }
+    .info-box.green  .info-box-icon { color: var(--green); }
+    .info-box.orange .info-box-icon { color: var(--orange); }
+    .info-box.red    .info-box-icon { color: var(--red); }
+    .info-box.blue   .info-box-icon { color: var(--blue); }
+    .info-box-text { font-size: .82rem; color: var(--gray-700); line-height: 1.7; flex: 1; }
+    .info-box-text strong { display: block; font-weight: 900; margin-bottom: 2px; }
+
+    /* Steps */
+    .steps-list { display: flex; flex-direction: column; gap: 12px; }
+    .step-item  { display: flex; align-items: flex-start; gap: 14px; }
+    .step-item-num {
+      width: 28px; height: 28px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-item-content { flex: 1; }
+    .step-item-content strong { display: block; font-size: .85rem; font-weight: 900; color: var(--gray-900); margin-bottom: 2px; }
+    .step-item-content span   { font-size: .8rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* Grille de cartes garanties */
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .guarantee-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 9px;
+      padding: 12px 14px;
+      transition: border-color var(--transition);
+    }
+    .guarantee-card:hover { border-color: var(--green); }
+    .guarantee-card-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    .guarantee-card-icon svg { width: 16px; height: 16px; }
+    .guarantee-card-icon.orange { background: var(--orange-light); color: var(--orange); }
+    .guarantee-card-icon.red    { background: var(--red-light);    color: var(--red); }
+    .guarantee-card-icon.blue   { background: var(--blue-light);   color: var(--blue); }
+    .guarantee-card-text strong { display: block; font-size: .8rem; font-weight: 900; color: var(--gray-900); }
+    .guarantee-card-text span   { font-size: .72rem; color: var(--gray-500); line-height: 1.5; }
+
+    /* Tableau */
+    .ret-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .82rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .ret-table thead th {
+      background: var(--green);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: right;
+      font-weight: 700;
+      font-size: .78rem;
+    }
+    .ret-table tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-700);
+      vertical-align: middle;
+    }
+    .ret-table tbody tr:nth-child(even) td { background: var(--gray-50); }
+    .ret-table tbody tr:last-child td { border-bottom: none; }
+
+    /* Badge statut */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .status-ok  { background: var(--green-light); color: var(--green); }
+    .status-no  { background: var(--red-light);   color: var(--red); }
+    .status-cond{ background: var(--orange-light); color: var(--orange); }
+
+    /* ══════════════════════════════════════
+       FOOTER — identique terms.html
+       ══════════════════════════════════════ */
+    .terms-footer {
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      padding: 28px 24px;
+      margin-top: 20px;
+    }
+    .terms-footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .footer-logo img { height: 34px; width: auto; object-fit: contain; }
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-legal-links a {
+      font-size: .75rem;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: all var(--transition);
+    }
+    .footer-legal-links a:hover   { background: var(--green-light); color: var(--green); }
+    .footer-legal-links a.current { color: var(--green); font-weight: 700; }
+    .footer-sep  { color: var(--gray-300); font-size: .7rem; }
+    .footer-copy { font-size: .72rem; color: var(--gray-500); }
+
+    /* ══════════════════════════════════════
+       SCROLL-TO-TOP — identique terms.html
+       ══════════════════════════════════════ */
+    .scroll-top {
+      position: fixed;
+      bottom: 24px; left: 24px;
+      width: 44px; height: 44px;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(26,107,60,.35);
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      z-index: 200;
+    }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scroll-top:hover   { background: var(--green-dark); transform: translateY(-2px); }
+    .scroll-top svg     { width: 20px; height: 20px; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — identique terms.html
+       ══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .terms-layout    { grid-template-columns: 1fr; }
+      .toc-sidebar     { position: static; }
+      .guarantees-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .terms-hero h1  { font-size: 1.4rem; }
+      .terms-layout   { padding: 0 14px; margin: 20px auto; }
+      .article-body   { padding: 16px; }
+      .article-header { padding: 14px 16px; }
+      .header-nav     { display: none; }
+      .ret-table      { font-size: .72rem; }
+      .ret-table thead th,
+      .ret-table tbody td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER — identique terms.html
+═══════════════════════════════════════════ -->
+<header class="terms-header">
+  <div class="terms-header-inner">
+    <a href="index.html" class="header-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك | wasalak.com" height="42"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/>
+      <span class="logo-fallback" id="logoFallback">وصلك</span>
+    </a>
+    <nav class="header-nav" aria-label="التنقل الرئيسي">
+      <a href="index.html">الرئيسية</a>
+      <a href="catalog.html">المنتجات</a>
+      <a href="about.html">من نحن</a>
+      <a href="track.html">تتبع طلبي</a>
+      <a href="returns.html" class="active" aria-current="page">الإرجاع</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     HERO — identique terms.html, SVG adapté
+═══════════════════════════════════════════ -->
+<div class="terms-hero" role="banner">
+  <div class="terms-hero-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="1 4 1 10 7 10"/>
+      <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
+    </svg>
+  </div>
+  <h1>سياسة الإرجاع والاستبدال</h1>
+  <p>نضمن لك حق الإرجاع أو الاستبدال خلال 14 يوماً كاملاً من تاريخ الاستلام، دون تعقيدات ودون رسوم شحن إضافية في الحالات المؤهَّلة.</p>
+  <div class="terms-meta" aria-label="تاريخ آخر تحديث">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+    </svg>
+    آخر تحديث: 1 أبريل 2026 · الإصدار 2.0
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN LAYOUT — identique terms.html
+═══════════════════════════════════════════ -->
+<div class="terms-layout">
+
+  <!-- ══ SIDEBAR TOC ══ -->
+  <aside class="toc-sidebar" aria-label="فهرس المحتوى">
+    <div class="toc-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+        <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+      <span>فهرس المحتوى</span>
+    </div>
+    <ul class="toc-list" role="navigation" aria-label="انتقال سريع للمواد">
+      <li><a href="#art1"><span class="toc-num">1</span>ضمان الإرجاع المجاني</a></li>
+      <li><a href="#art2"><span class="toc-num">2</span>حالات الإرجاع المقبولة</a></li>
+      <li><a href="#art3"><span class="toc-num">3</span>حالات الإرجاع غير المقبولة</a></li>
+      <li><a href="#art4"><span class="toc-num">4</span>خطوات طلب الإرجاع</a></li>
+      <li><a href="#art5"><span class="toc-num">5</span>الاستبدال</a></li>
+      <li><a href="#art6"><span class="toc-num">6</span>استرداد المبلغ</a></li>
+      <li><a href="#art7"><span class="toc-num">7</span>المنتجات المستثناة</a></li>
+      <li><a href="#art8"><span class="toc-num">8</span>الإرجاع عند الاستلام</a></li>
+      <li><a href="#art9"><span class="toc-num">9</span>حالات التلف والخطأ</a></li>
+      <li><a href="#art10"><span class="toc-num">10</span>جدول ملخّص الحالات</a></li>
+      <li><a href="#art11"><span class="toc-num">11</span>حقوقك القانونية</a></li>
+      <li><a href="#art12"><span class="toc-num">12</span>تواصل معنا</a></li>
+    </ul>
+    <div class="toc-contact" role="complementary" aria-label="وسائل التواصل السريع">
+      <div class="toc-contact-title">طلب إرجاع فوري</div>
+      <a href="https://wa.me/218912345678" class="toc-contact-item"
+         target="_blank" rel="noopener" aria-label="واتساب">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        واتساب: 0912-345-678
+      </a>
+      <a href="mailto:returns@wasalak.com" class="toc-contact-item" aria-label="البريد الإلكتروني">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        returns@wasalak.com
+      </a>
+    </div>
+  </aside>
+
+  <!-- ══ CONTENT ══ -->
+  <main class="terms-content" id="returnsContent">
+
+    <!-- Alert intro -->
+    <div class="terms-alert" role="note">
+      <div class="terms-alert-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+      </div>
+      <div class="terms-alert-text">
+        <strong>ضمان الإرجاع المجاني خلال 14 يوماً</strong>
+        <p>نؤمن بأن ثقتك في وصلك تستحق ضماناً حقيقياً. لذلك نتيح لك إرجاع أي منتج خلال 14 يوماً كاملاً من تاريخ الاستلام دون أسئلة معقدة ودون رسوم شحن إضافية في حالات العيب أو الخطأ.</p>
+      </div>
+    </div>
+
+    <!-- ══════════ ART. 1 ══════════ -->
+    <article class="article-card" id="art1">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">1</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الأولى — ضمان الإرجاع المجاني</h2>
+      </div>
+      <div class="article-body">
+        <p>يمنحك متجر وصلك حق الإرجاع أو الاستبدال خلال <strong>14 يوماً كاملاً</strong> من تاريخ استلام الطلب، وذلك التزاماً بحقوق المستهلك الليبي وثقةً بجودة منتجاتنا.</p>
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>14 يوماً كاملاً</strong>
+              <span>من تاريخ الاستلام الفعلي، ليس من تاريخ الطلب.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>شحن مجاني للإرجاع</strong>
+              <span>في حالات العيب أو الخطأ، نتحمل رسوم الشحن كاملاً.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="2"/>
+                <path d="M16 8h4l3 4v3h-7V8z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>استلام من عندك</strong>
+              <span>نرسل مندوباً لاستلام المنتج من عنوانك مباشرةً.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"/>
+                <polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>استرداد سريع</strong>
+              <span>يُعاد المبلغ نقداً عند استلام المنتج أو يُرسَل البديل.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 2 ══════════ -->
+    <article class="article-card" id="art2">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">2</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الثانية — حالات الإرجاع المقبولة</h2>
+      </div>
+      <div class="article-body">
+        <p>يُقبل الإرجاع مجاناً وبشكل فوري في الحالات التالية، دون الحاجة لتقديم أي مبرر إضافي:</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>منتج تالف أو معيب:</strong> أي عيب ظاهر أو خفي ناجم عن التصنيع أو الشحن يُكتشف عند الاستخدام الأول.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>منتج مخالف للطلب:</strong> اللون، المقاس، النوع أو الموديل المستلَم يختلف عمّا طُلب فعلاً.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>منتج لا يعمل:</strong> المنتج الإلكتروني أو الكهربائي لا يعمل عند الاستخدام الأول مع اتباع تعليمات التشغيل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>منتج ناقص الملحقات:</strong> غياب أجزاء أو ملحقات مذكورة صراحةً في وصف المنتج على الموقع.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>كمية خاطئة:</strong> استلام عدد أقل أو أكثر من المطلوب في الطلب الأصلي.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>منتج منتهي الصلاحية:</strong> في حالة المواد الغذائية أو مستحضرات التجميل ذات تاريخ انتهاء.</span>
+          </li>
+        </ul>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>الإثبات بالصور</strong>
+            لتسريع معالجة طلبك، أرسل صوراً واضحة للمنتج تُوضّح المشكلة عبر واتساب مع ذكر رقم طلبك. لا يُشترط إرجاع التغليف الأصلي في حالات العيب.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 3 ══════════ -->
+    <article class="article-card" id="art3">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">3</div>
+        <div class="article-icon red" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الثالثة — حالات الإرجاع غير المقبولة</h2>
+      </div>
+      <div class="article-body">
+        <p>لضمان حقوق جميع العملاء والحفاظ على جودة المنتجات، لا يُقبل الإرجاع في الحالات التالية:</p>
+        <ul class="terms-list cross">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>المنتجات المستخدمة:</strong> أي منتج تمّ استخدامه أو تشغيله بعد الاستلام دون وجود عيب.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>التغليف المفتوح دون سبب:</strong> منتجات فُكّ تغليفها الأصلي ولا توجد مشكلة فعلية بها.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>منتجات العناية الشخصية:</strong> مستحضرات التجميل، العطور، الملابس الداخلية لدواعٍ صحية وقانونية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>بعد انقضاء 14 يوماً:</strong> أي طلب إرجاع يُقدَّم بعد مرور أربعة عشر يوماً من تاريخ الاستلام.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>الأضرار الناجمة عن سوء الاستخدام:</strong> كسر، خدش، أو تلف ناتج عن إهمال أو حادثة من طرف العميل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>المنتجات المُعدَّلة:</strong> أي منتج تمّ تعديله أو تغيير مكوناته أو إزالة ملصقاته بعد الاستلام.</span>
+          </li>
+        </ul>
+        <div class="info-box orange">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>اختلاف الألوان ليس عيباً</strong>
+            الاختلافات الطفيفة في الألوان بسبب إعدادات الشاشة أو إضاءة التصوير لا تُعدّ سبباً للإرجاع. المواصفات التقنية المكتوبة في وصف المنتج هي المرجع الفاصل.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 4 ══════════ -->
+    <article class="article-card" id="art4">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">4</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الرابعة — خطوات طلب الإرجاع</h2>
+      </div>
+      <div class="article-body">
+        <p>تمّر عملية الإرجاع بأربع خطوات بسيطة يمكن إتمامها عبر واتساب دون مغادرة منزلك:</p>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">1</div>
+            <div class="step-item-content">
+              <strong>التواصل عبر واتساب</strong>
+              <span>تواصل معنا على <a href="https://wa.me/218912345678" target="_blank" rel="noopener">0912-345-678</a> خلال 14 يوماً من الاستلام، وذكر رقم الطلب وسبب الإرجاع.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">2</div>
+            <div class="step-item-content">
+              <strong>إرسال الصور</strong>
+              <span>أرسل صوراً واضحة للمنتج تُوضّح العيب أو المشكلة. يُساعد ذلك في تسريع الموافقة خلال أقل من ساعة.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">3</div>
+            <div class="step-item-content">
+              <strong>تحديد موعد الاستلام</strong>
+              <span>نُرتّب مع العميل موعداً مناسباً لاستلام المنتج من عنوانه خلال <strong>2 – 5 أيام عمل</strong>.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">4</div>
+            <div class="step-item-content">
+              <strong>الاسترداد أو الاستبدال</strong>
+              <span>يُسترد المبلغ نقداً لدى المندوب عند استلام المنتج، أو يُرسَل البديل في نفس الرحلة أو خلال المدة المتفق عليها.</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-box blue">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>وقت المعالجة</strong>
+            نلتزم بالرد على جميع طلبات الإرجاع خلال <strong>3 ساعات عمل</strong> كحد أقصى من استلام رسالتك عبر واتساب.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 5 ══════════ -->
+    <article class="article-card" id="art5">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">5</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"/>
+            <path d="M3 11V9a4 4 0 014-4h14"/>
+            <polyline points="7 23 3 19 7 15"/>
+            <path d="M21 13v2a4 4 0 01-4 4H3"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الخامسة — الاستبدال</h2>
+      </div>
+      <div class="article-body">
+        <p>يحق للعميل اختيار الاستبدال بدلاً من الإرجاع في جميع حالات الإرجاع المقبولة. تسري على الاستبدال نفس الشروط والمدد.</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>الاستبدال بنفس المنتج:</strong> في حالة العيب، نُرسل وحدة جديدة من نفس المنتج دون أي تكلفة إضافية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>الاستبدال بمنتج آخر:</strong> يمكن الاستبدال بمنتج مختلف مع تسوية الفارق في السعر إن وُجد.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>مدة توصيل البديل:</strong> يُوصَّل المنتج البديل وفق مواعيد التوصيل المعتادة للمنطقة.</span>
+          </li>
+        </ul>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>الاستبدال في نفس الرحلة</strong>
+            إذا كان المنتج البديل متوفراً في المخزن وكانت المنطقة ضمن طرابلس، يمكن تسليم البديل مع استلام المُعاد في نفس الزيارة.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 6 ══════════ -->
+    <article class="article-card" id="art6">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">6</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <path d="M12 12h.01M6 12h.01M18 12h.01"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة السادسة — استرداد المبلغ</h2>
+      </div>
+      <div class="article-body">
+        <p>نظراً لاعتماد وصلك على الدفع النقدي عند الاستلام (COD)، تتم عملية استرداد المبلغ بطريقة مباشرة وفورية:</p>
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="2"/>
+                <path d="M16 8h4l3 4v3h-7V8z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>استرداد نقدي فوري</strong>
+              <span>يُسلّم المبلغ كاملاً نقداً لدى المندوب عند استلام المنتج المُعاد.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="2"/>
+                <path d="M12 12h.01"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>تحويل بنكي</strong>
+              <span>للعملاء الذين دفعوا بالتحويل، يُعاد المبلغ للحساب ذاته خلال 3-5 أيام عمل.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>استرداد كامل</strong>
+              <span>يشمل الاسترداد قيمة المنتج كاملاً دون خصم أي رسوم في حالات العيب أو الخطأ.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>مدة المعالجة</strong>
+              <span>الاسترداد النقدي فوري. التحويل البنكي خلال 3-5 أيام عمل.</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-box orange">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>رسوم الشحن عند الإرجاع الاختياري</strong>
+            في حالات الإرجاع الاختياري (لا عيب، مجرد تغيير رأي) قد تُطبَّق رسوم شحن الإرجاع. يُبلَّغ العميل بالمبلغ قبل تأكيد الإرجاع.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 7 ══════════ -->
+    <article class="article-card" id="art7">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">7</div>
+        <div class="article-icon red" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة السابعة — المنتجات المستثناة كلياً</h2>
+      </div>
+      <div class="article-body">
+        <p>بسبب طبيعتها أو لدواعٍ صحية وقانونية، تُستثنى الفئات التالية من سياسة الإرجاع العامة <strong>حتى في حالة وجود عيب</strong> — يُعالَج العيب باستبدال فوري لا بالإرجاع النقدي:</p>
+        <ul class="terms-list cross">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>الملابس الداخلية والبيكيني:</strong> لدواعٍ صحية وقانونية بعد فتح التغليف.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>مستحضرات العناية والتجميل:</strong> بعد استخدامها أو فتح تغليفها الأصلي لأسباب صحية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>المنتجات الغذائية:</strong> بعد انتهاء التغليف أو الاستخدام، إلا في حالات الفساد قبل انتهاء الصلاحية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>البرامج والتراخيص الرقمية:</strong> بعد تفعيلها أو كشف رمز التفعيل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span><strong>المنتجات المخصصة (Custom):</strong> التي صُنعت أو طُبعت خصيصاً بناءً على طلب العميل.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 8 ══════════ -->
+    <article class="article-card" id="art8">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">8</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="2"/>
+            <path d="M16 8h4l3 4v3h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الثامنة — الإرجاع الفوري عند الاستلام</h2>
+      </div>
+      <div class="article-body">
+        <p>يحق للعميل <strong>رفض الاستلام فوراً</strong> عند وصول المندوب في الحالات الآتية، دون الحاجة لأي إجراء لاحق:</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>التغليف الخارجي تالف أو ممزق بشكل واضح يُشير إلى تلف المحتوى.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>اسم المنتج على الطرد مختلف تماماً عن المطلوب في الطلب.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>الكمية المُسلَّمة أقل من المطلوبة بشكل واضح.</span>
+          </li>
+        </ul>
+        <div class="info-box blue">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>حق الفحص قبل الدفع</strong>
+            لك الحق في فحص المنتج من الخارج قبل الدفع. في حال رفض الاستلام، لن يُطالبك المندوب بأي مبلغ ويُعاد الطلب للمخزن مباشرةً.
+          </div>
+        </div>
+        <div class="info-box red">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>تنبيه: الرفض المتكرر غير المبرر</strong>
+            الرفض المتكرر لاستلام طلبات مؤكدة دون سبب مشروع (أكثر من مرتين) قد يؤدي إلى تعليق حساب العميل وفق شروط الاستخدام.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 9 ══════════ -->
+    <article class="article-card" id="art9">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">9</div>
+        <div class="article-icon red" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة التاسعة — حالات التلف والخطأ من طرفنا</h2>
+      </div>
+      <div class="article-body">
+        <p>إذا كان الخطأ أو التلف ناجماً عن طرف وصلك (تغليف خاطئ، منتج تالف، خطأ في الشحن)، نتكفّل بكل ما يلي دون أي تكلفة على العميل:</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>استلام المنتج التالف أو الخاطئ من عنوان العميل مجاناً.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>إرسال المنتج الصحيح أو البديل الجديد بالأولوية القصوى وبالشحن المجاني.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>استرداد المبلغ كاملاً نقداً إذا اختار العميل الإلغاء بدل الاستبدال.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>إعطاء العميل قسيمة خصم تعويضية على طلبه القادم كاعتذار رسمي.</span>
+          </li>
+        </ul>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>ضمان المسؤولية الكاملة</strong>
+            أخطاؤنا مسؤوليتنا الكاملة. لن نطلب منك تحمّل أي تكلفة عن خطأ صدر من طرفنا، وسنُعالج الوضع بأسرع ما يمكن.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 10 ══════════ -->
+    <article class="article-card" id="art10">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">10</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/>
+            <line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة العاشرة — جدول ملخّص الحالات</h2>
+      </div>
+      <div class="article-body">
+        <p>فيما يلي جدول مرجعي سريع يلخّص حالات الإرجاع وما يترتب عليها:</p>
+        <div style="overflow-x:auto; border-radius:8px; border:1px solid var(--gray-200)">
+          <table class="ret-table" aria-label="جدول ملخص حالات الإرجاع">
+            <thead>
+              <tr>
+                <th scope="col">الحالة</th>
+                <th scope="col">مقبول؟</th>
+                <th scope="col">رسوم الشحن</th>
+                <th scope="col">المدة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>منتج معيب أو تالف</td>
+                <td><span class="status-badge status-ok">✓ مقبول</span></td>
+                <td>مجاني</td>
+                <td>14 يوماً</td>
+              </tr>
+              <tr>
+                <td>منتج مخالف للطلب</td>
+                <td><span class="status-badge status-ok">✓ مقبول</span></td>
+                <td>مجاني</td>
+                <td>14 يوماً</td>
+              </tr>
+              <tr>
+                <td>منتج لا يعمل</td>
+                <td><span class="status-badge status-ok">✓ مقبول</span></td>
+                <td>مجاني</td>
+                <td>14 يوماً</td>
+              </tr>
+              <tr>
+                <td>ناقص ملحقات مذكورة</td>
+                <td><span class="status-badge status-ok">✓ مقبول</span></td>
+                <td>مجاني</td>
+                <td>14 يوماً</td>
+              </tr>
+              <tr>
+                <td>تغيير رأي (لا عيب)</td>
+                <td><span class="status-badge status-cond">⚠ مشروط</span></td>
+                <td>على العميل</td>
+                <td>14 يوماً</td>
+              </tr>
+              <tr>
+                <td>منتج مستخدم دون عيب</td>
+                <td><span class="status-badge status-no">✗ مرفوض</span></td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>بعد 14 يوماً</td>
+                <td><span class="status-badge status-no">✗ مرفوض</span></td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>منتجات العناية الشخصية</td>
+                <td><span class="status-badge status-no">✗ مرفوض</span></td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>سوء استخدام أو حادثة</td>
+                <td><span class="status-badge status-no">✗ مرفوض</span></td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 11 ══════════ -->
+    <article class="article-card" id="art11">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">11</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الحادية عشرة — حقوقك القانونية</h2>
+      </div>
+      <div class="article-body">
+        <p>تتوافق سياسة الإرجاع هذه مع أحكام <strong>قانون المعاملات الإلكترونية الليبي رقم 6 لسنة 2022</strong> ومبادئ حماية المستهلك المعتمدة.</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>هذه السياسة لا تنتهك أي حق مكفول قانوناً للمستهلك الليبي، وفي حالة أي تعارض، تُقدَّم أحكام القانون الليبي النافذ.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>النزاعات المتعلقة بالإرجاع تُسوَّى ودياً أولاً خلال 7 أيام. وفي غياب التسوية، تختص محاكم طرابلس بالفصل فيها.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>للاطلاع على الشروط والأحكام الكاملة، يُرجى زيارة صفحة <a href="terms.html">الشروط والأحكام</a>.</span>
+          </li>
+        </ul>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+            </svg>
+          </span>
+          <div class="info-box-text">
+            <strong>التسوية الودية أولاً</strong>
+            قبل أي إجراء قانوني، نُشجّع على حل النزاعات ودياً عبر واتساب. أغلب الشكاوى تُحلّ في أقل من <strong>48 ساعة</strong>.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════ ART. 12 ══════════ -->
+    <article class="article-card" id="art12">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">12</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+        </div>
+        <h2 class="article-title">المادة الثانية عشرة — تواصل معنا</h2>
+      </div>
+      <div class="article-body">
+        <p>لطلب الإرجاع أو الاستفسار عن حالة طلب الإرجاع أو لأي مساعدة، تواصل معنا عبر القنوات الرسمية. نلتزم بالرد خلال <strong>3 ساعات عمل</strong>.</p>
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" style="background:#e8f5e9;color:#25d366" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>واتساب (الأسرع)</strong>
+              <span><a href="https://wa.me/218912345678" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">0912-345-678</a> — متاح 24/7</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>البريد الإلكتروني</strong>
+              <span><a href="mailto:returns@wasalak.com" style="color:var(--green);font-weight:700">returns@wasalak.com</a></span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6z"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>الهاتف</strong>
+              <span><a href="tel:+218912345678" style="color:var(--green);font-weight:700">218-91-234-5678+</a></span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>العنوان والدوام</strong>
+              <span>طرابلس، ليبيا · السبت – الخميس 9ص – 9م</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:.8rem;color:var(--gray-500);text-align:center;margin-top:4px">
+          نهدف للرد على جميع طلبات الإرجاع خلال <strong style="color:var(--green)">3 ساعات عمل</strong> كحد أقصى.
+        </p>
+      </div>
+    </article>
+
+    <!-- Signature finale -->
+    <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:24px;text-align:center;box-shadow:var(--shadow-sm)">
+      <p style="font-size:.82rem;color:var(--gray-600);line-height:1.8;max-width:600px;margin:0 auto">
+        هذه الوثيقة تمثّل التزام وصلك الكامل تجاه حقوق العملاء في الإرجاع والاستبدال. نؤمن بأن ثقتك تُبنى بالشفافية والعدل.
+        <br/><br/>
+        <strong style="color:var(--green)">وصلك – wasalak.com</strong><br/>
+        <span style="font-size:.75rem;color:var(--gray-400)">طرابلس، ليبيا · تاريخ الإصدار: 1 أبريل 2026 · الإصدار 2.0</span>
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — identique terms.html
+═══════════════════════════════════════════ -->
+<footer class="terms-footer" role="contentinfo">
+  <div class="terms-footer-inner">
+    <a href="index.html" class="footer-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك" height="34"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span style="display:none;font-size:1.1rem;font-weight:900;color:var(--green)">وصلك</span>
+    </a>
+    <nav class="footer-legal-links" aria-label="الروابط القانونية">
+      <a href="index.html">الرئيسية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="terms.html">الشروط والأحكام</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="returns.html" class="current" aria-current="page">سياسة الإرجاع</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="shipping.html">سياسة الشحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="about.html">من نحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="track.html">تتبع الطلب</a>
+    </nav>
+    <p class="footer-copy">
+      © 2026 وصلك – wasalak.com · جميع الحقوق محفوظة · طرابلس، ليبيا
+    </p>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTopBtn"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="العودة للأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+  /* Scroll-to-top */
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTopBtn');
+    if (btn) btn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+
+  /* TOC active highlight */
+  const articles = document.querySelectorAll('.article-card[id]');
+  const tocLinks  = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => {
+          link.classList.toggle('toc-active',
+            link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  articles.forEach(a => observer.observe(a));
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

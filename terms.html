@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="الشروط والأحكام لمتجر وصلك — تعرف على حقوقك وواجباتك عند التسوق من wasalak.com"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+  <title>الشروط والأحكام | وصلك – wasalak.com</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* ============================================================
+       TERMS PAGE – Styles dédiés
+       ============================================================ */
+    :root {
+      --green:       #1a6b3c;
+      --green-light: #e8f5ee;
+      --green-dark:  #145530;
+      --green-glow:  rgba(26,107,60,.12);
+      --red:         #c0392b;
+      --red-light:   #fdecea;
+      --orange:      #e67e22;
+      --orange-light:#fef5ec;
+      --blue:        #2563eb;
+      --blue-light:  #eff6ff;
+      --gray-50:     #f8f9fa;
+      --gray-100:    #f1f3f4;
+      --gray-200:    #e8eaed;
+      --gray-300:    #dadce0;
+      --gray-500:    #80868b;
+      --gray-600:    #5f6368;
+      --gray-700:    #3c4043;
+      --gray-900:    #1a1a1a;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,.06);
+      --shadow-md:   0 4px 24px rgba(0,0,0,.09);
+      --transition:  .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      direction: rtl;
+      line-height: 1.8;
+    }
+
+    /* ── Header ── */
+    .terms-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .terms-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      gap: 16px;
+    }
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity var(--transition);
+    }
+    .header-logo:hover img { opacity: .85; }
+    .logo-fallback {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--green);
+      display: none;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-nav a {
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .header-nav a:hover { background: var(--gray-100); color: var(--gray-900); }
+    .header-nav a.active { background: var(--green-light); color: var(--green); font-weight: 700; }
+
+    /* ── Hero ── */
+    .terms-hero {
+      background: linear-gradient(135deg, #1a6b3c 0%, #0f4a28 100%);
+      color: var(--white);
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .terms-hero-icon {
+      width: 68px; height: 68px;
+      background: rgba(255,255,255,.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      border: 2px solid rgba(255,255,255,.2);
+    }
+    .terms-hero-icon svg { width: 32px; height: 32px; color: var(--white); }
+    .terms-hero h1 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .terms-hero p {
+      font-size: .9rem;
+      opacity: .85;
+      max-width: 540px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+    .terms-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .terms-meta svg { width: 13px; height: 13px; }
+
+    /* ── Layout ── */
+    .terms-layout {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ── Sidebar TOC ── */
+    .toc-sidebar {
+      position: sticky;
+      top: 86px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 18px;
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .toc-header svg { width: 15px; height: 15px; color: var(--green); }
+    .toc-header span { font-size: .82rem; font-weight: 900; color: var(--gray-900); }
+    .toc-list {
+      list-style: none;
+      padding: 8px 0;
+    }
+    .toc-list li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: all var(--transition);
+      border-right: 3px solid transparent;
+    }
+    .toc-list li a:hover {
+      background: var(--green-light);
+      color: var(--green);
+      border-right-color: var(--green);
+    }
+    .toc-list li a .toc-num {
+      width: 20px; height: 20px;
+      background: var(--gray-100);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem;
+      font-weight: 900;
+      color: var(--gray-500);
+      flex-shrink: 0;
+    }
+    .toc-list li a:hover .toc-num { background: var(--green); color: var(--white); }
+
+    /* Contact card dans TOC */
+    .toc-contact {
+      margin: 8px 12px 12px;
+      background: var(--green-light);
+      border: 1px solid rgba(26,107,60,.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .toc-contact-title { font-size: .72rem; font-weight: 900; color: var(--green); }
+    .toc-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .72rem;
+      color: var(--gray-700);
+      text-decoration: none;
+    }
+    .toc-contact-item svg { width: 13px; height: 13px; color: var(--green); flex-shrink: 0; }
+    .toc-contact-item:hover { color: var(--green); }
+
+    /* ── Content ── */
+    .terms-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Alert box en haut */
+    .terms-alert {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--blue-light);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .terms-alert-icon {
+      width: 36px; height: 36px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .terms-alert-icon svg { width: 18px; height: 18px; color: var(--white); }
+    .terms-alert-text { flex: 1; }
+    .terms-alert-text strong { display: block; font-size: .88rem; color: var(--blue); margin-bottom: 4px; }
+    .terms-alert-text p { font-size: .8rem; color: #1e40af; line-height: 1.6; margin: 0; }
+
+    /* Article card */
+    .article-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      scroll-margin-top: 90px;
+    }
+    .article-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .article-num {
+      width: 34px; height: 34px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .article-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .article-icon svg { width: 18px; height: 18px; }
+    .article-icon.green  { background: var(--green-light);  color: var(--green); }
+    .article-icon.orange { background: var(--orange-light); color: var(--orange); }
+    .article-icon.red    { background: var(--red-light);    color: var(--red); }
+    .article-icon.blue   { background: var(--blue-light);   color: var(--blue); }
+    .article-title {
+      font-size: .95rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      flex: 1;
+    }
+    .article-body {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Paragraphes */
+    .article-body p {
+      font-size: .875rem;
+      color: var(--gray-700);
+      line-height: 1.85;
+    }
+    .article-body p strong { color: var(--gray-900); }
+    .article-body p a { color: var(--green); font-weight: 700; text-decoration: none; }
+    .article-body p a:hover { text-decoration: underline; }
+
+    /* Sous-titres dans article */
+    .article-body h4 {
+      font-size: .85rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-body h4 svg { width: 15px; height: 15px; color: var(--green); }
+
+    /* Listes */
+    .terms-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .terms-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .85rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+    .terms-list li .li-icon {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .terms-list li .li-icon svg { width: 100%; height: 100%; }
+    .terms-list.check  li .li-icon { color: var(--green); }
+    .terms-list.cross  li .li-icon { color: var(--red); }
+    .terms-list.bullet li .li-icon { color: var(--gray-400); }
+
+    /* Info box inline */
+    .info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      border-radius: 9px;
+      padding: 14px 16px;
+    }
+    .info-box.green  { background: var(--green-light);  border: 1px solid rgba(26,107,60,.2); }
+    .info-box.orange { background: var(--orange-light); border: 1px solid rgba(230,126,34,.2); }
+    .info-box.red    { background: var(--red-light);    border: 1px solid rgba(192,57,43,.2); }
+    .info-box.blue   { background: var(--blue-light);   border: 1px solid #bfdbfe; }
+    .info-box-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+    .info-box-icon svg { width: 100%; height: 100%; }
+    .info-box.green  .info-box-icon { color: var(--green); }
+    .info-box.orange .info-box-icon { color: var(--orange); }
+    .info-box.red    .info-box-icon { color: var(--red); }
+    .info-box.blue   .info-box-icon { color: var(--blue); }
+    .info-box-text { font-size: .82rem; color: var(--gray-700); line-height: 1.7; flex: 1; }
+    .info-box-text strong { display: block; font-weight: 900; margin-bottom: 2px; }
+
+    /* Tableau zones livraison */
+    .delivery-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .82rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .delivery-table thead th {
+      background: var(--green);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: right;
+      font-weight: 700;
+      font-size: .78rem;
+    }
+    .delivery-table tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-700);
+      vertical-align: middle;
+    }
+    .delivery-table tbody tr:nth-child(even) td { background: var(--gray-50); }
+    .delivery-table tbody tr:last-child td { border-bottom: none; }
+    .zone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .zone-a { background: #dcfce7; color: #15803d; }
+    .zone-b { background: #fef9c3; color: #854d0e; }
+    .zone-c { background: #fee2e2; color: #b91c1c; }
+
+    /* Steps numérotés */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .step-item-num {
+      width: 28px; height: 28px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-item-content { flex: 1; }
+    .step-item-content strong { display: block; font-size: .85rem; font-weight: 900; color: var(--gray-900); margin-bottom: 2px; }
+    .step-item-content span { font-size: .8rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* Grille garanties */
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .guarantee-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 9px;
+      padding: 12px 14px;
+    }
+    .guarantee-card-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    .guarantee-card-icon svg { width: 16px; height: 16px; }
+    .guarantee-card-text strong { display: block; font-size: .8rem; font-weight: 900; color: var(--gray-900); }
+    .guarantee-card-text span  { font-size: .72rem; color: var(--gray-500); line-height: 1.5; }
+
+    /* Footer */
+    .terms-footer {
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      padding: 28px 24px;
+      margin-top: 20px;
+    }
+    .terms-footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .footer-logo img { height: 36px; width: auto; object-fit: contain; }
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-legal-links a {
+      font-size: .75rem;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: all var(--transition);
+    }
+    .footer-legal-links a:hover { background: var(--green-light); color: var(--green); }
+    .footer-legal-links a.current { color: var(--green); font-weight: 700; }
+    .footer-sep { color: var(--gray-300); font-size: .7rem; }
+    .footer-copy {
+      font-size: .72rem;
+      color: var(--gray-500);
+    }
+
+    /* Scroll-to-top */
+    .scroll-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 44px; height: 44px;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(26,107,60,.35);
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      z-index: 200;
+    }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scroll-top:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .scroll-top svg { width: 20px; height: 20px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .terms-layout { grid-template-columns: 1fr; }
+      .toc-sidebar { position: static; }
+      .guarantees-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .terms-hero h1 { font-size: 1.4rem; }
+      .terms-layout  { padding: 0 14px; margin: 20px auto; }
+      .article-body  { padding: 16px; }
+      .article-header{ padding: 14px 16px; }
+      .header-nav    { display: none; }
+      .delivery-table{ font-size: .72rem; }
+      .delivery-table thead th, .delivery-table tbody td { padding: 8px; }
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="terms-header">
+  <div class="terms-header-inner">
+
+    <a href="index.html" class="header-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك | wasalak.com" height="42"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/>
+      <span class="logo-fallback" id="logoFallback">وصلك</span>
+    </a>
+
+    <nav class="header-nav" aria-label="التنقل الرئيسي">
+      <a href="index.html">الرئيسية</a>
+      <a href="catalog.html">المنتجات</a>
+      <a href="about.html">من نحن</a>
+      <a href="track.html">تتبع طلبي</a>
+      <a href="terms.html" class="active" aria-current="page">الشروط</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="terms-hero" role="banner">
+  <div class="terms-hero-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+      <polyline points="10 9 9 9 8 9"/>
+    </svg>
+  </div>
+  <h1>الشروط والأحكام</h1>
+  <p>يُرجى قراءة هذه الشروط بعناية قبل إتمام أي عملية شراء من متجر وصلك. باستخدامك للموقع أو تقديم طلب، فإنك توافق على هذه الشروط كاملةً.</p>
+  <div class="terms-meta" aria-label="تاريخ آخر تحديث">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    آخر تحديث: 1 أبريل 2026 · الإصدار 2.0
+  </div>
+</div>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="terms-layout">
+
+  <!-- ══ SIDEBAR TABLE OF CONTENTS ══ -->
+  <aside class="toc-sidebar" aria-label="فهرس المحتوى">
+    <div class="toc-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <span>فهرس المحتوى</span>
+    </div>
+    <ul class="toc-list" role="navigation" aria-label="انتقال سريع للمواد">
+      <li><a href="#art1"><span class="toc-num">1</span>تعريفات ومصطلحات</a></li>
+      <li><a href="#art2"><span class="toc-num">2</span>قبول الشروط والتسجيل</a></li>
+      <li><a href="#art3"><span class="toc-num">3</span>المنتجات والأسعار</a></li>
+      <li><a href="#art4"><span class="toc-num">4</span>إتمام الطلب وتأكيده</a></li>
+      <li><a href="#art5"><span class="toc-num">5</span>الدفع عند الاستلام</a></li>
+      <li><a href="#art6"><span class="toc-num">6</span>التوصيل والشحن</a></li>
+      <li><a href="#art7"><span class="toc-num">7</span>الإرجاع والاستبدال</a></li>
+      <li><a href="#art8"><span class="toc-num">8</span>الضمان وجودة المنتجات</a></li>
+      <li><a href="#art9"><span class="toc-num">9</span>حماية البيانات الشخصية</a></li>
+      <li><a href="#art10"><span class="toc-num">10</span>الملكية الفكرية</a></li>
+      <li><a href="#art11"><span class="toc-num">11</span>حدود المسؤولية</a></li>
+      <li><a href="#art12"><span class="toc-num">12</span>تعديل الشروط</a></li>
+      <li><a href="#art13"><span class="toc-num">13</span>القانون المنطبق</a></li>
+      <li><a href="#art14"><span class="toc-num">14</span>تواصل معنا</a></li>
+    </ul>
+
+    <!-- Contact rapide -->
+    <div class="toc-contact" role="complementary" aria-label="وسائل التواصل السريع">
+      <div class="toc-contact-title">تواصل معنا مباشرةً</div>
+      <a href="https://wa.me/218912345678" class="toc-contact-item" target="_blank" rel="noopener" aria-label="واتساب">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        واتساب: 0912-345-678
+      </a>
+      <a href="mailto:info@wasalak.com" class="toc-contact-item" aria-label="البريد الإلكتروني">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@wasalak.com
+      </a>
+    </div>
+  </aside>
+
+  <!-- ══ CONTENT ══ -->
+  <main class="terms-content" id="termsContent">
+
+    <!-- Alert intro -->
+    <div class="terms-alert" role="note">
+      <div class="terms-alert-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="terms-alert-text">
+        <strong>ملاحظة مهمة قبل البدء</strong>
+        <p>هذه الشروط تُشكّل عقداً ملزماً بينك وبين وصلك. باستخدامك للموقع أو تقديم أي طلب شراء، فإنك تُقرّ بقراءة هذه الشروط وفهمها والموافقة الكاملة عليها. إذا كنت لا توافق على أي بند، يُرجى عدم إتمام عملية الشراء والتواصل معنا عبر واتساب.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════
+         المادة 1 – تعريفات
+    ══════════════════════════ -->
+    <article class="article-card" id="art1">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">1</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h2 class="article-title">المادة الأولى — تعريفات ومصطلحات</h2>
+      </div>
+      <div class="article-body">
+        <p>في سياق هذه الشروط والأحكام، تحمل المصطلحات التالية المعاني المحددة لها أدناه:</p>
+        <ul class="terms-list bullet">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span><strong>«وصلك»</strong> أو <strong>«المتجر»</strong>: يُشير إلى منصة التجارة الإلكترونية wasalak.com وجميع خدماتها المرتبطة، المُشغَّلة من مدينة طرابلس، ليبيا.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span><strong>«العميل»</strong> أو <strong>«أنت»</strong>: أي شخص طبيعي أتمّ عملية تسجيل أو تقديم طلب عبر الموقع، سواء كان فرداً أو ممثلاً لجهة قانونية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span><strong>«الطلب»</strong>: طلب الشراء الذي يُقدّمه العميل عبر نموذج الطلب الإلكتروني ويحمل رقماً مرجعياً فريداً من نوع «WS…».</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span><strong>«المنتج»</strong>: أي سلعة مادية معروضة للبيع على المنصة، مع مراعاة أن الصور واصفة والمواصفات مُعتمَدة.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span><strong>«الدينار الليبي»</strong> أو <strong>«د.ل»</strong>: العملة الرسمية لجميع الأسعار والمبالغ المذكورة في المنصة.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span><strong>«COD» (الدفع عند الاستلام)</strong>: طريقة الدفع الرئيسية التي تتيح للعميل سداد قيمة الطلب نقداً فور تسليمه.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span><strong>«الشروط»</strong>: الوثيقة الراهنة بجميع مواده وملاحقها، بالإضافة إلى سياسة الخصوصية وسياسة الإرجاع.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 2 – قبول الشروط
+    ══════════════════════════ -->
+    <article class="article-card" id="art2">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">2</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h2 class="article-title">المادة الثانية — قبول الشروط والتسجيل</h2>
+      </div>
+      <div class="article-body">
+        <p>يُعدّ استخدام الموقع أو تقديم طلب شراء موافقةً صريحةً وكاملة على هذه الشروط والأحكام. يحق للمتجر رفض أو إلغاء أي طلب في الحالات التالية:</p>
+        <ul class="terms-list cross">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>تقديم معلومات شخصية مزيفة أو غير دقيقة.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>الرفض المتكرر لاستلام الطلبات المؤكدة دون سبب مشروع (أكثر من مرتين).</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>استخدام الموقع لأغراض غير مشروعة أو مخالفة للقانون الليبي.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>طلب كميات تجارية كبيرة تتجاوز الاستخدام الشخصي دون التنسيق المسبق.</span>
+          </li>
+        </ul>
+        <div class="info-box blue">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+          <div class="info-box-text"><strong>تنبيه قانوني</strong>يستلزم تقديم الطلب أن يكون العميل بالغاً (18 سنة فأكثر) وقادراً قانونياً على إبرام العقود وفق القانون المدني الليبي.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 3 – المنتجات والأسعار
+    ══════════════════════════ -->
+    <article class="article-card" id="art3">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">3</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </div>
+        <h2 class="article-title">المادة الثالثة — المنتجات والأسعار</h2>
+      </div>
+      <div class="article-body">
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          وصف المنتجات
+        </h4>
+        <p>نسعى جاهدين لضمان دقة وصف المنتجات وصورها. غير أنه قد تطرأ اختلافات طفيفة في الألوان بحسب إعدادات الشاشة. الوصف النصي والمواصفات التقنية هي المرجع المعتمد في حال وجود تعارض مع الصورة.</p>
+
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          الأسعار والعملة
+        </h4>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>جميع الأسعار المعروضة بالدينار الليبي (د.ل) وتشمل الضريبة إن وُجدت.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>الأسعار المعروضة لحظة تأكيد الطلب هي الأسعار الملزمة، بصرف النظر عن أي تغيير لاحق.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>رسوم التوصيل مذكورة بشكل منفصل ومحسوبة وفق منطقة التوصيل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>يحق للمتجر تعديل الأسعار في أي وقت دون إشعار مسبق، دون أن يُؤثر ذلك على الطلبات المؤكدة.</span>
+          </li>
+        </ul>
+
+        <div class="info-box orange">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <div class="info-box-text"><strong>تحذير: الأسعار الخاطئة</strong>في حال نُشر سعر خاطئ بسبب خطأ تقني، يحتفظ المتجر بحق إلغاء الطلب وإشعار العميل خلال 24 ساعة، مع إتاحة خيار إعادة الطلب بالسعر الصحيح.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 4 – إتمام الطلب
+    ══════════════════════════ -->
+    <article class="article-card" id="art4">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">4</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <h2 class="article-title">المادة الرابعة — إتمام الطلب وتأكيده</h2>
+      </div>
+      <div class="article-body">
+        <p>تمر عملية الطلب بالمراحل التالية:</p>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">1</div>
+            <div class="step-item-content">
+              <strong>تقديم الطلب</strong>
+              <span>يملأ العميل نموذج الطلب ببياناته الصحيحة (الاسم، الهاتف، العنوان) ويضغط «تأكيد الطلب».</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">2</div>
+            <div class="step-item-content">
+              <strong>التأكيد الأولي التلقائي</strong>
+              <span>يتلقى العميل رقم طلبه فوراً، ثم يتواصل معه أحد المندوبين عبر واتساب خلال ساعات العمل.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">3</div>
+            <div class="step-item-content">
+              <strong>التأكيد البشري</strong>
+              <span>يؤكد المندوب الطلب مع العميل هاتفياً أو عبر واتساب، ويُحدَّد موعد ومنطقة التوصيل.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">4</div>
+            <div class="step-item-content">
+              <strong>الشحن والتوصيل</strong>
+              <span>يُحضَّر الطلب ويُشحن إلى المنطقة المحددة وفق جدول مناطق التوصيل.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">5</div>
+            <div class="step-item-content">
+              <strong>الاستلام والدفع</strong>
+              <span>يستلم العميل الطلب ويدفع المبلغ نقداً للمندوب. التوقيع أو القبول الشفهي يُعدّ إقراراً باستلام المنتج بحالة جيدة.</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div class="info-box-text"><strong>حق إلغاء الطلب</strong>يحق للعميل إلغاء طلبه مجاناً ما لم يُشحن بعد. للإلغاء، تواصل معنا عبر واتساب بذكر رقم الطلب في أقرب وقت ممكن.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 5 – الدفع COD
+    ══════════════════════════ -->
+    <article class="article-card" id="art5">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">5</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg>
+        </div>
+        <h2 class="article-title">المادة الخامسة — الدفع عند الاستلام (COD)</h2>
+      </div>
+      <div class="article-body">
+        <p>يعتمد متجر وصلك نظام <strong>الدفع عند الاستلام</strong> كطريقة دفع رئيسية، وهو ما يُمثّل ضماناً حقيقياً لحقوق العميل.</p>
+
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>لا دفع مسبق</strong>
+              <span>لا نطلب بيانات بنكية أو دفعاً إلكترونياً مسبقاً تحت أي ظرف.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 4v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>فحص عند الاستلام</strong>
+              <span>يحق لك فحص المنتج قبل الدفع والتأكد من مطابقته للطلب.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>رفض مشروط</strong>
+              <span>يمكنك رفض الاستلام إذا كان المنتج تالفاً ظاهرياً أو مخالفاً للطلب.</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>المبلغ المُؤكَّد</strong>
+              <span>المبلغ المطلوب عند الاستلام هو الإجمالي المذكور في تأكيد الطلب فقط.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box red">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <div class="info-box-text"><strong>تحذير من الاحتيال</strong>لا يطلب موظفو وصلك أبداً إرسال مبالغ مالية مسبقة، ولا بيانات بطاقات بنكية، ولا كلمات مرور عبر أي قناة. أي طلب من هذا القبيل يُعدّ احتيالاً. يُرجى إبلاغنا فوراً.</div>
+        </div>
+
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          التحويل البنكي (خيار إضافي)
+        </h4>
+        <p>يتاح للعملاء الراغبين الدفع المسبق عبر التحويل البنكي إلى حساب وصلك الرسمي في مصرف الجمهورية. يشترط في هذه الحالة إرسال إيصال التحويل عبر واتساب لتأكيد الطلب. <strong>لا يُعفي الدفع المسبق من حقوق الإرجاع المكفولة.</strong></p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 6 – التوصيل
+    ══════════════════════════ -->
+    <article class="article-card" id="art6">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">6</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 4v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h2 class="article-title">المادة السادسة — التوصيل والشحن</h2>
+      </div>
+      <div class="article-body">
+        <p>يُوصَّل المتجر إلى جميع المدن الليبية وفق المناطق التالية:</p>
+
+        <div style="overflow-x:auto; border-radius:8px; border:1px solid var(--gray-200)">
+          <table class="delivery-table" aria-label="جدول مناطق ورسوم التوصيل">
+            <thead>
+              <tr>
+                <th scope="col">المنطقة</th>
+                <th scope="col">المدن</th>
+                <th scope="col">مدة التوصيل</th>
+                <th scope="col">رسوم التوصيل</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="zone-badge zone-a">أ — سريع</span></td>
+                <td>طرابلس، جنزور، تاجوراء، عين زارة</td>
+                <td><strong>24 – 48 ساعة</strong></td>
+                <td><strong>15 د.ل</strong></td>
+              </tr>
+              <tr>
+                <td><span class="zone-badge zone-b">ب — قياسي</span></td>
+                <td>بنغازي، مصراتة، الزاوية، زليتن، الخمس، درنة، البيضاء، طبرق، الزنتان، غريان</td>
+                <td><strong>3 – 6 أيام</strong></td>
+                <td><strong>18 – 30 د.ل</strong></td>
+              </tr>
+              <tr>
+                <td><span class="zone-badge zone-c">ج — موسّع</span></td>
+                <td>سبها، مرزق، الكفرة، غات، وغيرها</td>
+                <td><strong>5 – 10 أيام</strong></td>
+                <td><strong>35 – 50 د.ل</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ul class="terms-list bullet">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>مواعيد التوصيل تقديرية وغير ملزمة قانونياً، وقد تتأثر بالظروف الأمنية أو القوة القاهرة.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>يتواصل مندوب التوصيل مع العميل قبل الوصول. إذا تعذّر التواصل، يُحاوَل التوصيل مرتين، ثم يُعاد الطلب للمخزن.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>الطلبات المُعادة للمخزن لسبب يعود للعميل (عدم الرد، خطأ في العنوان) تستلزم إعادة جدولة وقد تترتب عليها رسوم إضافية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>يمكن تتبع الطلب في الوقت الفعلي عبر صفحة <a href="track.html">تتبع الطلبات</a> بإدخال رقم الهاتف.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 7 – الإرجاع
+    ══════════════════════════ -->
+    <article class="article-card" id="art7">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">7</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        </div>
+        <h2 class="article-title">المادة السابعة — الإرجاع والاستبدال</h2>
+      </div>
+      <div class="article-body">
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div class="info-box-text"><strong>ضمان الإرجاع المجاني خلال 14 يوماً</strong>تمنحك وصلك حق الإرجاع أو الاستبدال خلال <strong>14 يوماً كاملاً</strong> من تاريخ الاستلام، دون تحمّل أي رسوم شحن إضافية في الحالات المؤهَّلة.</div>
+        </div>
+
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          حالات الإرجاع المقبولة
+        </h4>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>المنتج تالف أو معيب بسبب التصنيع أو خلال الشحن.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>المنتج المستلم مخالف لما طُلب (لون، مقاس، نوع مختلف).</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>المنتج لا يعمل عند الاستخدام الأول مع اتباع تعليمات التشغيل.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>ناقص أجزاء أو ملحقات مذكورة صراحةً في وصف المنتج.</span>
+          </li>
+        </ul>
+
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          حالات الإرجاع غير المقبولة
+        </h4>
+        <ul class="terms-list cross">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>المنتجات المُستخدَمة أو المُعدَّلة بعد الاستلام.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>المنتجات التي فُكّت تغليفها الأصلي ولا توجد مشكلة فعلية بها.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>منتجات العناية الشخصية (مستحضرات التجميل، الملابس الداخلية) لدواعٍ صحية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>طلبات الإرجاع بعد انقضاء مدة الـ 14 يوماً.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>الأضرار الناجمة عن سوء الاستخدام أو الحوادث.</span>
+          </li>
+        </ul>
+
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          طريقة طلب الإرجاع
+        </h4>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">1</div>
+            <div class="step-item-content">
+              <strong>التواصل عبر واتساب</strong>
+              <span>تواصل معنا على <a href="https://wa.me/218912345678" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">0912-345-678</a> وذكر رقم طلبك وسبب الإرجاع.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">2</div>
+            <div class="step-item-content">
+              <strong>إرسال الصور</strong>
+              <span>أرسل صوراً واضحة للمنتج تُوضّح العيب أو المشكلة لتسريع المعالجة.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">3</div>
+            <div class="step-item-content">
+              <strong>تحديد موعد الاستلام</strong>
+              <span>يُرتَّب مع العميل موعد لاستلام المنتج من عنوانه خلال 2-5 أيام عمل.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-item-num" aria-hidden="true">4</div>
+            <div class="step-item-content">
+              <strong>الاسترداد أو الاستبدال</strong>
+              <span>يُسترد المبلغ نقداً عند الاستلام، أو يُرسَل بديل خلال المدة المتفق عليها.</span>
+            </div>
+          </div>
+        </div>
+        <p>للاطلاع على سياسة الإرجاع الكاملة، يُرجى زيارة صفحة <a href="returns.html">سياسة الإرجاع والاستبدال</a>.</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 8 – الضمان
+    ══════════════════════════ -->
+    <article class="article-card" id="art8">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">8</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h2 class="article-title">المادة الثامنة — الضمان وجودة المنتجات</h2>
+      </div>
+      <div class="article-body">
+        <p>تلتزم وصلك بتوريد منتجات أصلية ومطابقة للمواصفات المُعلنة. تندرج ضمانات الجودة في إطارين:</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>ضمان الوصف:</strong> المنتج مطابق للوصف المنشور من حيث المواصفات الجوهرية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>ضمان السلامة:</strong> المنتج خالٍ من العيوب الخفية الموجودة قبل الشراء.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><strong>ضمان المُصنّع (إن وُجد):</strong> بعض المنتجات الإلكترونية تحمل ضماناً من المُصنّع، يُشار إليه في وصف المنتج.</span>
+          </li>
+        </ul>
+        <div class="info-box orange">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+          <div class="info-box-text"><strong>ملاحظة</strong>الاختلافات الطفيفة في الألوان بسبب الشاشات أو إضاءة التصوير لا تُعدّ عيباً. المواصفات التقنية المكتوبة هي المرجع الفاصل.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 9 – حماية البيانات
+    ══════════════════════════ -->
+    <article class="article-card" id="art9">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">9</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h2 class="article-title">المادة التاسعة — حماية البيانات الشخصية</h2>
+      </div>
+      <div class="article-body">
+        <p>تلتزم وصلك بحماية خصوصية عملائها وفق أعلى المعايير. تُجمَع البيانات الشخصية (الاسم، الهاتف، العنوان) لأغراض محددة وهي:</p>
+        <ul class="terms-list check">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>تنفيذ الطلبات وتأكيدها وتوصيلها.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>التواصل مع العميل بشأن طلبه عبر واتساب أو الهاتف.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>تحسين تجربة التسوق وإرسال عروض ذات صلة (بموافقة العميل).</span>
+          </li>
+        </ul>
+        <ul class="terms-list cross">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>لا تُباع بيانات العملاء أو تُشارك مع أطراف ثالثة لأغراض تجارية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>لا تُخزَّن بيانات البطاقات البنكية، إذ نعتمد الدفع النقدي فقط.</span>
+          </li>
+        </ul>
+        <p>للاطلاع على سياسة الخصوصية الكاملة وحقوقك في الوصول والتعديل والحذف، يُرجى زيارة <a href="privacy.html">صفحة سياسة الخصوصية</a>.</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 10 – الملكية الفكرية
+    ══════════════════════════ -->
+    <article class="article-card" id="art10">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">10</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h2 class="article-title">المادة العاشرة — الملكية الفكرية</h2>
+      </div>
+      <div class="article-body">
+        <p>جميع محتويات موقع وصلك — بما فيها الشعار، التصاميم، الصور، النصوص، الأكواد البرمجية، وأسماء المنتجات — هي ملك حصري لـ <strong>وصلك – wasalak.com</strong> أو مرخّصة لها. يُحظر صراحةً:</p>
+        <ul class="terms-list cross">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>نسخ أو استنساخ أي محتوى من الموقع دون إذن كتابي مسبق.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>إنشاء متجر مُقلِّد أو استخدام علامة «وصلك» التجارية لأغراض تجارية.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+            <span>استخراج بيانات المنتجات أو الأسعار بشكل آلي (scraping).</span>
+          </li>
+        </ul>
+        <p>يُسمح بمشاركة روابط المنتجات على منصات التواصل الاجتماعي لأغراض شخصية غير تجارية.</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 11 – حدود المسؤولية
+    ══════════════════════════ -->
+    <article class="article-card" id="art11">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">11</div>
+        <div class="article-icon red" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h2 class="article-title">المادة الحادية عشرة — حدود المسؤولية</h2>
+      </div>
+      <div class="article-body">
+        <p>دون الإخلال بحقوق العميل القانونية المكفولة، تُحدَّد مسؤولية وصلك على النحو الآتي:</p>
+        <ul class="terms-list bullet">
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>الحد الأقصى للتعويض في أي نزاع لا يتجاوز قيمة الطلب المعني.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>لا تتحمل وصلك المسؤولية عن التأخيرات الناجمة عن أسباب خارجة عن إرادتها (القوة القاهرة، اضطرابات أمنية، ظروف طبيعية).</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>لا تتحمل وصلك مسؤولية الأضرار غير المباشرة الناجمة عن استخدام المنتج أو عدم استخدامه.</span>
+          </li>
+          <li>
+            <span class="li-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg></span>
+            <span>المتجر غير مسؤول عن الروابط الخارجية التي قد يحتوي عليها الموقع.</span>
+          </li>
+        </ul>
+        <div class="info-box blue">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+          <div class="info-box-text"><strong>حقوقك المكفولة دائماً</strong>لا تنتهك هذه البنود أي حق مكفول قانوناً للمستهلك الليبي. في حال وجود أي تعارض، تُقدَّم أحكام القانون الليبي النافذ.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 12 – تعديل الشروط
+    ══════════════════════════ -->
+    <article class="article-card" id="art12">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">12</div>
+        <div class="article-icon orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        </div>
+        <h2 class="article-title">المادة الثانية عشرة — تعديل الشروط</h2>
+      </div>
+      <div class="article-body">
+        <p>يحتفظ المتجر بحق تعديل هذه الشروط في أي وقت. تسري التعديلات اعتباراً من تاريخ نشرها على الموقع. يُنصح العملاء بمراجعة هذه الصفحة دورياً. الطلبات المقدَّمة قبل تاريخ التعديل تخضع للشروط السابقة سارية وقت تقديمها.</p>
+        <p>تُُعلَن التعديلات الجوهرية عبر واتساب أو بانر إشعاري على الموقع قبل 7 أيام من سريانها.</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 13 – القانون المنطبق
+    ══════════════════════════ -->
+    <article class="article-card" id="art13">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">13</div>
+        <div class="article-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </div>
+        <h2 class="article-title">المادة الثالثة عشرة — القانون المنطبق وفض النزاعات</h2>
+      </div>
+      <div class="article-body">
+        <p>تخضع هذه الشروط وأي نزاع ينشأ عنها للقانون الليبي، ولا سيما أحكام <strong>القانون المدني الليبي</strong> وقانون حماية المستهلك النافذ. تُعدّ <strong>محاكم مدينة طرابلس</strong> ذات الاختصاص الحصري في البت بأي نزاع لم يُسوَّ ودياً.</p>
+        <div class="info-box green">
+          <span class="info-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+          <div class="info-box-text"><strong>التسوية الودية أولاً</strong>قبل أي إجراء قانوني، نُشجّع على حل النزاعات ودياً عبر واتساب خلال 7 أيام من الإخطار. أغلب الشكاوى تُحلّ في أقل من 48 ساعة.</div>
+        </div>
+        <p style="font-size:.8rem;color:var(--gray-500)">مرجع قانوني: قانون المعاملات الإلكترونية الليبي رقم 6 لسنة 2022 الصادر بتاريخ 4 أكتوبر 2022.</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════
+         المادة 14 – التواصل
+    ══════════════════════════ -->
+    <article class="article-card" id="art14">
+      <div class="article-header">
+        <div class="article-num" aria-hidden="true">14</div>
+        <div class="article-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h2 class="article-title">المادة الرابعة عشرة — تواصل معنا</h2>
+      </div>
+      <div class="article-body">
+        <p>لأي استفسار حول هذه الشروط أو لتقديم شكوى أو طلب توضيح، يُرجى التواصل معنا عبر القنوات الرسمية الآتية:</p>
+
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" style="background:#e8f5e9;color:#25d366" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>واتساب (الأسرع)</strong>
+              <span><a href="https://wa.me/218912345678" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">0912-345-678</a> — متاح 24/7</span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>البريد الإلكتروني</strong>
+              <span><a href="mailto:info@wasalak.com" style="color:var(--green);font-weight:700">info@wasalak.com</a></span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>الهاتف</strong>
+              <span><a href="tel:+218912345678" style="color:var(--green);font-weight:700">218-91-234-5678+</a></span>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="guarantee-card-text">
+              <strong>العنوان</strong>
+              <span>طرابلس، ليبيا · ساعات الدوام: السبت – الخميس 9ص – 9م</span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:.8rem;color:var(--gray-500);text-align:center;margin-top:8px">نهدف للرد على جميع الاستفسارات خلال <strong style="color:var(--green)">3 ساعات عمل</strong> كحد أقصى.</p>
+      </div>
+    </article>
+
+    <!-- Signature finale -->
+    <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:24px;text-align:center;box-shadow:var(--shadow-sm)">
+      <p style="font-size:.82rem;color:var(--gray-600);line-height:1.8;max-width:600px;margin:0 auto">
+        هذه الوثيقة تمثّل الاتفاقية الكاملة بين وصلك وعملائها فيما يتعلق بشروط الاستخدام والشراء. تلغي جميع الاتفاقيات السابقة الشفهية أو الكتابية.
+        <br/><br/>
+        <strong style="color:var(--green)">وصلك – wasalak.com</strong><br/>
+        <span style="font-size:.75rem;color:var(--gray-400)">طرابلس، ليبيا · تاريخ الإصدار: 1 أبريل 2026 · الإصدار 2.0</span>
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="terms-footer" role="contentinfo">
+  <div class="terms-footer-inner">
+    <a href="index.html" class="footer-logo" aria-label="وصلك – الرئيسية">
+      <img src="assets/logo.png" alt="وصلك" height="34"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span style="display:none;font-size:1.1rem;font-weight:900;color:var(--green)">وصلك</span>
+    </a>
+    <nav class="footer-legal-links" aria-label="الروابط القانونية">
+      <a href="index.html">الرئيسية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="terms.html" class="current" aria-current="page">الشروط والأحكام</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="returns.html">سياسة الإرجاع</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="shipping.html">سياسة الشحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="about.html">من نحن</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="track.html">تتبع الطلب</a>
+    </nav>
+    <p class="footer-copy">
+      © 2026 وصلك – wasalak.com · جميع الحقوق محفوظة · طرابلس، ليبيا
+    </p>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="العودة للأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+  /* Scroll-to-top visibility */
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTopBtn');
+    if (btn) btn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+
+  /* TOC active link highlight on scroll */
+  const articles = document.querySelectorAll('.article-card[id]');
+  const tocLinks  = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => {
+          link.parentElement.style.fontWeight = link.getAttribute('href') === '#' + entry.target.id ? '700' : '';
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.style.color    = 'var(--green)';
+            link.style.borderRightColor = 'var(--green)';
+            link.style.background = 'var(--green-light)';
+          } else {
+            link.style.color    = '';
+            link.style.borderRightColor = '';
+            link.style.background = '';
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  articles.forEach(a => observer.observe(a));
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

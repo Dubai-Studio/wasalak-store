@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="تفاصيل المنتج - وصلك | تسوق بأمان وادفع عند الاستلام في ليبيا"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:type" content="product"/>
+  <meta property="og:site_name" content="وصلك - wasalak.com"/>
+  <title>تفاصيل المنتج | وصلك – wasalak.com</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <meta name="theme-color" content="#1a6b3c"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+
+    /* ══════════════════════════════
+       HEADER
+    ══════════════════════════════ */
+    .top-bar {
+      padding: 6px 0; font-size: 0.78rem;
+      background: #1a6b3c; color: #fff; text-align: center;
+    }
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,.08);
+    }
+    .header-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 12px;
+      padding-top: 12px; padding-bottom: 12px; min-height: 68px;
+    }
+    .logo-link {
+      display: inline-flex; align-items: center;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .logo-link img {
+      height: 48px; width: auto; display: block;
+      object-fit: contain; transition: opacity .2s;
+    }
+    .logo-link img:hover { opacity: .85; }
+    .nav-menu { display: flex; align-items: center; gap: 4px; }
+    .nav-link {
+      padding: 6px 12px; font-size: 0.88rem; font-weight: 600;
+      color: #1a1a1a; text-decoration: none; border-radius: 6px;
+      transition: background .2s, color .2s; white-space: nowrap;
+    }
+    .nav-link:hover,
+    .nav-link.active { background: #e8f5ee; color: #1a6b3c; }
+    .header-actions { display: flex; align-items: center; gap: 6px; }
+    .icon-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer; padding: 7px;
+      border-radius: 8px; color: #1a1a1a;
+      transition: background .2s, color .2s; text-decoration: none;
+      position: relative;
+    }
+    .icon-btn:hover { background: #e8f5ee; color: #1a6b3c; }
+    .cart-count {
+      position: absolute; top: 2px; left: 2px;
+      background: #f0a500; color: #fff;
+      font-size: 0.62rem; font-weight: 800;
+      min-width: 16px; height: 16px; border-radius: 99px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .menu-toggle { display: none; }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .nav-menu.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 100%; right: 0; left: 0;
+        background: #fff; padding: 12px 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,.1); z-index: 999;
+      }
+      .menu-toggle { display: inline-flex; }
+    }
+
+    /* ══════════════════════════════
+       BREADCRUMB
+    ══════════════════════════════ */
+    .breadcrumb-bar {
+      background: #f7faf8;
+      border-bottom: 1px solid #e8f0e8;
+      padding: 10px 0;
+    }
+    .breadcrumb-bar .container {
+      display: flex; align-items: center; gap: 6px;
+      flex-wrap: wrap; font-size: .82rem;
+    }
+    .breadcrumb-bar a {
+      color: #1a6b3c; text-decoration: none; font-weight: 600;
+      transition: color .2s;
+    }
+    .breadcrumb-bar a:hover { color: #145c35; text-decoration: underline; }
+    .breadcrumb-bar span { color: #aaa; }
+    .breadcrumb-bar span:last-child { color: #555; }
+
+    /* ══════════════════════════════
+       PRODUCT LAYOUT
+    ══════════════════════════════ */
+    .product-detail { padding: 32px 0 48px; background: #f7faf8; }
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .product-layout { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    /* ══════════════════════════════
+       GALERIE
+    ══════════════════════════════ */
+    .product-gallery { position: sticky; top: 84px; }
+    .main-image-wrapper {
+      position: relative; border-radius: 16px;
+      overflow: hidden; background: #fff;
+      box-shadow: 0 2px 16px rgba(0,0,0,.08);
+      aspect-ratio: 1 / 1; margin-bottom: 12px;
+    }
+    .main-product-image {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .3s;
+    }
+    .main-image-wrapper:hover .main-product-image { transform: scale(1.03); }
+    .image-badges {
+      position: absolute; top: 12px; right: 12px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .thumbnail-list {
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .thumbnail-list img {
+      width: 68px; height: 68px; border-radius: 10px;
+      object-fit: cover; cursor: pointer; border: 2px solid #eee;
+      transition: border-color .2s, transform .2s;
+    }
+    .thumbnail-list img:hover,
+    .thumbnail-list img.active { border-color: #1a6b3c; transform: scale(1.05); }
+
+    /* Vidéo produit */
+    .product-video {
+      margin-top: 16px; background: #fff;
+      border-radius: 14px; padding: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+    .product-video h4 {
+      font-size: .9rem; font-weight: 700; color: #111;
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .product-video-player {
+      width: 100%; border-radius: 10px; display: block;
+    }
+
+    /* ══════════════════════════════
+       PRODUCT INFO
+    ══════════════════════════════ */
+    .product-info {
+      background: #fff; border-radius: 16px;
+      padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .product-category-tag {
+      display: inline-flex; align-items: center;
+      background: #e8f5ee; color: #1a6b3c;
+      font-size: .75rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 99px;
+      margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+    .product-name {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 900; color: #111;
+      margin-bottom: 14px; line-height: 1.4;
+    }
+    .product-rating-row {
+      display: flex; align-items: center; gap: 10px;
+      flex-wrap: wrap; margin-bottom: 18px;
+    }
+    .stars { display: flex; gap: 2px; }
+    .stars svg { width: 16px; height: 16px; }
+    .review-count { font-size: .82rem; color: #888; }
+    .in-stock {
+      font-size: .82rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 99px;
+    }
+    .in-stock.available { background: #e8f5ee; color: #1a6b3c; }
+    .in-stock.out { background: #fff0f0; color: #e53e3e; }
+
+    /* Prix */
+    .product-price-block {
+      display: flex; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      margin-bottom: 18px; padding: 16px;
+      background: #f7faf8; border-radius: 12px;
+    }
+    .current-price {
+      font-size: 1.8rem; font-weight: 900; color: #1a6b3c;
+    }
+    .original-price {
+      font-size: 1rem; color: #aaa;
+      text-decoration: line-through;
+    }
+    .discount-badge {
+      background: #e53e3e; color: #fff;
+      font-size: .75rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 6px;
+    }
+
+    /* Description courte */
+    .product-description {
+      color: #555; line-height: 1.8;
+      font-size: .95rem; margin-bottom: 20px;
+    }
+
+    /* Options */
+    .product-options { margin-bottom: 20px; }
+    .option-group { margin-bottom: 14px; }
+    .option-group label {
+      display: block; font-size: .85rem;
+      font-weight: 700; color: #333; margin-bottom: 8px;
+    }
+    .option-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .option-btn {
+      padding: 6px 14px; border-radius: 8px;
+      border: 1.5px solid #ddd; background: #fff;
+      font-family: 'Cairo', sans-serif; font-size: .85rem;
+      cursor: pointer; transition: all .2s; color: #333;
+    }
+    .option-btn:hover,
+    .option-btn.selected {
+      border-color: #1a6b3c; background: #e8f5ee; color: #1a6b3c;
+      font-weight: 700;
+    }
+
+    /* Quantité */
+    .quantity-selector {
+      display: flex; align-items: center;
+      gap: 14px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .quantity-selector label {
+      font-size: .9rem; font-weight: 700; color: #333;
+    }
+    .qty-controls {
+      display: flex; align-items: center;
+      border: 1.5px solid #ddd; border-radius: 10px;
+      overflow: hidden;
+    }
+    .qty-btn {
+      width: 38px; height: 38px;
+      background: #f5f5f5; border: none;
+      font-size: 1.1rem; font-weight: 700;
+      cursor: pointer; color: #333;
+      transition: background .2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .qty-btn:hover { background: #e8f5ee; color: #1a6b3c; }
+    .qty-input {
+      width: 52px; height: 38px;
+      border: none; border-right: 1.5px solid #ddd;
+      border-left: 1.5px solid #ddd;
+      text-align: center; font-family: 'Cairo', sans-serif;
+      font-size: .95rem; font-weight: 700;
+      outline: none; color: #111;
+    }
+
+    /* Boutons actions */
+    .product-actions {
+      display: flex; flex-direction: column;
+      gap: 10px; margin-bottom: 20px;
+    }
+    .btn-buy {
+      display: inline-flex; align-items: center;
+      justify-content: center; gap: 8px;
+      background: #1a6b3c; color: #fff; border: none;
+      padding: 14px 20px; border-radius: 12px;
+      font-size: 1rem; font-weight: 700;
+      font-family: 'Cairo', sans-serif;
+      cursor: pointer; text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+    .btn-buy:hover { background: #145c35; transform: translateY(-1px); }
+    .btn-buy svg { width: 18px; height: 18px; }
+    .btn-cart-outline {
+      display: inline-flex; align-items: center;
+      justify-content: center; gap: 8px;
+      background: #fff; color: #1a6b3c;
+      border: 2px solid #1a6b3c;
+      padding: 13px 20px; border-radius: 12px;
+      font-size: .95rem; font-weight: 700;
+      font-family: 'Cairo', sans-serif;
+      cursor: pointer; text-decoration: none;
+      transition: all .2s;
+    }
+    .btn-cart-outline:hover { background: #e8f5ee; }
+    .btn-cart-outline svg { width: 18px; height: 18px; }
+    .btn-wa-product {
+      display: inline-flex; align-items: center;
+      justify-content: center; gap: 8px;
+      background: #25d366; color: #fff; border: none;
+      padding: 13px 20px; border-radius: 12px;
+      font-size: .95rem; font-weight: 700;
+      font-family: 'Cairo', sans-serif;
+      cursor: pointer; text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-wa-product:hover { background: #1ebe5d; }
+    .btn-wa-product svg { width: 18px; height: 18px; }
+
+    /* Garanties */
+    .product-guarantees {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .guarantee-item {
+      display: flex; align-items: center; gap: 8px;
+      background: #f7faf8; border-radius: 10px;
+      padding: 10px 12px; font-size: .82rem;
+      color: #444; font-weight: 600;
+    }
+    .guarantee-item svg { width: 18px; height: 18px; stroke: #1a6b3c; flex-shrink: 0; }
+
+    /* ══════════════════════════════
+       TABS
+    ══════════════════════════════ */
+    .product-tabs {
+      background: #fff; border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      overflow: hidden; margin-bottom: 40px;
+    }
+    .tabs-header {
+      display: flex; border-bottom: 2px solid #f0f0f0;
+      background: #fafafa;
+    }
+    .tabs-header .tab-btn {
+      flex: 1; padding: 14px 16px;
+      background: none; border: none;
+      font-family: 'Cairo', sans-serif;
+      font-size: .9rem; font-weight: 600;
+      color: #666; cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: color .2s, border-color .2s;
+    }
+    .tabs-header .tab-btn:hover { color: #1a6b3c; }
+    .tabs-header .tab-btn.active {
+      color: #1a6b3c; border-bottom-color: #1a6b3c;
+      background: #fff;
+    }
+    .tab-content { display: none; padding: 28px; }
+    .tab-content.active { display: block; }
+    .tab-content p { color: #555; line-height: 1.8; font-size: .95rem; }
+
+    /* Tableau specs */
+    .specs-table { width: 100%; border-collapse: collapse; }
+    .specs-table tr:nth-child(even) { background: #f7faf8; }
+    .specs-table td {
+      padding: 12px 16px; font-size: .88rem; color: #444;
+      border-bottom: 1px solid #eee;
+    }
+    .specs-table td:first-child { font-weight: 700; color: #111; width: 40%; }
+
+    /* Reviews */
+    .reviews-summary {
+      display: flex; align-items: center; gap: 24px;
+      padding: 20px; background: #f7faf8;
+      border-radius: 12px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .rating-big {
+      font-size: 3rem; font-weight: 900; color: #1a6b3c; line-height: 1;
+    }
+    .reviews-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+    .review-item {
+      background: #f7faf8; border-radius: 12px; padding: 16px;
+    }
+    .review-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap;
+    }
+    .reviewer-name { font-weight: 700; font-size: .9rem; color: #111; }
+    .reviewer-city {
+      font-size: .78rem; color: #888;
+      background: #e8f5ee; padding: 2px 8px; border-radius: 99px;
+    }
+    .review-date { font-size: .75rem; color: #bbb; margin-right: auto; }
+    .review-text { font-size: .88rem; color: #555; line-height: 1.7; }
+
+    /* Formulaire avis */
+    .add-review {
+      border-top: 1px solid #eee; padding-top: 24px; margin-top: 24px;
+    }
+    .add-review h3 {
+      font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 16px;
+    }
+    .star-rating-input {
+      display: flex; gap: 6px; margin-bottom: 14px; flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+    .star-rating-input svg {
+      width: 28px; height: 28px; cursor: pointer;
+      transition: transform .1s;
+    }
+    .star-rating-input svg:hover { transform: scale(1.2); }
+    .review-input, .review-textarea {
+      width: 100%; padding: 10px 14px;
+      border: 1.5px solid #ddd; border-radius: 10px;
+      font-family: 'Cairo', sans-serif; font-size: .9rem;
+      outline: none; margin-bottom: 10px;
+      transition: border-color .2s; direction: rtl;
+    }
+    .review-input:focus, .review-textarea:focus { border-color: #1a6b3c; }
+    .review-textarea { min-height: 100px; resize: vertical; }
+    .btn-submit-review {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #1a6b3c; color: #fff; border: none;
+      padding: 11px 22px; border-radius: 10px;
+      font-family: 'Cairo', sans-serif; font-size: .9rem;
+      font-weight: 700; cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-submit-review:hover { background: #145c35; }
+    .btn-submit-review svg { width: 16px; height: 16px; }
+
+    /* ══════════════════════════════
+       UPSELL / RELATED
+    ══════════════════════════════ */
+    .section-title-row {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .section-title-row h2 {
+      font-size: 1.4rem; font-weight: 900; color: #111;
+    }
+    .section-title-row svg { width: 22px; height: 22px; stroke: #1a6b3c; }
+    .bundle-products {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      align-items: center; margin-bottom: 16px;
+    }
+    .bundle-item {
+      background: #fff; border-radius: 12px;
+      padding: 12px; text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      width: 130px; flex-shrink: 0;
+    }
+    .bundle-item img {
+      width: 80px; height: 80px; object-fit: cover;
+      border-radius: 8px; margin-bottom: 8px; display: block; margin: 0 auto 8px;
+    }
+    .bundle-item-name { font-size: .78rem; font-weight: 600; color: #333; margin-bottom: 4px; }
+    .bundle-item-price { font-size: .85rem; font-weight: 900; color: #1a6b3c; }
+    .bundle-plus {
+      font-size: 1.4rem; color: #aaa; font-weight: 700; flex-shrink: 0;
+    }
+    .bundle-total {
+      display: flex; align-items: center; gap: 14px;
+      flex-wrap: wrap; background: #f7faf8;
+      border-radius: 12px; padding: 16px 20px;
+    }
+    .bundle-total-price { font-size: 1.1rem; font-weight: 900; color: #1a6b3c; }
+    .btn-bundle {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #f0a500; color: #111; border: none;
+      padding: 10px 20px; border-radius: 10px;
+      font-family: 'Cairo', sans-serif; font-size: .9rem;
+      font-weight: 700; cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-bundle:hover { background: #e09500; }
+    .btn-bundle svg { width: 16px; height: 16px; }
+
+    /* ══════════════════════════════
+       WHATSAPP FLOAT
+    ══════════════════════════════ */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+      width: 54px; height: 54px; background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,.45);
+      transition: transform .2s; text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 28px; height: 28px; }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .footer-simple {
+      background: #0d2b1a; color: #aaa;
+      padding: 20px 0; text-align: center; font-size: .82rem;
+    }
+    .footer-simple a { color: #22a05a; text-decoration: none; }
+    .footer-simple a:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 480px) {
+      .product-info { padding: 18px; }
+      .product-guarantees { grid-template-columns: 1fr; }
+      .tabs-header .tab-btn { font-size: .78rem; padding: 12px 8px; }
+      .bundle-item { width: 110px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ===== Top Bar ===== -->
+<div class="top-bar">
+  <span>
+    <svg style="width:14px;height:14px;vertical-align:middle;margin-left:4px;"
+         viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="1"/>
+      <path d="M16 8h4l3 5v3h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+    توصيل مجاني فوق 150 د.ل
+    &nbsp;|&nbsp;
+    <svg style="width:13px;height:13px;vertical-align:middle;margin-left:3px;"
+         viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    الدفع عند الاستلام
+  </span>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="header" id="mainHeader">
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo-link" aria-label="وصلك - الصفحة الرئيسية">
+      <img src="assets/logo.png" alt="وصلك | wasalak.com"
+           height="48" width="auto" loading="eager" fetchpriority="high"
+           onerror="this.onerror=null;this.src='assets/logo-fallback.svg';"/>
+    </a>
+
+    <nav class="nav-menu" id="navMenu" role="navigation" aria-label="القائمة الرئيسية">
+      <a href="index.html"   class="nav-link">الرئيسية</a>
+      <a href="catalog.html" class="nav-link active">المنتجات</a>
+      <a href="about.html"   class="nav-link">من نحن</a>
+      <a href="track.html"   class="nav-link">تتبع طلبي</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="catalog.html" class="icon-btn" aria-label="عربة التسوق">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9"  cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <button class="icon-btn menu-toggle" onclick="toggleMenu()"
+              aria-label="القائمة" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Breadcrumb ===== -->
+<div class="breadcrumb-bar">
+  <div class="container">
+    <a href="index.html">الرئيسية</a>
+    <span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </span>
+    <a href="catalog.html">المنتجات</a>
+    <span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </span>
+    <span id="breadcrumbProduct">تفاصيل المنتج</span>
+  </div>
+</div>
+
+<!-- ===== Page Produit ===== -->
+<section class="product-detail section">
+  <div class="container">
+    <div class="product-layout">
+
+      <!-- ── Galerie ── -->
+      <div class="product-gallery">
+        <div class="main-image-wrapper">
+          <img src="" alt="صورة المنتج" id="mainProductImage" class="main-product-image"/>
+          <div class="image-badges" id="imageBadges"></div>
+        </div>
+        <div class="thumbnail-list" id="thumbnailList"></div>
+        <div class="product-video" id="productVideo" style="display:none;">
+          <h4>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a6b3c" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+            فيديو المنتج
+          </h4>
+          <video controls class="product-video-player" id="videoPlayer">
+            <source src="" type="video/mp4"/>
+          </video>
+        </div>
+      </div>
+
+      <!-- ── Infos produit ── -->
+      <div class="product-info">
+        <div class="product-category-tag" id="productCategoryTag"></div>
+        <h1 class="product-name" id="productName"></h1>
+
+        <div class="product-rating-row">
+          <div class="stars" id="productStars"></div>
+          <span class="review-count" id="reviewCount"></span>
+          <span class="in-stock" id="stockStatus"></span>
+        </div>
+
+        <div class="product-price-block">
+          <span class="current-price"   id="currentPrice"></span>
+          <span class="original-price"  id="originalPrice"></span>
+          <span class="discount-badge"  id="discountBadge"></span>
+        </div>
+
+        <p class="product-description" id="productDescription"></p>
+
+        <div class="product-options" id="productOptions"></div>
+
+        <!-- Quantité -->
+        <div class="quantity-selector">
+          <label>الكمية:</label>
+          <div class="qty-controls">
+            <button onclick="decreaseQty()" class="qty-btn" aria-label="تقليل الكمية">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <input type="number" id="qtyInput" value="1" min="1" max="99"
+                   class="qty-input" aria-label="الكمية"/>
+            <button onclick="increaseQty()" class="qty-btn" aria-label="زيادة الكمية">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5"  y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="product-actions">
+          <button class="btn-buy" onclick="buyNow()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            اشتر الآن — الدفع عند الاستلام
+          </button>
+          <button class="btn-cart-outline" onclick="addToCartFromProduct()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9"  cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+            </svg>
+            أضف للسلة
+          </button>
+          <a href="https://wa.me/218912345678?text=مرحباً، أريد الاستفسار عن هذا المنتج"
+             target="_blank" rel="noopener" class="btn-wa-product">
+            <svg viewBox="0 0 24 24" fill="#fff">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            استفسر عبر واتساب
+          </a>
+        </div>
+
+        <!-- Garanties -->
+        <div class="product-guarantees">
+          <div class="guarantee-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
+            </svg>
+            إرجاع خلال 14 يوم
+          </div>
+          <div class="guarantee-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+            منتج أصلي مضمون
+          </div>
+          <div class="guarantee-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <path d="M2 10h20"/>
+              <circle cx="17" cy="15" r="1" fill="#1a6b3c" stroke="none"/>
+            </svg>
+            الدفع عند الاستلام
+          </div>
+          <div class="guarantee-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="1"/>
+              <path d="M16 8h4l3 5v3h-7V8z"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+            توصيل سريع
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Tabs ===== -->
+    <div class="product-tabs">
+      <div class="tabs-header">
+        <button class="tab-btn active" onclick="showTab('description')">الوصف التفصيلي</button>
+        <button class="tab-btn" onclick="showTab('specs')">المواصفات</button>
+        <button class="tab-btn" onclick="showTab('reviews')">آراء العملاء</button>
+      </div>
+
+      <div class="tab-content active" id="tab-description">
+        <div id="detailedDescription"></div>
+      </div>
+
+      <div class="tab-content" id="tab-specs">
+        <table class="specs-table" id="specsTable"></table>
+      </div>
+
+      <div class="tab-content" id="tab-reviews">
+        <div class="reviews-summary" id="reviewsSummary"></div>
+        <div class="reviews-list"   id="reviewsList"></div>
+
+        <!-- Formulaire avis -->
+        <div class="add-review">
+          <h3>أضف تقييمك</h3>
+          <div class="star-rating-input" id="starRatingInput">
+            <!-- 5 étoiles SVG interactives (RTL : 5→1) -->
+            <svg data-val="5" viewBox="0 0 24 24" fill="none" stroke="#f0a500"
+                 stroke-width="1.8" onclick="setReviewStar(5)">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <svg data-val="4" viewBox="0 0 24 24" fill="none" stroke="#f0a500"
+                 stroke-width="1.8" onclick="setReviewStar(4)">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <svg data-val="3" viewBox="0 0 24 24" fill="none" stroke="#f0a500"
+                 stroke-width="1.8" onclick="setReviewStar(3)">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <svg data-val="2" viewBox="0 0 24 24" fill="none" stroke="#f0a500"
+                 stroke-width="1.8" onclick="setReviewStar(2)">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <svg data-val="1" viewBox="0 0 24 24" fill="none" stroke="#f0a500"
+                 stroke-width="1.8" onclick="setReviewStar(1)">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <input type="text" id="reviewName" placeholder="اسمك" class="review-input"/>
+          <input type="text" id="reviewCity" placeholder="مدينتك" class="review-input"/>
+          <textarea id="reviewText" placeholder="رأيك في المنتج..." class="review-textarea"></textarea>
+          <button class="btn-submit-review" onclick="submitReview()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            إرسال التقييم
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Upsell ===== -->
+    <div class="frequently-bought section">
+      <div class="section-title-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9"  cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+        </svg>
+        <h2>يُشترى معاً عادةً</h2>
+      </div>
+      <div class="bundle-products" id="bundleProducts"></div>
+      <div class="bundle-total"    id="bundleTotal"></div>
+    </div>
+
+    <!-- ===== Produits liés ===== -->
+    <div class="related-products section">
+      <div class="section-title-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+        </svg>
+        <h2>منتجات <span class="highlight">مشابهة</span></h2>
+      </div>
+      <div class="products-grid" id="relatedProducts"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== WhatsApp Float ===== -->
+<a href="https://wa.me/218912345678?text=مرحباً، أريد الاستفسار عن منتج من وصلك"
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+   aria-label="تواصل معنا عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="#fff">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ===== Footer ===== -->
+<footer class="footer-simple">
+  <div class="container footer-bottom">
+    <p>
+      © 2025 <strong style="color:#fff;">وصلك</strong> – wasalak.com &nbsp;|&nbsp;
+      <a href="privacy.html">الخصوصية</a> &nbsp;|&nbsp;
+      <a href="terms.html">الشروط</a> &nbsp;|&nbsp;
+      <a href="index.html">الرئيسية</a>
+    </p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  /* ── Tab switcher ── */
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tabs-header .tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  /* ── Quantity ── */
+  function increaseQty() {
+    const i = document.getElementById('qtyInput');
+    if (+i.value < 99) i.value = +i.value + 1;
+  }
+  function decreaseQty() {
+    const i = document.getElementById('qtyInput');
+    if (+i.value > 1) i.value = +i.value - 1;
+  }
+
+  /* ── Star review ── */
+  let selectedStar = 0;
+  function setReviewStar(val) {
+    selectedStar = val;
+    document.querySelectorAll('#starRatingInput svg').forEach(s => {
+      s.style.fill = +s.dataset.val <= val ? '#f0a500' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

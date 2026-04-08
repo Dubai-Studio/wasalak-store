@@ -14,7 +14,7 @@
 
   <style>
     /* ============================================================
-       CHECKOUT PAGE – Styles dédiés
+       CHECKOUT PAGE – Styles dédiés + Cart Edit Controls
        ============================================================ */
     :root {
       --green:        #1a6b3c;
@@ -551,7 +551,9 @@
     .submit-error-alert.visible { display: flex; }
     .submit-error-alert svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-    /* ── ORDER SUMMARY ── */
+    /* ============================================================
+       ORDER SUMMARY — WITH EDIT CONTROLS
+       ============================================================ */
     .order-summary {
       position: sticky;
       top: 88px;
@@ -585,51 +587,102 @@
       padding: 2px 8px;
       border-radius: 99px;
     }
-    .order-items { padding: 0 20px; max-height: 280px; overflow-y: auto; }
+
+    /* ── ORDER ITEMS (with edit controls) ── */
+    .order-items { padding: 0 20px; max-height: 380px; overflow-y: auto; }
     .order-item {
-      display: flex;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
       gap: 12px;
-      padding: 12px 0;
+      padding: 14px 0;
       border-bottom: 1px solid var(--gray-100);
+      align-items: center;
     }
     .order-item:last-child { border-bottom: none; }
+
     .order-item-img {
       width: 54px; height: 54px;
       border-radius: 8px;
       object-fit: cover;
       border: 1px solid var(--gray-200);
       background: var(--gray-100);
-      flex-shrink: 0;
+      grid-row: 1 / 3;
     }
-    .order-item-details { flex: 1; min-width: 0; }
+
+    .order-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
     .order-item-name {
       font-size: .82rem;
       font-weight: 700;
       color: var(--gray-900);
-      line-height: 1.4;
+      line-height: 1.3;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .order-item-meta { font-size: .7rem; color: var(--gray-500); margin-top: 2px; }
-    .order-item-qty {
-      background: var(--gray-100);
-      color: var(--gray-700);
-      padding: 2px 8px;
-      border-radius: 99px;
-      font-size: .7rem;
-      font-weight: 700;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+    .order-item-meta { font-size: .7rem; color: var(--gray-500); }
     .order-item-price {
       font-size: .88rem;
       font-weight: 900;
       color: var(--green);
       white-space: nowrap;
-      flex-shrink: 0;
     }
+
+    /* ── Quantity controls ── */
+    .order-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      grid-column: 2 / 4;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 2px;
+    }
+    .btn-qty {
+      width: 26px; height: 26px;
+      border: none;
+      background: var(--white);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      color: var(--gray-700);
+      font-weight: 900;
+    }
+    .btn-qty:hover { background: var(--green); color: var(--white); }
+    .btn-qty:active { transform: scale(.9); }
+    .btn-qty svg { width: 14px; height: 14px; }
+    .qty-display {
+      min-width: 30px;
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 900;
+      color: var(--gray-900);
+    }
+
+    /* Delete button */
+    .btn-delete {
+      margin-right: auto;
+      width: 28px; height: 28px;
+      border: none;
+      background: var(--red-light);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      color: var(--red);
+    }
+    .btn-delete:hover { background: var(--red); color: var(--white); transform: scale(1.05); }
+    .btn-delete svg { width: 15px; height: 15px; }
 
     /* Coupon */
     .coupon-section { padding: 14px 20px; border-bottom: 1px solid var(--gray-100); }
@@ -1296,7 +1349,7 @@
 
       </div><!-- /.checkout-form-wrapper -->
 
-      <!-- ══ ORDER SUMMARY SIDEBAR ══ -->
+      <!-- ══ ORDER SUMMARY SIDEBAR WITH EDIT CONTROLS ══ -->
       <aside class="order-summary" aria-label="ملخص الطلب">
         <div class="summary-card">
 
@@ -1469,13 +1522,12 @@
 <script src="js/app.js"></script>
 <script>
 /* ================================================================
-   CHECKOUT PAGE — COD + Google Sheet (Shiper) — wasalak.com
+   CHECKOUT PAGE — COD + Google Sheet + CART EDIT CONTROLS
    ================================================================ */
 
 /* ── CONFIG ── */
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbz3kwrmitq0fQD3qLVMxijHpKK7ppoqIHHOgTt368sPH7p4aCEsgwQuYxDLYmK3-J8TEg/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwVJiI2IKABHtVKHXmfgeJg6sq1n4W0XItlIL_37fJdTw7kdNldithiH6TxtyYmq_XF3A/exec';
 
-/* ── LABELS VILLES ── */
 const CITY_LABELS = {
   tripoli:'طرابلس', janzur:'جنزور', tajura:'تاجوراء', 'ain-zara':'عين زارة',
   benghazi:'بنغازي', misrata:'مصراتة', zawiya:'الزاوية', zliten:'زليتن',
@@ -1484,7 +1536,6 @@ const CITY_LABELS = {
   kufra:'الكفرة', ghat:'غات', other:'مدينة أخرى'
 };
 
-/* ── ZONES DE LIVRAISON ── */
 const DELIVERY_ZONES = {
   tripoli:   { time:'توصيل خلال 24–48 ساعة', cost:15,  costText:'15 د.ل' },
   janzur:    { time:'توصيل خلال 24–48 ساعة', cost:15,  costText:'15 د.ل' },
@@ -1507,14 +1558,12 @@ const DELIVERY_ZONES = {
   other:     { time:'يُحدَّد بعد التواصل',   cost:0,   costText:'يُحدَّد لاحقاً' },
 };
 
-/* ── COUPONS ── */
 const COUPONS = {
   'WASALAK10': { discount:0.10, label:'خصم 10%' },
   'LIBYA20':   { discount:0.20, label:'خصم 20%' },
   'WELCOME15': { discount:0.15, label:'خصم 15%' },
 };
 
-/* ── STATE ── */
 let currentShippingCost = 0;
 let currentDiscount     = 0;
 let appliedCoupon       = null;
@@ -1529,7 +1578,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ================================================================
-   RENDER CART ITEMS
+   RENDER CART ITEMS — WITH EDIT CONTROLS
    ================================================================ */
 function renderOrderItems() {
   const cart      = getCart();
@@ -1555,20 +1604,90 @@ function renderOrderItems() {
 
   if (countEl) countEl.textContent = cart.reduce((s,i) => s + (i.qty||1), 0);
 
-  container.innerHTML = cart.map(item => `
-    <div class="order-item" role="listitem">
+  container.innerHTML = cart.map((item, idx) => `
+    <div class="order-item" role="listitem" data-index="${idx}">
       <img class="order-item-img"
            src="${esc(item.image || 'assets/placeholder.png')}"
            alt="${esc(item.name || 'منتج')}"
            loading="lazy"
            onerror="this.src='assets/placeholder.png'"/>
-      <div class="order-item-details">
+      
+      <div class="order-item-info">
         <div class="order-item-name">${esc(item.name || 'منتج')}</div>
         <div class="order-item-meta">${esc(item.option || item.variant || '')}</div>
       </div>
-      <span class="order-item-qty">×${item.qty || 1}</span>
-      <span class="order-item-price">${((item.price||0)*(item.qty||1)).toFixed(0)} د.ل</span>
+
+      <div class="order-item-price">${((item.price||0)*(item.qty||1)).toFixed(0)} د.ل</div>
+
+      <div class="order-item-controls">
+        <div class="qty-controls">
+          <button class="btn-qty" onclick="decreaseQty(${idx})" aria-label="تقليل الكمية">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <span class="qty-display">${item.qty || 1}</span>
+          <button class="btn-qty" onclick="increaseQty(${idx})" aria-label="زيادة الكمية">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+        <button class="btn-delete" onclick="deleteItem(${idx})" aria-label="حذف المنتج">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        </button>
+      </div>
     </div>`).join('');
+}
+
+/* ================================================================
+   CART MANIPULATION
+   ================================================================ */
+function increaseQty(idx) {
+  const cart = getCart();
+  if (!cart[idx]) return;
+  cart[idx].qty = (cart[idx].qty || 1) + 1;
+  saveCart(cart);
+  renderOrderItems();
+  recalculateDiscount();
+  updateTotals();
+}
+
+function decreaseQty(idx) {
+  const cart = getCart();
+  if (!cart[idx]) return;
+  if ((cart[idx].qty || 1) > 1) {
+    cart[idx].qty = (cart[idx].qty || 1) - 1;
+    saveCart(cart);
+    renderOrderItems();
+    recalculateDiscount();
+    updateTotals();
+  }
+}
+
+function deleteItem(idx) {
+  const cart = getCart();
+  if (!cart[idx]) return;
+  if (confirm('هل تريد حذف هذا المنتج من السلة؟')) {
+    cart.splice(idx, 1);
+    saveCart(cart);
+    renderOrderItems();
+    recalculateDiscount();
+    updateTotals();
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem('wasalak_cart', JSON.stringify(cart));
+  const badge = document.getElementById('cartCount');
+  if (badge) badge.textContent = cart.reduce((s,i)=>s+(i.qty||1),0);
+}
+
+function getCart() {
+  return JSON.parse(localStorage.getItem('wasalak_cart') || '[]');
+}
+
+function recalculateDiscount() {
+  if (!appliedCoupon) return;
+  const cart = getCart();
+  const sub  = cart.reduce((s,i) => s + (i.price||0)*(i.qty||1), 0);
+  currentDiscount = sub * appliedCoupon.discount;
 }
 
 /* ================================================================
@@ -1592,14 +1711,14 @@ function updateTotals() {
   const cityVal    = getVal('city');
   const shippingEl = document.getElementById('shippingCost');
   if (shippingEl) {
-    if (!cityVal)           shippingEl.innerHTML = '<span class="shipping-pending">اختر مدينتك</span>';
+    if (!cityVal)               shippingEl.innerHTML = '<span class="shipping-pending">اختر مدينتك</span>';
     else if (cityVal==='other') shippingEl.innerHTML = '<span class="shipping-pending">يُحدَّد لاحقاً</span>';
-    else                    shippingEl.textContent = currentShippingCost + ' د.ل';
+    else                        shippingEl.textContent = currentShippingCost + ' د.ل';
   }
 }
 
 /* ================================================================
-   DELIVERY INFO (on city change)
+   DELIVERY INFO
    ================================================================ */
 function updateDeliveryInfo() {
   const cityVal = getVal('city');
@@ -1615,13 +1734,7 @@ function updateDeliveryInfo() {
   box.style.display = 'flex';
 
   currentShippingCost = zone.cost;
-
-  if (appliedCoupon) {
-    const cart = getCart();
-    const sub  = cart.reduce((s,i) => s + (i.price||0)*(i.qty||1), 0);
-    currentDiscount = sub * appliedCoupon.discount;
-  }
-
+  recalculateDiscount();
   updateTotals();
   clearFieldError(document.getElementById('city'), document.getElementById('cityError'));
 }
@@ -1674,7 +1787,6 @@ function validateForm() {
     else                      clearFieldError(el, err);
   });
 
-  /* Phone */
   const phoneEl  = document.getElementById('phone');
   const phoneErr = document.getElementById('phoneError');
   const phoneVal = (phoneEl?.value||'').replace(/[^0-9]/g,'');
@@ -1687,7 +1799,6 @@ function validateForm() {
     phoneEl?.closest?.('.phone-wrapper')?.classList.remove('error');
   }
 
-  /* Terms */
   const terms    = document.getElementById('termsAccepted');
   const termsErr = document.getElementById('termsError');
   if (!terms?.checked) {
@@ -1697,7 +1808,6 @@ function validateForm() {
     if (termsErr) { termsErr.textContent=''; termsErr.classList.remove('visible'); }
   }
 
-  /* Panier non vide */
   if (!getCart().length) {
     showSubmitError('سلة المشتريات فارغة. أضف منتجات ثم عد لإتمام الطلب.');
     valid = false;
@@ -1707,37 +1817,19 @@ function validateForm() {
 }
 
 /* ================================================================
-   BUILD PAYLOAD — Format exact attendu par doPost()
-   Champs : nom, telephone, ville, adresse, produit, prix
+   BUILD PAYLOAD
    ================================================================ */
 function buildPayload() {
   const cart     = getCart();
   const subtotal = cart.reduce((s,i) => s + (i.price||0)*(i.qty||1), 0);
   const total    = Math.max(0, subtotal - currentDiscount) + currentShippingCost;
 
-  /* ── nom ── */
-  const nom = (getVal('firstName') + ' ' + getVal('lastName')).trim();
-
-  /* ── telephone ── */
+  const nom       = (getVal('firstName') + ' ' + getVal('lastName')).trim();
   const telephone = '+218' + getVal('phone').replace(/[^0-9]/g,'');
-
-  /* ── ville ── */
-  const ville = CITY_LABELS[getVal('city')] || getVal('city');
-
-  /* ── adresse ── */
-  const adresse = [
-    getVal('district'),
-    getVal('address'),
-    getVal('orderNotes')
-  ].filter(Boolean).join(' — ') || '—';
-
-  /* ── produit ── (résumé lisible de tous les articles) */
-  const produit = cart.map(i =>
-    `${i.name || 'منتج'} ×${i.qty||1}`
-  ).join(' | ') || '—';
-
-  /* ── prix ── (total final avec rسوم التوصيل) */
-  const prix = total.toFixed(2) + ' د.ل'
+  const ville     = CITY_LABELS[getVal('city')] || getVal('city');
+  const adresse   = [getVal('district'), getVal('address'), getVal('orderNotes')].filter(Boolean).join(' — ') || '—';
+  const produit   = cart.map(i => `${i.name || 'منتج'} ×${i.qty||1}`).join(' | ') || '—';
+  const prix      = total.toFixed(2) + ' د.ل'
     + (currentShippingCost > 0 ? ` (توصيل: ${currentShippingCost} د.ل)` : '')
     + ' — COD';
 
@@ -1745,21 +1837,15 @@ function buildPayload() {
 }
 
 /* ================================================================
-   SEND TO GOOGLE SHEET — POST JSON (comme doPost attend)
+   SEND TO GOOGLE SHEET
    ================================================================ */
 async function sendToSheet(payload) {
-  /*
-   * Google Apps Script (doPost) attend un POST avec body JSON.
-   * On envoie via fetch + mode no-cors pour éviter l'erreur CORS.
-   * La réponse sera "opaque" mais le script s'exécute côté serveur.
-   */
   await fetch(SHEET_URL, {
     method:  'POST',
-    mode:    'no-cors',             /* évite l'erreur CORS du navigateur  */
+    mode:    'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(payload),
   });
-  /* no-cors → on ne peut pas lire la réponse → on suppose succès */
   return true;
 }
 
@@ -1776,7 +1862,6 @@ async function submitOrder(e) {
     return;
   }
 
-  /* ── UI : état chargement ── */
   const btn     = document.getElementById('submitOrderBtn');
   const btnText = document.getElementById('submitBtnText');
   const spinner = document.getElementById('submitSpinner');
@@ -1785,38 +1870,29 @@ async function submitOrder(e) {
   if (btnText) btnText.textContent   = 'جاري إرسال الطلب...';
   setStepActive(2);
 
-  /* ── Payload ── */
   const payload = buildPayload();
   const orderId = generateOrderId();
 
   let sheetOk = false;
 
   try {
-    /* 1️⃣  Envoi Google Sheet */
     await sendToSheet(payload);
     sheetOk = true;
   } catch (err) {
     console.warn('[Checkout] Sheet send failed:', err.message);
-    /* On continue quand même — sauvegarde locale de secours */
   }
 
-  /* 2️⃣  Sauvegarde locale (toujours) */
   saveOrderLocal({ orderId, ...payload, sheetOk, ts: new Date().toISOString() });
-
-  /* 3️⃣  Vider le panier */
   clearCart();
 
-  /* 4️⃣  Steps */
   setStepDone(1);
   setStepDone(2);
   setStepActive(3);
 
-  /* 5️⃣  Reset UI */
   if (btn)     btn.disabled          = false;
   if (spinner) spinner.style.display = 'none';
   if (btnText) btnText.textContent   = 'تأكيد الطلب — الدفع عند الاستلام';
 
-  /* 6️⃣  Modal succès */
   showSuccessModal(orderId, payload.telephone, sheetOk);
 }
 
@@ -1859,10 +1935,6 @@ function clearCart() {
   localStorage.removeItem('wasalak_cart');
   const badge = document.getElementById('cartCount');
   if (badge) badge.textContent = '0';
-}
-
-function getCart() {
-  return JSON.parse(localStorage.getItem('wasalak_cart') || '[]');
 }
 
 /* ================================================================
@@ -1950,7 +2022,6 @@ function esc(str) {
     .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 </script>
-
 
 </body>
 </html>

@@ -1,0 +1,6 @@
+ID de déploiement
+AKfycbz3kwrmitq0fQD3qLVMxijHpKK7ppoqIHHOgTt368sPH7p4aCEsgwQuYxDLYmK3-J8TEg
+
+
+Application Web URL
+https://script.google.com/macros/s/AKfycbz3kwrmitq0fQD3qLVMxijHpKK7ppoqIHHOgTt368sPH7p4aCEsgwQuYxDLYmK3-J8TEg/exec
